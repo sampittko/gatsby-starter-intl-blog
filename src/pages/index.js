@@ -1,6 +1,12 @@
-import React from "react"
+import React from "react";
+import { injectIntl } from "gatsby-plugin-intl";
 
-const IndexPage = () =>
-  <h1>Hello, Human.</h1>
+const IndexPage = ({ intl }) => {
+  return (
+    <div>
+      {intl.formatMessage({ id: "welcome" })}
+    </div>
+  );
+};
 
-export default IndexPage
+export default injectIntl(IndexPage);

@@ -7,15 +7,22 @@
   "version": "0.0.0-unversioned",
   "license": "MIT",
   "scripts": {
+    "start": "gatsby develop",
     "develop": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve"
   },
   "dependencies": {
     "gatsby": "^2.0.0-rc.0",
+    "gatsby-plugin-intl": "^0.3.3",
+    "gatsby-plugin-postcss": "^2.3.1",
     "gatsby-source-filesystem": "^2.0.1-beta.10",
     "gatsby-transformer-remark": "^2.1.1-beta.5",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
+  },
+  "devDependencies": {
+    "slugify": "^1.4.0",
+    "tailwindcss": "^1.4.6"
   }
 }

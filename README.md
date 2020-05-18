@@ -1,1 +1,3 @@
-# Personal website of Samuel Pitoňak
+# [sampittko.sk](https://sampittko.sk/)
+
+My personal website.

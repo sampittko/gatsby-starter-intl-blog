@@ -1,6 +1,7 @@
 const path = require("path");
 const { supportedLanguages, languageSettings } = require("./src/config/i18n");
 const slugify = require("slugify");
+const { getBlogTagPrefix } = require('./src/utils/i18n')
 
 const slugifySettings = {
   replacement: "-",
@@ -44,12 +45,8 @@ exports.createPages = ({ graphql, actions }) => {
           return reject(result.errors);
         }
 
-        // TODO Create blog index pages
-
         const blogPosts = result.data.blogPosts.edges;
-        createBlogPostsPages(createPage, blogPosts);
-
-        // TODO Create tag pages
+        createBlogPages(createPage, blogPosts)
 
         // TODO Create projects pages
 
@@ -61,11 +58,11 @@ exports.createPages = ({ graphql, actions }) => {
   });
 };
 
-const createBlogPostsPages = (createPage, blogPosts) => {
-  const blogPostTemplate = path.resolve("src/templates/blog/post.js");
+// TODO Use lodash helper fn?
+const getBlogPostsByIntl = (blogPosts) => {
   const blogPostsIntl = {};
 
-  // Create object with properties as empty arrays by language
+  // Create object with properties being empty arrays divided by language
   Object.keys(supportedLanguages).forEach((supportedLanguage) => {
     blogPostsIntl[supportedLanguage] = [];
   });
@@ -81,6 +78,21 @@ const createBlogPostsPages = (createPage, blogPosts) => {
     }
   });
 
+  return blogPostsIntl;
+}
+
+const createBlogPages = (createPage, blogPosts) => {
+  const basePath = "blog";
+  const blogPostsIntl = getBlogPostsByIntl(blogPosts);
+  // TODO createBlogIndexPages in case new supported language is added that writes blog differently
+  createBlogPostsPages(createPage, blogPostsIntl, basePath);
+  // TODO Create category pages
+  createBlogTagsPages(createPage, blogPostsIntl, basePath);
+}
+
+const createBlogPostsPages = (createPage, blogPostsIntl, blogPath) => {
+  const blogPostTemplate = path.resolve("src/templates/blog/post.js");
+
   // Iterate over each blog post in every language and create their individual pages
   Object.keys(blogPostsIntl).forEach((blogPostsLanguageKey) => {
     blogPostsIntl[blogPostsLanguageKey].forEach((node, index) => {
@@ -92,15 +104,16 @@ const createBlogPostsPages = (createPage, blogPosts) => {
         node.frontmatter.post_category,
         slugifySettings
       );
-      const basePath = `blog/${slugifiedCategory}/${slugifiedTitle}`;
-      const path = blogPostsLanguageKey === languageSettings.rootLanguageKey
-            ? `/${basePath}`
-            : `/${blogPostsLanguageKey}/${basePath}`
+      const basePath = `${blogPath}/${slugifiedCategory}/${slugifiedTitle}`;
+      const path =
+        blogPostsLanguageKey === languageSettings.rootLanguageKey
+          ? `/${basePath}`
+          : `/${blogPostsLanguageKey}/${basePath}`;
       createPage({
         path,
         component: blogPostTemplate,
         context: {
-          pagination: {
+          postsNavigation: {
             prev:
               index === 0
                 ? null
@@ -115,6 +128,43 @@ const createBlogPostsPages = (createPage, blogPosts) => {
     });
   });
 };
+
+const createBlogTagsPages = (createPage, blogPostsIntl, blogPath) => {
+  const blogTagTemplate = path.resolve("src/templates/blog/tag.js");
+  const blogPostsIntlByTag = {}
+
+  Object.keys(blogPostsIntl).forEach((blogPostsLanguageKey) => {
+    blogPostsIntl[blogPostsLanguageKey].forEach((blogPost) => {
+      blogPost.frontmatter.post_tags.forEach((blogPostTag) => {
+        const slugifiedTag = slugify(
+          blogPostTag,
+          slugifySettings
+        );
+        if (!blogPostsIntlByTag[blogPostsLanguageKey]) {
+          blogPostsIntlByTag[blogPostsLanguageKey] = {}
+        }
+        blogPostsIntlByTag[blogPostsLanguageKey][`${slugifiedTag}`] = blogPostsIntlByTag[blogPostsLanguageKey][`${slugifiedTag}`] ? [...blogPostsIntlByTag[blogPostsLanguageKey][`${slugifiedTag}`], blogPost] : [blogPost]
+      })
+    })
+  })
+
+  Object.keys(blogPostsIntlByTag).forEach((blogPostsLanguageKey) => {
+    Object.keys(blogPostsIntlByTag[blogPostsLanguageKey]).forEach((blogPostTagInLanguage) => {
+      const basePath = `${blogPath}/${getBlogTagPrefix(blogPostsLanguageKey)}/${blogPostTagInLanguage}`;
+      const path =
+        blogPostsLanguageKey === languageSettings.rootLanguageKey
+          ? `/${basePath}`
+          : `/${blogPostsLanguageKey}/${basePath}`;
+      createPage({
+        path,
+        component: blogTagTemplate,
+        context: {
+          blogPosts: blogPostsIntlByTag[blogPostsLanguageKey][`${blogPostTagInLanguage}`],
+        },
+      });
+    })
+  })
+}
 
 exports.onCreatePage = ({ page, actions }) => {
   const { deletePage } = actions;

@@ -1,6 +1,12 @@
 exports.supportedLanguages = {
-  en: "English",
-  sk: "Slovenčina",
+  en: {
+    key: "en",
+    string: "English",
+  },
+  sk: {
+    key: "sk",
+    string: "Slovenčina",
+  },
 };
 
 exports.languageSettings = {

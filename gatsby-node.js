@@ -11,7 +11,7 @@ const slugifySettings = {
 };
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
 
   return new Promise((resolve, reject) => {
     resolve(
@@ -46,7 +46,9 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         const blogPosts = result.data.blogPosts.edges;
-        createBlogPages(createPage, blogPosts)
+        const blogBasePath = "blog";
+        createBlogPages(createPage, blogPosts, blogBasePath);
+        createBlogRedirects(createRedirect, blogBasePath);
 
         // TODO Create projects pages
 
@@ -81,8 +83,7 @@ const getBlogPostsByIntl = (blogPosts) => {
   return blogPostsIntl;
 }
 
-const createBlogPages = (createPage, blogPosts) => {
-  const basePath = "blog";
+const createBlogPages = (createPage, blogPosts, basePath) => {
   const blogPostsIntl = getBlogPostsByIntl(blogPosts);
   // TODO createBlogIndexPages in case new supported language is added that writes blog differently
   createBlogPostsPages(createPage, blogPostsIntl, basePath);
@@ -165,6 +166,23 @@ const createBlogTagsPages = (createPage, blogPostsIntl, blogPath) => {
     })
   })
 }
+
+const createBlogRedirects = (createRedirect, blogBasePath) => {
+  // Internationalized redirects from /blog/tags to /blog
+  Object.keys(supportedLanguages).forEach((supportedLanguageKey) => {
+    const baseFromPath = `${blogBasePath}/${getBlogTagPrefix(supportedLanguageKey)}`;
+    createRedirect({
+      fromPath: supportedLanguageKey === languageSettings.rootLanguageKey
+          ? `/${baseFromPath}`
+          : `/${supportedLanguageKey}/${baseFromPath}`,
+      toPath: supportedLanguageKey === languageSettings.rootLanguageKey
+          ? `/${blogBasePath}`
+          : `/${supportedLanguageKey}/${blogBasePath}`,
+      isPermanent: false,
+      redirectInBrowser: true,
+    });
+  })
+};
 
 exports.onCreatePage = ({ page, actions }) => {
   const { deletePage } = actions;

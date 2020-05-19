@@ -1,7 +1,7 @@
 const path = require("path");
 const { supportedLanguages, languageSettings } = require("./src/config/i18n");
 const slugify = require("slugify");
-const { getBlogTagPrefix } = require('./src/utils/i18n')
+const { getBlogTagPrefix, getBlogCategoryPrefix } = require('./src/utils/i18n')
 
 const slugifySettings = {
   replacement: "-",
@@ -85,9 +85,9 @@ const getBlogPostsByIntl = (blogPosts) => {
 
 const createBlogPages = (createPage, blogPosts, basePath) => {
   const blogPostsIntl = getBlogPostsByIntl(blogPosts);
-  // TODO createBlogIndexPages in case new supported language is added that writes blog differently
+  // TODO createBlogIndexPages in case new supported language is added that writes `blog` word differently
   createBlogPostsPages(createPage, blogPostsIntl, basePath);
-  // TODO Create category pages
+  createBlogCategoriesPages(createPage, blogPostsIntl, basePath);
   createBlogTagsPages(createPage, blogPostsIntl, basePath);
 }
 
@@ -167,17 +167,82 @@ const createBlogTagsPages = (createPage, blogPostsIntl, blogPath) => {
   })
 }
 
+const createBlogCategoriesPages = (createPage, blogPostsIntl, blogPath) => {
+  const blogCategoryTemplate = path.resolve("src/templates/blog/category.js");
+  const blogPostsIntlByCategory = {}
+
+  Object.keys(blogPostsIntl).forEach((blogPostsLanguageKey) => {
+    blogPostsIntl[blogPostsLanguageKey].forEach((blogPost) => {
+      const slugifiedCategory = slugify(
+        blogPost.frontmatter.post_category,
+        slugifySettings
+      );
+      if (!blogPostsIntlByCategory[blogPostsLanguageKey]) {
+        blogPostsIntlByCategory[blogPostsLanguageKey] = {}
+      }
+      blogPostsIntlByCategory[blogPostsLanguageKey][`${slugifiedCategory}`] = blogPostsIntlByCategory[blogPostsLanguageKey][`${slugifiedCategory}`] ? [...blogPostsIntlByCategory[blogPostsLanguageKey][`${slugifiedCategory}`], blogPost] : [blogPost]
+    })
+  })
+
+  Object.keys(blogPostsIntlByCategory).forEach((blogPostsLanguageKey) => {
+    Object.keys(blogPostsIntlByCategory[blogPostsLanguageKey]).forEach((blogPostCategoryInLanguage) => {
+      const basePath = `${blogPath}/${getBlogCategoryPrefix(blogPostsLanguageKey)}/${blogPostCategoryInLanguage}`;
+      const path =
+        blogPostsLanguageKey === languageSettings.rootLanguageKey
+          ? `/${basePath}`
+          : `/${blogPostsLanguageKey}/${basePath}`;
+      createPage({
+        path,
+        component: blogCategoryTemplate,
+        context: {
+          blogPosts: blogPostsIntlByCategory[blogPostsLanguageKey][`${blogPostCategoryInLanguage}`],
+        },
+      });
+    })
+  })
+}
+
 const createBlogRedirects = (createRedirect, blogBasePath) => {
-  // Internationalized redirects from /blog/tags to /blog
   Object.keys(supportedLanguages).forEach((supportedLanguageKey) => {
-    const baseFromPath = `${blogBasePath}/${getBlogTagPrefix(supportedLanguageKey)}`;
-    createRedirect({
-      fromPath: supportedLanguageKey === languageSettings.rootLanguageKey
+    const isRootLanguage = supportedLanguageKey === languageSettings.rootLanguageKey;
+    // Internationalized redirects from /blog/tags && /blog/tags/ to /blog
+    let baseFromPath = `${blogBasePath}/${getBlogTagPrefix(supportedLanguageKey)}`;
+    let fromPath = isRootLanguage
           ? `/${baseFromPath}`
-          : `/${supportedLanguageKey}/${baseFromPath}`,
-      toPath: supportedLanguageKey === languageSettings.rootLanguageKey
+          : `/${supportedLanguageKey}/${baseFromPath}`
+    let toPath = isRootLanguage
           ? `/${blogBasePath}`
-          : `/${supportedLanguageKey}/${blogBasePath}`,
+          : `/${supportedLanguageKey}/${blogBasePath}`
+    createRedirect({
+      fromPath,
+      toPath,
+      isPermanent: false,
+      redirectInBrowser: true,
+    });
+    createRedirect({
+      fromPath: `${fromPath}/`,
+      toPath,
+      isPermanent: false,
+      redirectInBrowser: true,
+    });
+
+    // Internationalized redirects from /blog/categories && /blog/categories/ to /blog
+    baseFromPath = `${blogBasePath}/${getBlogCategoryPrefix(supportedLanguageKey)}`;
+    fromPath = isRootLanguage
+      ? `/${baseFromPath}`
+      : `/${supportedLanguageKey}/${baseFromPath}`
+    toPath = isRootLanguage
+      ? `/${blogBasePath}`
+      : `/${supportedLanguageKey}/${blogBasePath}`;
+    createRedirect({
+      fromPath,
+      toPath,
+      isPermanent: false,
+      redirectInBrowser: true,
+    });
+    createRedirect({
+      fromPath: `${fromPath}/`,
+      toPath,
       isPermanent: false,
       redirectInBrowser: true,
     });

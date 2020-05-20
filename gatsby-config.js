@@ -3,7 +3,14 @@ const { languageSettings, supportedLanguages } = require("./src/config/i18n");
 module.exports = {
   siteMetadata: {
     title: "Samuel Pitoňák (@sampittko)",
+    author: "Samuel Pitoňák <sampittko@gmail.com>",
     description: "Personal website of Samuel Pitoňák",
+    siteUrl: "https://sampittko.sk",
+    social: {
+      twitter: "sampittko",
+      linkedin: "sampittko",
+      github: "sampittko",
+    },
   },
   plugins: [
     `gatsby-plugin-postcss`,

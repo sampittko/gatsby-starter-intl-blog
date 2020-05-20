@@ -1,8 +1,8 @@
 import React from "react";
 import { injectIntl } from "gatsby-plugin-intl";
 
-const BlogIndexTemplate = (props) => {
-  // console.log(props.data);
+const BlogIndexTemplate = ({ pageContext }) => {
+  console.log(pageContext);
   return (
     <div>
       Hellou

@@ -1,7 +1,7 @@
 const path = require("path");
 const { supportedLanguages, languageSettings } = require("./src/config/i18n");
 const slugify = require("slugify");
-const i18n = require('./src/locales/i18n')
+const linkLocales = require('./src/locales/links')
 
 const slugifySettings = {
   replacement: "-",
@@ -92,8 +92,8 @@ const createBlogIndexPages = (createPage, blogPostsIntl) => {
   Object.keys(blogPostsIntl).forEach((languageKey) => {
     const path =
       languageKey === languageSettings.rootLanguageKey
-        ? `/${i18n.blog[languageKey]}`
-        : `/${languageKey}/${i18n.blog[languageKey]}`;
+        ? `/${linkLocales.blog[languageKey]}`
+        : `/${languageKey}/${linkLocales.blog[languageKey]}`;
     createPage({
       path,
       component,
@@ -118,7 +118,7 @@ const createBlogPostPages = (createPage, blogPostsIntl) => {
         node.frontmatter.post_category,
         slugifySettings
       );
-      const basePath = `${i18n.blog[languageKey]}/${slugifiedCategory}/${slugifiedTitle}`;
+      const basePath = `${linkLocales.blog[languageKey]}/${slugifiedCategory}/${slugifiedTitle}`;
       const path =
         languageKey === languageSettings.rootLanguageKey
           ? `/${basePath}`
@@ -162,7 +162,7 @@ const createBlogCategoryPages = (createPage, blogPostsIntl) => {
 
   Object.keys(blogPostsIntlByCategory).forEach((languageKey) => {
     Object.keys(blogPostsIntlByCategory[languageKey]).forEach((category) => {
-      const basePath = `${i18n.blog[languageKey]}/${i18n.blog.categories[
+      const basePath = `${linkLocales.blog[languageKey]}/${linkLocales.blog.categories[
         languageKey]}/${category}`;
       const path =
         languageKey === languageSettings.rootLanguageKey
@@ -200,7 +200,7 @@ const createBlogTagPages = (createPage, blogPostsIntl) => {
 
   Object.keys(blogPostsIntlByTag).forEach((languageKey) => {
     Object.keys(blogPostsIntlByTag[languageKey]).forEach((tag) => {
-      const basePath = `${i18n.blog[languageKey]}/${i18n.blog.tags[languageKey]}/${tag}`;
+      const basePath = `${linkLocales.blog[languageKey]}/${linkLocales.blog.tags[languageKey]}/${tag}`;
       const path =
         languageKey === languageSettings.rootLanguageKey
           ? `/${basePath}`
@@ -219,9 +219,9 @@ const createBlogTagPages = (createPage, blogPostsIntl) => {
 const createBlogRedirects = (createRedirect) => {
   Object.keys(supportedLanguages).forEach((supportedLanguageKey) => {
     const isRootLanguage = supportedLanguageKey === languageSettings.rootLanguageKey;
-    const blogBasePath = i18n.blog[supportedLanguageKey];
+    const blogBasePath = linkLocales.blog[supportedLanguageKey];
     // Internationalized redirects from /blog/tags && /blog/tags/ to /blog
-    let baseFromPath = `${blogBasePath}/${i18n.blog.tags[supportedLanguageKey]}`;
+    let baseFromPath = `${blogBasePath}/${linkLocales.blog.tags[supportedLanguageKey]}`;
     let fromPath = isRootLanguage
           ? `/${baseFromPath}`
           : `/${supportedLanguageKey}/${baseFromPath}`
@@ -242,7 +242,7 @@ const createBlogRedirects = (createRedirect) => {
     });
 
     // Internationalized redirects from /blog/categories && /blog/categories/ to /blog
-    baseFromPath = `${blogBasePath}/${i18n.blog.categories[supportedLanguageKey]}`;
+    baseFromPath = `${blogBasePath}/${linkLocales.blog.categories[supportedLanguageKey]}`;
     fromPath = isRootLanguage
       ? `/${baseFromPath}`
       : `/${supportedLanguageKey}/${baseFromPath}`
@@ -279,3 +279,13 @@ exports.onCreatePage = ({ page, actions }) => {
 const pathWithException = (pagePath) => {
   return pagePath === "/en/blog";
 }
+
+exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
+  const config = getConfig();
+  if (stage.startsWith("develop") && config.resolve) {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "react-dom": "@hot-loader/react-dom",
+    };
+  }
+};

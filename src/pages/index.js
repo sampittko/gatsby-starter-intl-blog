@@ -4,6 +4,7 @@ import SEO from "../components/SEO";
 import Layout from "../components/Layout";
 import { graphql } from "gatsby";
 import { getNodeInLanguage } from "../utils/i18n";
+import '../assets/css/main.css'
 
 const IndexPage = ({ pageContext, intl, data }) => {
   const node = getNodeInLanguage(data.allMarkdownRemark.nodes, pageContext.intl.language)

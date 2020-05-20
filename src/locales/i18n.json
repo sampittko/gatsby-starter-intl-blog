@@ -1,0 +1,14 @@
+{
+  "blog": {
+    "tags": {
+      "sk": "znacky",
+      "en": "tags"
+    },
+    "categories": {
+      "sk": "kategorie",
+      "en": "categories"
+    },  
+    "sk": "blog",
+    "en": "blog"
+  }
+}

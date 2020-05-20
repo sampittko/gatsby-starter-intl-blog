@@ -1,7 +1,8 @@
 import React from "react";
 import { injectIntl } from "gatsby-plugin-intl";
 
-const BlogPage = ({ intl }) => {
+const BlogIndexTemplate = (props) => {
+  // console.log(props.data);
   return (
     <div>
       Hellou
@@ -9,4 +10,4 @@ const BlogPage = ({ intl }) => {
   );
 };
 
-export default injectIntl(BlogPage);
+export default injectIntl(BlogIndexTemplate);

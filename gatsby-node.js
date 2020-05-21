@@ -14,6 +14,9 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions;
 
   return new Promise((resolve, reject) => {
+    // TODO Remove after WIP
+    return resolve();
+
     resolve(
       graphql(
         `

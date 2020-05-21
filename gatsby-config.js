@@ -3,14 +3,15 @@ const { languageSettings, supportedLanguages } = require("./src/config/i18n");
 module.exports = {
   siteMetadata: {
     title: "Samuel Pitoňák (@sampittko)",
-    author: "Samuel Pitoňák <sampittko@gmail.com>",
+    author: {
+      fullName: "Samuel Pitoňák",
+      photoUrl: "https://avatars3.githubusercontent.com/u/38221262",
+      email: "sampittko@gmail.com",
+      userName: "sampittko",
+    },
     description: "Personal website of Samuel Pitoňák",
     siteUrl: "https://sampittko.sk",
-    social: {
-      twitter: "sampittko",
-      linkedin: "sampittko",
-      github: "sampittko",
-    },
+    gitHubUrl: "https://github.com/sampittko/personal-website",
   },
   plugins: [
     `gatsby-plugin-postcss`,
@@ -34,7 +35,7 @@ module.exports = {
       resolve: `gatsby-plugin-purgecss`,
       options: {
         printRejected: true,
-        develop: true,
+        develop: false,
         tailwind: true,
       },
     },

@@ -55,7 +55,7 @@ const SEO = ({
             },
             {
               name: "twitter:creator",
-              content: siteMetadata.social.twitter,
+              content: `@${siteMetadata.author.userName}`,
             },
             {
               name: "twitter:title",
@@ -87,17 +87,17 @@ const SEO = ({
   />
 );
 
-export const query = graphql`
+const query = graphql`
   query getSiteMetadata {
     site {
       siteMetadata {
         title
-        author
+        author {
+          fullName
+          userName
+        }
         description
         siteUrl
-        social {
-          twitter
-        }
       }
     }
   }

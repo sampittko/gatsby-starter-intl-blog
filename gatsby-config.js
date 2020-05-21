@@ -17,6 +17,18 @@ module.exports = {
     `gatsby-plugin-postcss`,
     `gatsby-transformer-remark`,
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Samuel Pitoňák (@sampittko)`,
+        short_name: `Samuel Pitoňák`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#ffffff`,
+        display: `minimal-ui`,
+        icon: `src/assets/img/favicon.ico`,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/content`,

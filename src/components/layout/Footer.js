@@ -5,7 +5,20 @@ import { injectIntl } from 'gatsby-plugin-intl';
 const Footer = ({ intl }) => {
   return (
     <div className="p-3 text-center">
-      {intl.formatMessage({ id: "footer.opensource" }, { emoji: <span role="img" aria-label="">🖤</span> })}
+      {intl.formatMessage(
+        { id: "footer.opensource" },
+        {
+          emoji: (
+            <span
+              role="img"
+              aria-label={intl.formatMessage({ id: "footer.emoji.label" })}
+            >
+              🖤
+            </span>
+          ),
+        }
+      )}
+      &nbsp;
       <StaticQuery
         query={query}
         render={(data) => {

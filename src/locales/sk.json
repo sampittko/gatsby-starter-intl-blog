@@ -4,5 +4,6 @@
     "profile.image.alt": "Profilová fotka",
     "profile.email.hover": "Napíš mi e-mail",
     "profile.position": "IT študent, Front-end developer",
-    "footer.opensource": "open-source {emoji} dostupný na&nbsp;"
+    "footer.opensource": "open-source {emoji} dostupný na",
+    "footer.emoji.label": "Láska"
 }

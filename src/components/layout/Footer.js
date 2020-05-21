@@ -29,7 +29,6 @@ const Footer = ({ intl }) => {
               href={gitHubUrl}
               target="_blank"
               rel="noreferrer"
-              title={gitHubUrl}
             >
               GitHub
             </a>

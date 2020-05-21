@@ -1,8 +1,12 @@
 import React from "react";
 import Layout from '../components/layout/Layout';
+import { injectIntl } from "gatsby-plugin-intl";
 
-const NotFoundPage = () =>
+const NotFoundPage = ({ intl }) =>
   <Layout>
+    <h1 className="text-xl">
+      {intl.formatMessage({ id: 'page.notfound' })}
+    </h1>
   </Layout>
 
-export default NotFoundPage;
+export default injectIntl(NotFoundPage);

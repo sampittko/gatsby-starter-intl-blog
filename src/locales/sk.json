@@ -5,5 +5,6 @@
     "profile.email.hover": "Napíš mi e-mail",
     "profile.position": "IT študent, Front-end developer",
     "footer.opensource": "open-source {emoji} dostupný na",
-    "footer.emoji.label": "Láska"
+    "footer.emoji.label": "Láska",
+    "page.notfound": "Požadovaná stránka neexistuje"
 }

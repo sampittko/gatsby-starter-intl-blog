@@ -4,6 +4,7 @@
     "profile.image.alt": "Profile photo",
     "profile.email.hover": "Write me an e-mail",
     "profile.position": "CS student, Front-end developer",
-    "footer.opensource": "open-source {emoji} available on",
-    "footer.emoji.label": "Love"
+    "footer.opensource": "open-source {emoji}",
+    "footer.emoji.label": "Love",
+    "page.notfound": "Requested page does not exist"
 }

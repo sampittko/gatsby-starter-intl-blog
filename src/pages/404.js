@@ -4,7 +4,7 @@ import { injectIntl } from "gatsby-plugin-intl";
 
 const NotFoundPage = ({ intl }) =>
   <Layout>
-    <h1 className="text-xl">
+    <h1 className="text-8xl md:text-xl font-bold">
       {intl.formatMessage({ id: 'page.notfound' })}
     </h1>
   </Layout>

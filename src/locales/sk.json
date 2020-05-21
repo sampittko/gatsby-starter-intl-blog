@@ -4,7 +4,7 @@
     "profile.image.alt": "Profilová fotka",
     "profile.email.hover": "Napíš mi e-mail",
     "profile.position": "IT študent, Front-end developer",
-    "footer.opensource": "open-source {emoji} dostupný na",
+    "footer.opensource": "open-source {emoji}",
     "footer.emoji.label": "Láska",
     "page.notfound": "Požadovaná stránka neexistuje"
 }

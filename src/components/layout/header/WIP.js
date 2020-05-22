@@ -3,7 +3,7 @@ import { injectIntl } from 'gatsby-plugin-intl';
 
 const WIP = ({ intl }) => {
   return (
-    <div className="flex items-center justify-center bg-gray-600 text-white text-sm font-bold px-4 py-3 w-full" role="alert">
+    <div className="flex items-center justify-center bg-gray-500 text-white text-sm font-bold px-4 py-3 w-full" role="alert">
       <svg
         className="fill-current w-4 h-4 mr-2"
         xmlns="http://www.w3.org/2000/svg"

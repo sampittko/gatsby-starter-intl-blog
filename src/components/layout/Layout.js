@@ -3,6 +3,7 @@ import "../../assets/css/main.css";
 import Footer from "./Footer";
 import Header from './header/Header';
 import Main from './Main';
+import { withIntlRedirect } from '../withIntlRedirect';
 
 const Layout = ({ children }) => {
   return (
@@ -16,4 +17,4 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout;
+export default withIntlRedirect(Layout);

@@ -16,6 +16,15 @@ module.exports = {
   plugins: [
     `gatsby-plugin-postcss`,
     `gatsby-transformer-remark`,
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://sampittko.sk',
+        sitemap: 'https://sampittko.sk/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

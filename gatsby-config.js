@@ -14,16 +14,25 @@ module.exports = {
     gitHubUrl: "https://github.com/sampittko/personal-website",
   },
   plugins: [
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
-    `gatsby-transformer-remark`,
     `gatsby-plugin-sitemap`,
+    `gatsby-remark-copy-linked-files`,
+    `gatsby-plugin-catch-links`,
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: `gatsby-transformer-remark`,
       options: {
-        host: 'https://sampittko.sk',
-        sitemap: 'https://sampittko.sk/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/' }]
-      }
+        plugins: [`gatsby-remark-copy-linked-files`],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://sampittko.sk",
+        sitemap: "https://sampittko.sk/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -44,6 +53,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `assets`, `images`),
+      },
+    },
+    {
       resolve: `gatsby-plugin-intl`,
       options: {
         path: `${__dirname}/src/locales`,
@@ -59,6 +75,27 @@ module.exports = {
         develop: false,
         tailwind: true,
       },
+    },
+    // TODO Configure
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID",
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+        exclude: [],
+        pageTransitionDelay: 0,
+        optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID",
+        experimentId: "YOUR_GOOGLE_EXPERIMENT_ID",
+        variationId: "YOUR_GOOGLE_OPTIMIZE_VARIATION_ID",
+        defer: false,
+      },
+    },
+    // TODO Configure
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {},
     },
   ],
 };

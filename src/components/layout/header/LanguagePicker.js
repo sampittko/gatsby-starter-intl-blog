@@ -19,7 +19,7 @@ const LanguagePicker = ({ intl }) => {
   }
 
   return (
-    <div className="w-auto absolute right-0">
+    <div className="fixed top-0 right-0 w-auto">
       <select
         className="block appearance-none w-auto bg-white text-gray-600 py-3 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 cursor-pointer"
         onChange={(event) => onChange(event.target.value.toLowerCase())}

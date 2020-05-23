@@ -1,0 +1,2 @@
+- učím sa cez kurzy z [@eggheadio](https://twitter.com/eggheadio)
+- nejaký testovací obsah tiež

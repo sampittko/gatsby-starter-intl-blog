@@ -7,7 +7,7 @@ import { withIntlRedirect } from '../withIntlRedirect';
 
 const Layout = ({ children }) => {
   return (
-    <div className="font-sans text-black leading-tight antialiased min-h-screen flex flex-col items-center justify-between">
+    <div className="font-sans text-black leading-tight antialiased w-screen min-h-screen">
       <Header />
       <Main>
         {children}

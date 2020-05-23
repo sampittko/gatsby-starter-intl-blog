@@ -56,7 +56,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: path.join(__dirname, `src`, `assets`, `images`),
+        path: `${__dirname}/src/assets/img`,
       },
     },
     {
@@ -77,25 +77,25 @@ module.exports = {
       },
     },
     // TODO Configure
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID",
-        head: false,
-        anonymize: true,
-        respectDNT: true,
-        exclude: [],
-        pageTransitionDelay: 0,
-        optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID",
-        experimentId: "YOUR_GOOGLE_EXPERIMENT_ID",
-        variationId: "YOUR_GOOGLE_OPTIMIZE_VARIATION_ID",
-        defer: false,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID",
+    //     head: false,
+    //     anonymize: true,
+    //     respectDNT: true,
+    //     exclude: [],
+    //     pageTransitionDelay: 0,
+    //     optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID",
+    //     experimentId: "YOUR_GOOGLE_EXPERIMENT_ID",
+    //     variationId: "YOUR_GOOGLE_OPTIMIZE_VARIATION_ID",
+    //     defer: false,
+    //   },
+    // },
     // TODO Configure
-    {
-      resolve: `gatsby-plugin-feed`,
-      options: {},
-    },
+    // {
+    //   resolve: `gatsby-plugin-feed`,
+    //   options: {},
+    // },
   ],
 };

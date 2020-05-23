@@ -3,7 +3,8 @@
     "page.index.wip": "New website is under construction",
     "profile.image.alt": "Profile photo",
     "profile.email.hover": "Write me an e-mail",
-    "profile.position": "CS student, Front-end developer",
+    "profile.description.item1": "CS student",
+    "profile.description.item2": "Front-end Developer",
     "footer.opensource": "open-source {emoji}",
     "footer.emoji.label": "Love",
     "page.notfound": "404"

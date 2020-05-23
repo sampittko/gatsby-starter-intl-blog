@@ -3,7 +3,8 @@
     "page.index.wip": "Na novej stránke sa pracuje",
     "profile.image.alt": "Profilová fotka",
     "profile.email.hover": "Napíš mi e-mail",
-    "profile.position": "IT študent, Front-end developer",
+    "profile.description.item1": "IT študent",
+    "profile.description.item2": "Front-end Developer",
     "footer.opensource": "open-source {emoji}",
     "footer.emoji.label": "Láska",
     "page.notfound": "404"

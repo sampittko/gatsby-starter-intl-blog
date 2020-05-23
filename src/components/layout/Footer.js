@@ -1,10 +1,13 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
 import { injectIntl } from 'gatsby-plugin-intl';
+import gatsbyConfig from '../../../gatsby-config';
+import Link from '../Link';
 
 const Footer = ({ intl }) => {
+  const gitHubUrl = gatsbyConfig.siteMetadata
+
   return (
-    <div className="p-3 text-center">
+    <footer className="fixed bottom-0 w-full p-3 text-center">
       {intl.formatMessage(
         { id: "footer.opensource" },
         {
@@ -19,34 +22,11 @@ const Footer = ({ intl }) => {
         }
       )}
       &nbsp;
-      <StaticQuery
-        query={query}
-        render={(data) => {
-          const { gitHubUrl } = data.site.siteMetadata;
-          return (
-            <a
-              className="text-gray-600 hover:underline"
-              href={gitHubUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
-            </a>
-          );
-        }}
-      />
-    </div>
+      <Link to={gitHubUrl} foreign newTab>
+        GitHub
+      </Link>
+    </footer>
   );
 };
-
-const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        gitHubUrl
-      }
-    }
-  }
-`;
 
 export default injectIntl(Footer);

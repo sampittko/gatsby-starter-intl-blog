@@ -8,6 +8,20 @@ module.exports = {
       photoUrl: "https://avatars3.githubusercontent.com/u/38221262",
       email: "sampittko@gmail.com",
       userName: "sampittko",
+      socials: {
+        twitter: {
+          name: "Twitter",
+          url: "https://twitter.com/sampittko",
+        },
+        linkedIn: {
+          name: "LinkedIn",
+          url: "https://linkedin.com/in/sampittko",
+        },
+        gitHub: {
+          name: "GitHub",
+          url: "https://github.com/sampittko",
+        },
+      },
     },
     description: "Personal website of Samuel Pitoňák",
     siteUrl: "https://sampittko.sk",
@@ -20,6 +34,14 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     `gatsby-remark-copy-linked-files`,
     `gatsby-plugin-catch-links`,
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /src\/assets\/img\/.*\.svg/,
+        },
+      },
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {

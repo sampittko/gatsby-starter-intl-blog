@@ -2,6 +2,40 @@ import React from "react";
 import { injectIntl } from "gatsby-plugin-intl";
 import gatsbyConfig from "../../../../gatsby-config";
 import Link from "../../Link";
+import GitHub from "../../../assets/img/social/GitHub";
+import LinkedIn from "../../../assets/img/social/LinkedIn";
+import Twitter from "../../../assets/img/social/Twitter";
+
+const ProfileSocialLinks = ({ socials }) => (
+  <div className="mt-2 md:mt-0 mx-auto w-max-content md:w-auto md:mx-none md:absolute md:left-40 lg:left-52">
+    {Object.keys(socials).map((socialPage, index) => {
+      let social, IconComponent;
+      switch (socials[socialPage].name) {
+        case socials.gitHub.name:
+          social = socials.gitHub;
+          IconComponent = GitHub;
+          break;
+        case socials.linkedIn.name:
+          social = socials.linkedIn;
+          IconComponent = LinkedIn;
+          break;
+        case socials.twitter.name:
+          social = socials.twitter;
+          IconComponent = Twitter;
+          break;
+        default:
+          social = socials.twitter;
+          IconComponent = Twitter;
+          break;
+      }
+      return (
+        <Link key={index} to={social.url} title={social.name} foreign newTab>
+          <IconComponent className="w-6 lg:w-8 h-auto fill-white border-brown border-b-4 hover:border-white hover:border-b-4 inline mr-2"/>
+        </Link>
+      );
+    })}
+  </div>
+);
 
 const ProfileHighlightListItem = ({ children }) => <li className="inline">{children}</li>;
 
@@ -24,11 +58,16 @@ const ProfileName = ({ name }) => (
 );
 
 const ProfileDetails = ({ author, intl }) => (
-  <div className="text-center md:text-left md:absolute md:top-7 md:left-20 lg:top-8 lg:left-26 whitespace-no-wrap">
+  <div className="text-center md:text-left md:absolute md:top-14 md:left-40 lg:top-16 lg:left-52 whitespace-no-wrap">
     <ProfileName name={author.fullName} />
     <ProfileHighlightsList>
-      <Link to={`mailto:${author.email}`} onDark newTab foreign>
-        {author.email}
+      <Link
+        to={`https://www.google.com/search?q=${author.userName}`}
+        onDark
+        newTab
+        foreign
+      >
+        @{author.userName}
       </Link>
       {intl.formatMessage({ id: "profile.description.item1" })}
       {intl.formatMessage({ id: "profile.description.item2" })}
@@ -44,13 +83,14 @@ const ProfileImage = ({ url }) => (
   />
 );
 
-const Profile = ({ intl }) => {
+const Profile = ({ intl, className }) => {
   const { author } = gatsbyConfig.siteMetadata;
 
   return (
-    <div className="absolute -top-13 lg:-top-16 md:inset-x-0 md:mx-auto w-content">
+    <div className={className}>
       <ProfileImage url={author.photoUrl} />
       <ProfileDetails author={author} intl={intl} />
+      <ProfileSocialLinks socials={author.socials} />
     </div>
   );
 };

@@ -12,10 +12,10 @@ const IndexPage = ({ pageContext, data }) => {
     <Layout>
       <SEO lang={pageContext.intl.language} />
       <div className="flex flex-col justify-center items-center h-screen">
-        <div className="flex flex-col justify-center items-center min-h-2/5-screen md:min-h-1/2-screen w-screen transform -skew-y-11 bg-brown">
-          <Profile />
+        <div className="flex flex-col justify-center items-center h-content h-48 md:h-20 lg:h-26 w-screen transform -skew-y-11 bg-brown">
+          <Profile className="absolute -top-26 lg:-top-32 md:inset-x-0 md:mx-auto md:w-content-compact lg:w-content" />
           <div
-            className="hidden bg-white -mt-32 text-black mt-6 transform skew-y-11 max-w-screen-sm w-full mx-4 p-4"
+            className="hidden absolute bottom-0 border-4 border-brown bg-white -mt-32 text-black mt-6 transform skew-y-11 max-w-screen-sm w-full mx-4 p-4"
             dangerouslySetInnerHTML={{ __html: node.html }}
           />
         </div>

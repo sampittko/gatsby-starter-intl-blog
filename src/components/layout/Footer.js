@@ -14,17 +14,18 @@ const Footer = ({ intl }) => {
           emoji: (
             <span
               role="img"
-              aria-label={intl.formatMessage({ id: "footer.emoji.label" })}
+              aria-label=""
             >
               🖤
             </span>
           ),
+          repo: (
+            <Link to={gitHubUrl} foreign newTab>
+              GitHub
+            </Link>
+          )
         }
       )}
-      &nbsp;
-      <Link to={gitHubUrl} foreign newTab>
-        GitHub
-      </Link>
     </footer>
   );
 };

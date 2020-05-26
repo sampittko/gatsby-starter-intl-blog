@@ -17,12 +17,12 @@ module.exports = {
         "11": "11deg",
       },
       inset: {
-        "7": "3.5rem",
-        "8": "4rem",
-        "20": "10rem",
-        "26": "13rem",
-        "-13": "-6.5rem",
-        "-16": "-8rem",
+        "14": "3.5rem",
+        "16": "4rem",
+        "40": "10rem",
+        "52": "13rem",
+        "-26": "-6.5rem",
+        "-32": "-8rem",
       },
       borderWidth: {
         "12": "12px",
@@ -30,11 +30,22 @@ module.exports = {
       screens: {
         xl: "1280px",
       },
+      height: {
+        "26": "6.5rem",
+      },
       width: {
-        "content": "700px",
-      }
+        content: "700px",
+        "content-compact": "520px",
+        "max-content": "max-content",
+      },
+      fill: {
+        white: "#fff",
+      },
     },
   },
-  variants: {},
+  variants: {
+    fill: ["responsive", "hover"],
+    borderWidth: ["responsive", "hover"],
+  },
   plugins: [],
 };

@@ -1,6 +1,7 @@
 {
-    "page.index.title": "Moja osobná stránka",
-    "profile.description.item1": "IT študent",
-    "profile.description.item2": "Front-end Developer",
-    "footer.opensource": "toto je open-source projekt {emoji} {repo}"
+  "page.index.description": "Osobná stránka Samuela Pitoňáka - študent informatiky, Front-end Developer",
+  "page.index.title": "Moja osobná stránka",
+  "profile.description.item1": "IT študent",
+  "profile.description.item2": "Front-end Developer",
+  "footer.opensource": "toto je open-source projekt {emoji} {repo}"
 }

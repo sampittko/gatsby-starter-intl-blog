@@ -23,7 +23,6 @@ module.exports = {
         },
       },
     },
-    description: "Personal website of Samuel Pitoňák",
     siteUrl: "https://sampittko.sk",
     gitHubUrl: "https://github.com/sampittko/personal-website",
   },
@@ -34,14 +33,6 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     `gatsby-remark-copy-linked-files`,
     `gatsby-plugin-catch-links`,
-    {
-      resolve: "gatsby-plugin-react-svg",
-      options: {
-        rule: {
-          include: /src\/assets\/img\/.*\.svg/,
-        },
-      },
-    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {

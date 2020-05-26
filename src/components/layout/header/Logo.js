@@ -1,10 +1,13 @@
 import React from 'react';
-import logoPath from "../../../assets/img/logo.svg";
+import logoPath from "../../../assets/img/logo_brown.png";
+import Link from '../../Link';
+import { injectIntl } from 'gatsby-plugin-intl';
+import { isAtRootLanguage } from '../../../utils/i18n';
 
-const Logo = () => (
-  <div className="fixed top-0 left-0 w-auto">
-    <img src={logoPath} alt="" style={{width: "30px"}} />
-  </div>
+const Logo = ({ intl }) => (
+  <Link to={`/${isAtRootLanguage(intl.locale) ? "" : intl.locale}`}>
+    <img src={logoPath} alt="" className="w-10 h-auto" />
+  </Link>
 );
 
-export default Logo;
+export default injectIntl(Logo);

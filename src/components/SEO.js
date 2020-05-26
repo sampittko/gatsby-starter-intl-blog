@@ -18,7 +18,7 @@ const SEO = ({
     query={query}
     render={(data) => {
       const { siteMetadata } = data.site;
-      const metaDescription = description || siteMetadata.description;
+      const metaDescription = description;
       const metaImage = image ? `${siteMetadata.siteUrl}/${image}` : null;
       const url = `${siteMetadata.siteUrl}${slug}`;
       return (
@@ -96,7 +96,6 @@ const query = graphql`
           fullName
           userName
         }
-        description
         siteUrl
       }
     }

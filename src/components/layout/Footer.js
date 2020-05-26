@@ -4,7 +4,7 @@ import gatsbyConfig from '../../../gatsby-config';
 import Link from '../Link';
 
 const Footer = ({ intl }) => {
-  const gitHubUrl = gatsbyConfig.siteMetadata
+  const { gitHubUrl } = gatsbyConfig.siteMetadata
 
   return (
     <footer className="fixed bottom-0 w-full p-3 text-center">

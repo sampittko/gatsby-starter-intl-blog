@@ -1,13 +1,11 @@
 import React from 'react';
 import LanguagePicker from "./LanguagePicker";
-import Profile from "./Profile";
-import Menu from './Menu';
+import Logo from './Logo';
 
 const Header = () => {
   return (
     <header className="fixed top-0 w-screen">
-      {/* <Profile /> */}
-      {/* <Menu /> */}
+      <Logo />
       <LanguagePicker />
     </header>
   );

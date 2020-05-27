@@ -10,5 +10,13 @@
     },  
     "sk": "blog",
     "en": "blog"
+  },
+  "timeline": {
+    "sk": "casova-os",
+    "en": "timeline"
+  },
+  "projects": {
+    "sk": "projekty",
+    "en": "projects"
   }
 }

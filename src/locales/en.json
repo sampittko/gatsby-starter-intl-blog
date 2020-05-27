@@ -1,6 +1,9 @@
 {
     "page.index.description": "Personal website of Samuel Pitoňák - CS student, Front-end Developer",
     "page.index.title": "My personal website",
+    "header.menu.blog": "Articles",
+    "header.menu.projects": "Projects",
+    "header.menu.timeline": "Timeline",
     "profile.description.item1": "CS student",
     "profile.description.item2": "Front-end Developer",
     "footer.opensource": "this is an open-source project {emoji} {repo}"

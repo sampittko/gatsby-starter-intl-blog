@@ -1,13 +1,11 @@
 import React from 'react';
 import LanguagePicker from "./LanguagePicker";
-import Logo from './Logo';
-import Menu from './Menu';
+import Navigation from './Navigation';
 
 const Header = () => {
   return (
-    <header className="fixed top-0 inset-x-0 h-auto w-content-compact mx-auto">
-      {/* <Logo />
-      <Menu /> */}
+    <header className="fixed top-0 w-screen h-auto">
+      <Navigation />
       <LanguagePicker />
     </header>
   );

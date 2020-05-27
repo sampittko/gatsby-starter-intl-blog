@@ -5,8 +5,8 @@ import { injectIntl } from 'gatsby-plugin-intl';
 import { isAtRootLanguage } from '../../../utils/i18n';
 
 const Logo = ({ intl }) => (
-  <Link to={`/${isAtRootLanguage(intl.locale) ? "" : intl.locale}`}>
-    <img src={logoPath} alt="" className="w-10 h-auto" />
+  <Link to={`/${isAtRootLanguage(intl.locale) ? "" : intl.locale}`} notText>
+    <img src={logoPath} alt="" className="w-10 h-auto inline-block m-2" />
   </Link>
 );
 

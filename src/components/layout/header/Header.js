@@ -1,6 +1,6 @@
 import React from 'react';
 import LanguagePicker from "./LanguagePicker";
-import Navigation from './Navigation';
+import Navigation from './navigation/Navigation';
 
 const Header = () => {
   return (

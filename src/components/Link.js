@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
-const LinkComponent = ({ to, foreign, children, onDark, newTab, title, notText }) => {
-  const className = `${onDark ? "text-white" : "text-brown"} hover:underline`;
+const LinkComponent = ({ to, foreign, children, onDark, newTab, title, notText, className }) => {
+  const internalClassName = `${onDark ? "text-white" : "text-brown"} hover:underline ${className}`;
 
   return (
     <>
@@ -12,7 +12,7 @@ const LinkComponent = ({ to, foreign, children, onDark, newTab, title, notText }
           {notText ? (
             <Link to={to}>{children}</Link>
           ) : (
-            <span className={className}>
+            <span className={internalClassName}>
               <Link to={to} activeClassName="underline">
                 {children}
               </Link>
@@ -25,7 +25,7 @@ const LinkComponent = ({ to, foreign, children, onDark, newTab, title, notText }
           title={title}
           rel="noopener"
           target={newTab ? "_blank" : "_self"}
-          className={notText ? "" : className}
+          className={notText ? "" : internalClassName}
         >
           {children}
         </a>
@@ -40,6 +40,7 @@ LinkComponent.defaultProps = {
   newTab: false,
   title: "",
   notText: false,
+  className: "",
 };
 
 LinkComponent.propTypes = {
@@ -49,6 +50,7 @@ LinkComponent.propTypes = {
   newTab: PropTypes.bool,
   title: PropTypes.string,
   notText: PropTypes.bool,
+  className: PropTypes.string,
 }
 
 export default LinkComponent;

@@ -23,8 +23,12 @@ const Menu = ({ intl }) => {
 
   return (
     <div className="list-none inline-block uppercase">
-      {menuItems.map((menuItem) => (
-        <Link to={menuItem.intlLinks[locale]} className="mr-2">
+      {menuItems.map((menuItem, index) => (
+        <Link
+          key={`menu-link-${index}`}
+          to={menuItem.intlLinks[locale]}
+          className="mr-2"
+        >
           {intl.formatMessage({ id: menuItem.intlId })}
         </Link>
       ))}

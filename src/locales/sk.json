@@ -5,6 +5,7 @@
   "header.menu.projects": "Projekty",
   "header.menu.timeline": "Časová os",
   "profile.description.item1": "IT študent",
-  "profile.description.item2": "Front-end Developer",
+  "profile.description.item2": "front-end developer",
+  "profile.description.item3": "nadšenec pre Jamstack",
   "footer.opensource": "toto je open-source projekt {emoji} {repo}"
 }

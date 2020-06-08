@@ -34,6 +34,12 @@ module.exports = {
     `gatsby-remark-copy-linked-files`,
     `gatsby-plugin-catch-links`,
     {
+      resolve: "gatsby-plugin-use-dark-mode",
+      options: {
+        storageKey: "darkMode",
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [`gatsby-remark-copy-linked-files`],

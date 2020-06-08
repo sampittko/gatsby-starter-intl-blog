@@ -35,6 +35,6 @@ export const withIntlRedirect = (Component) => {
       }
     }, []);
 
-    return sessionStorage.getItem("language") ? <Component {...props}/> : ""
+    return typeof window !== 'undefined' && sessionStorage.getItem("language") ? <Component {...props}/> : ""
   };
 }

@@ -7,5 +7,6 @@
     "profile.description.item1": "CS student",
     "profile.description.item2": "Front-end Developer",
     "profile.description.item3": "Jamstack Enthusiast",
-    "footer.opensource": "this is an open-source project {emoji} {repo}"
+    "footer.opensource": "this is an open-source project {emoji} {repo}",
+    "wip": "New website is under construction"
 }

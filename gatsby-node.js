@@ -2,6 +2,7 @@ const path = require("path");
 const { supportedLanguages, languageSettings } = require("./src/config/i18n");
 const slugify = require("slugify");
 const linkLocales = require('./src/locales/links')
+const gatsbyConfig = require('./gatsby-config')
 
 const slugifySettings = {
   replacement: "-",
@@ -12,6 +13,10 @@ const slugifySettings = {
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions;
+
+  if (gatsbyConfig.siteMetadata.restrictedMode) {
+    return
+  }
 
   return new Promise((resolve, reject) => {
     resolve(

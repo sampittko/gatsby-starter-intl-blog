@@ -1,12 +1,12 @@
-import React from "react";
-import Layout from '../components/layout/Layout';
-import { injectIntl } from "gatsby-plugin-intl";
+import { useEffect } from "react";
+import { navigate } from 'gatsby';
 
-const NotFoundPage = ({ intl }) =>
-  <Layout>
-    <h1 className="text-6xl lg:text-12xl xl:text-12xl font-bold">
-      {intl.formatMessage({ id: 'page.notfound' })}
-    </h1>
-  </Layout>
+const NotFoundPage = () => {
+  useEffect(() => {
+    navigate('/')
+  })
 
-export default injectIntl(NotFoundPage);
+  return "";
+}
+
+export default NotFoundPage;

@@ -34,6 +34,7 @@ export const withIntlRedirect = (Component) => {
         navigate(`/${redirectLanguage}`);
       }
     }, []);
-    return <Component {...props}/>
+
+    return sessionStorage.getItem("language") ? <Component {...props}/> : ""
   };
 }

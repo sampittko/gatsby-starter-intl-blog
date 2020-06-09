@@ -22,7 +22,7 @@ const LanguagePicker = ({ intl }) => {
     <div className="fixed top-0 right-0 w-auto">
       <select
         className="block appearance-none w-auto bg-white text-brown py-3 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 cursor-pointer"
-        onChange={(event) => onChange(event.target.value.toLowerCase())}
+        onBlur={(event) => onChange(event.target.value.toLowerCase())}
         value={value}
       >
         {Object.keys(supportedLanguages).map((supportedLanguage) => {

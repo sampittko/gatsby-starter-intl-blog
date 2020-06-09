@@ -33,13 +33,6 @@ module.exports = {
     `gatsby-plugin-postcss`,
     `gatsby-plugin-sitemap`,
     `gatsby-remark-copy-linked-files`,
-    `gatsby-plugin-catch-links`,
-    {
-      resolve: "gatsby-plugin-use-dark-mode",
-      options: {
-        storageKey: "darkMode",
-      },
-    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -69,6 +62,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `content`,
         path: `${__dirname}/src/content`,
       },
     },

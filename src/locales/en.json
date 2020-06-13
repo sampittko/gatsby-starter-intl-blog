@@ -6,7 +6,6 @@
     "header.menu.timeline": "Timeline",
     "profile.description.item1": "CS Student",
     "profile.description.item2": "Front-end Developer",
-    "profile.description.item3": "Jamstack Enthusiast",
     "footer.opensource": "this is an open-source project {emoji} {repo}",
     "wip": "New website is under construction"
 }

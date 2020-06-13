@@ -1,8 +1,7 @@
 import React from 'react';
-import LanguagePicker from "./LanguagePicker";
 import Navigation from './navigation/Navigation';
 import gatsbyConfig from '../../../../gatsby-config';
-import WIP from './WIP';
+import WIP from '../../WIP';
 
 const Header = () => {
   const { restrictedMode } = gatsbyConfig.siteMetadata
@@ -14,7 +13,6 @@ const Header = () => {
       ) : (
         <Navigation />
       )}
-      <LanguagePicker />
     </header>
   );
 };

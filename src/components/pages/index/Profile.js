@@ -71,7 +71,6 @@ const ProfileDetails = ({ author, intl }) => (
       </Link>
       {intl.formatMessage({ id: "profile.description.item1" })}
       {intl.formatMessage({ id: "profile.description.item2" })}
-      {intl.formatMessage({ id: "profile.description.item3" })}
     </ProfileHighlightsList>
   </div>
 );

@@ -1,15 +1,12 @@
 import React from 'react';
-import { injectIntl } from 'gatsby-plugin-intl';
-import gatsbyConfig from '../../../gatsby-config';
-import LanguagePicker from "../LanguagePicker";
-import Link from "../Link";
+import { injectIntl } from "gatsby-plugin-intl";
+import Link from "../../Link";
+import gatsbyConfig from "../../../../gatsby-config";
 
-const Footer = ({ intl }) => {
+const OpenSource = ({ intl }) => {
   const { gitHubUrl } = gatsbyConfig.siteMetadata
-
   return (
-    <footer className="fixed bottom-0 w-full p-3 text-center text-sm">
-      <LanguagePicker />
+    <>
       {intl.formatMessage(
         { id: "footer.opensource" },
         {
@@ -25,8 +22,8 @@ const Footer = ({ intl }) => {
           ),
         }
       )}
-    </footer>
+    </>
   );
-};
+}
 
-export default injectIntl(Footer);
+export default injectIntl(OpenSource);

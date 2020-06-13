@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "../../assets/css/main.css";
-import Footer from "./Footer";
+import Footer from "./footer/Footer";
 import Header from './header/Header';
 import Main from './Main';
 import { withIntlRedirect } from '../withIntlRedirect';

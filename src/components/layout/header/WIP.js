@@ -1,10 +1,11 @@
 import React from 'react';
 import { injectIntl } from 'gatsby-plugin-intl';
+import PropTypes from 'prop-types';
 
-const WIP = ({ intl }) => {
+const WIP = ({ intl, className }) => {
   return (
     <div
-      className="flex items-center justify-center bg-white text-brown font-bold px-4 py-3 w-full"
+      className={className}
       role="alert"
     >
       <svg
@@ -20,5 +21,13 @@ const WIP = ({ intl }) => {
     </div>
   );
 };
+
+WIP.defaultProps = {
+  className: "",
+}
+
+WIP.propTypes = {
+  className: PropTypes.string,
+}
 
 export default injectIntl(WIP);

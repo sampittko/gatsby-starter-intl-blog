@@ -25,7 +25,7 @@ module.exports = {
     },
     siteUrl: "https://sampittko.sk",
     restrictedMode: true,
-    gitHubUrl: "https://github.com/sampittko/personal-website",
+    gitHubUrl: "https://github.com/sampittko/sampittko.sk",
   },
   plugins: [
     `gatsby-transformer-sharp`,

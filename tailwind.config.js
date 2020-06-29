@@ -2,50 +2,24 @@ module.exports = {
   purge: false,
   theme: {
     extend: {
-      colors: {
-        brown: "#56574d",
-      },
-      fontSize: {
-        "12xl": "8rem",
-      },
-      minHeight: {
-        "2/5-screen": "40vh",
-        "1/2-screen": "50vh",
-      },
-      skew: {
-        "-11": "-11deg",
-        "11": "11deg",
-      },
-      inset: {
-        "14": "3.5rem",
-        "16": "4rem",
-        "40": "10rem",
-        "52": "13rem",
-        "-26": "-6.5rem",
-        "-32": "-8rem",
-      },
-      borderWidth: {
-        "12": "12px",
-      },
       screens: {
         xl: "1280px",
       },
-      height: {
-        "26": "6.5rem",
-      },
-      width: {
-        content: "700px",
-        "content-compact": "520px",
-        "max-content": "max-content",
-      },
-      fill: {
-        white: "#fff",
-      },
+      fill: (theme) => ({
+        "gray-100": theme("colors.gray.100"),
+        "gray-200": theme("colors.gray.200"),
+        "gray-300": theme("colors.gray.300"),
+        "gray-400": theme("colors.gray.400"),
+        "gray-500": theme("colors.gray.500"),
+        "gray-600": theme("colors.gray.600"),
+        "gray-700": theme("colors.gray.700"),
+        "gray-800": theme("colors.gray.800"),
+        "gray-900": theme("colors.gray.900"),
+      }),
     },
   },
   variants: {
     fill: ["responsive", "hover"],
-    borderWidth: ["responsive", "hover"],
   },
   plugins: [],
 };

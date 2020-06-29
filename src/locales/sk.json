@@ -1,11 +1,10 @@
 {
     "page.index.description": "Osobná stránka Samuela Pitoňáka",
     "page.index.title": "Moja osobná stránka",
-    "header.menu.blog": "Články",
-    "header.menu.projects": "Projekty",
-    "header.menu.timeline": "Časová os",
     "profile.description.item1": "IT študent",
     "profile.description.item2": "front-end developer",
-    "footer.opensource": "toto je open-source projekt {emoji} {repo}",
-    "wip": "Na novej stránke sa pracuje"
+    "menu.blog": "Články",
+    "menu.projects": "Projekty",
+    "menu.timeline": "Časová os",
+    "blog.readmore": "Čítaj viac"
 }

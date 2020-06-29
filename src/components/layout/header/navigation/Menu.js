@@ -6,15 +6,15 @@ import { isAtRootLanguage } from '../../../../utils/i18n';
 
 const menuItems = [
   {
-    intlId: "header.menu.blog",
+    intlId: "menu.blog",
     intlLinks: intlLinks.blog,
   },
   {
-    intlId: "header.menu.projects",
+    intlId: "menu.projects",
     intlLinks: intlLinks.projects,
   },
   {
-    intlId: "header.menu.timeline",
+    intlId: "menu.timeline",
     intlLinks: intlLinks.timeline,
   },
 ];

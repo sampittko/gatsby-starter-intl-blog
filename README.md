@@ -1,10 +1,12 @@
 # [www.sampittko.sk](https://sampittko.sk/)
 
-Personal website of Samuel Pitoňák that is also open-source.
+Personal website of Samuel Pitoňák.
 
 
 
 ## Planned Features
+
+This list contains all the features that are planned for the future versions of this project.
 
 ### **v1**
 

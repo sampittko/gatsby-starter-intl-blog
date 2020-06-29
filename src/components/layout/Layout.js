@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import "../../assets/css/main.css";
-import Footer from "./footer/Footer";
 import Header from './header/Header';
 import Main from './Main';
+import Footer from "./footer/Footer";
 import { withIntlRedirect } from '../withIntlRedirect';
 
 const Layout = ({ children }) => {
@@ -16,11 +16,11 @@ const Layout = ({ children }) => {
     <div
       className={`${
         visible ? "transition duration-500 opacity-1" : "opacity-0"
-      } font-sans text-black leading-tight antialiased w-screen min-h-screen`}
+      } font-sans text-black leading-tight antialiased min-h-screen max-w-screen-md mx-auto`}
     >
-      <Header className="fixed top-0 w-screen h-auto text-xs lg:text-sm" />
+      <Header className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col" />
       <Main children={children} />
-      {/* <Footer className="fixed bottom-0 w-full p-3 text-center text-xs lg:text-sm" /> */}
+      <Footer className="absolute bottom-0 px-5 py-8" />
     </div>
   );
 };

@@ -1,11 +1,10 @@
 {
     "page.index.description": "Personal website of Samuel Pitoňák",
     "page.index.title": "My personal website",
-    "header.menu.blog": "Articles",
-    "header.menu.projects": "Projects",
-    "header.menu.timeline": "Timeline",
     "profile.description.item1": "CS Student",
     "profile.description.item2": "Front-end Developer",
-    "footer.opensource": "this is an open-source project {emoji} {repo}",
-    "wip": "New website is under construction"
+    "menu.blog": "Articles",
+    "menu.projects": "Projects",
+    "menu.timeline": "Timeline",
+    "blog.readmore": "Read more"
 }

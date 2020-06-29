@@ -33,6 +33,7 @@ exports.createPages = ({ graphql, actions }) => {
                     post_date
                     post_published
                   }
+                  excerpt
                   fileAbsolutePath
                 }
               }

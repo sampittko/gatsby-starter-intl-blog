@@ -10,10 +10,13 @@ const LinkComponent = ({ to, foreign, children, onDark, newTab, title, notText, 
       {!foreign ? (
         <>
           {notText ? (
-            <Link to={to}>{children}</Link>
+            <Link to={`/${to}`.replace(/\/\//g, "/")}>{children}</Link>
           ) : (
             <span className={internalClassName}>
-              <Link to={to} activeClassName="underline">
+              <Link
+                to={`/${to}`.replace(/\/\//g, "/")}
+                activeClassName="underline text-black"
+              >
                 {children}
               </Link>
             </span>

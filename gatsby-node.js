@@ -2,7 +2,6 @@ const path = require("path");
 const { supportedLanguages, languageSettings } = require("./src/config/i18n");
 const slugify = require("slugify");
 const linkLocales = require('./src/locales/links')
-const gatsbyConfig = require('./gatsby-config')
 
 const slugifySettings = {
   replacement: "-",
@@ -13,10 +12,6 @@ const slugifySettings = {
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions;
-
-  if (gatsbyConfig.siteMetadata.restrictedMode) {
-    return
-  }
 
   return new Promise((resolve, reject) => {
     resolve(
@@ -96,7 +91,7 @@ const createBlogIndexPages = (createPage, blogPostsIntl) => {
 
   Object.keys(blogPostsIntl).forEach((languageKey) => {
     const path =
-      languageKey === languageSettings.rootLanguageKey
+      isAtRootLanguage(languageKey)
         ? `/${linkLocales.blog[languageKey]}`
         : `/${languageKey}/${linkLocales.blog[languageKey]}`;
     createPage({
@@ -125,7 +120,7 @@ const createBlogPostPages = (createPage, blogPostsIntl) => {
       );
       const basePath = `${linkLocales.blog[languageKey]}/${slugifiedCategory}/${slugifiedTitle}`;
       const path =
-        languageKey === languageSettings.rootLanguageKey
+        isAtRootLanguage(languageKey)
           ? `/${basePath}`
           : `/${languageKey}/${basePath}`;
       createPage({
@@ -170,7 +165,7 @@ const createBlogCategoryPages = (createPage, blogPostsIntl) => {
       const basePath = `${linkLocales.blog[languageKey]}/${linkLocales.blog.categories[
         languageKey]}/${category}`;
       const path =
-        languageKey === languageSettings.rootLanguageKey
+        isAtRootLanguage(languageKey)
           ? `/${basePath}`
           : `/${languageKey}/${basePath}`;
       createPage({
@@ -207,7 +202,7 @@ const createBlogTagPages = (createPage, blogPostsIntl) => {
     Object.keys(blogPostsIntlByTag[languageKey]).forEach((tag) => {
       const basePath = `${linkLocales.blog[languageKey]}/${linkLocales.blog.tags[languageKey]}/${tag}`;
       const path =
-        languageKey === languageSettings.rootLanguageKey
+        isAtRootLanguage(languageKey)
           ? `/${basePath}`
           : `/${languageKey}/${basePath}`;
       createPage({
@@ -223,7 +218,7 @@ const createBlogTagPages = (createPage, blogPostsIntl) => {
 
 const createBlogRedirects = (createRedirect) => {
   Object.keys(supportedLanguages).forEach((supportedLanguageKey) => {
-    const isRootLanguage = supportedLanguageKey === languageSettings.rootLanguageKey;
+    const isRootLanguage = isAtRootLanguage(supportedLanguageKey);
     const blogBasePath = linkLocales.blog[supportedLanguageKey];
     // Internationalized redirects from /blog/tags && /blog/tags/ to /blog
     let baseFromPath = `${blogBasePath}/${linkLocales.blog.tags[supportedLanguageKey]}`;
@@ -284,6 +279,9 @@ exports.onCreatePage = ({ page, actions }) => {
 const pathWithException = (pagePath) => {
   return pagePath === "/en/blog";
 }
+
+const isAtRootLanguage = (locale) =>
+  locale === languageSettings.rootLanguageKey;
 
 exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
   const config = getConfig();

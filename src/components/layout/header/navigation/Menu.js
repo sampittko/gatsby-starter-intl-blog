@@ -2,6 +2,7 @@ import React from 'react';
 import { injectIntl } from 'gatsby-plugin-intl';
 import intlLinks from '../../../../locales/links.json';
 import Link from '../../../Link';
+import { isAtRootLanguage } from '../../../../utils/i18n';
 
 const menuItems = [
   {
@@ -26,7 +27,11 @@ const Menu = ({ intl }) => {
       {menuItems.map((menuItem, index) => (
         <Link
           key={`menu-link-${index}`}
-          to={menuItem.intlLinks[locale]}
+          to={
+            isAtRootLanguage(locale)
+              ? menuItem.intlLinks[locale]
+              : `${locale}/${menuItem.intlLinks[locale]}`
+          }
           className="mr-2"
         >
           {intl.formatMessage({ id: menuItem.intlId })}

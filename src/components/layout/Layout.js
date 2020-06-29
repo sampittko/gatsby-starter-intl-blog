@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
     >
       <Header className="fixed top-0 w-screen h-auto text-xs lg:text-sm" />
       <Main children={children} />
-      <Footer className="fixed bottom-0 w-full p-3 text-center text-xs lg:text-sm" />
+      {/* <Footer className="fixed bottom-0 w-full p-3 text-center text-xs lg:text-sm" /> */}
     </div>
   );
 };

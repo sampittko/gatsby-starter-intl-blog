@@ -2,6 +2,9 @@ const path = require("path");
 const { supportedLanguages, languageSettings } = require("./src/config/i18n");
 const slugify = require("slugify");
 const linkLocales = require('./src/locales/links')
+const links = require('./src/utils/markdown/modifiers/ast-links')
+const unified = require('unified')
+const html = require('rehype-stringify')
 
 const slugifySettings = {
   replacement: "-",
@@ -9,6 +12,10 @@ const slugifySettings = {
   lower: true,
   strict: true,
 };
+
+// 1. Sort data by language
+// 2. Generate pages for each language
+// 3. (optional) Create redirects where meaningful
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions;
@@ -53,16 +60,17 @@ exports.createPages = ({ graphql, actions }) => {
           console.error(result.errors);
           return reject(result.errors);
         }
-
-        const indexes = result.data.indexes.edges;
         
         const blogPosts = result.data.blogPosts.edges;
-        const blogPostsIntl = getBlogPostsByLanguage(blogPosts);
+        const blogPostsIntl = getCollectionByLanguage(blogPosts);
         
         createBlogPages(createPage, blogPostsIntl);
         createBlogRedirects(createRedirect);
 
-        createIndexes(createPage, indexes, blogPostsIntl)
+        const indexes = result.data.indexes.nodes;
+        const indexesIntl = getCollectionByLanguage(indexes);
+
+        createIndexPages(createPage, indexesIntl, blogPostsIntl);
 
         return resolve();
       })
@@ -71,26 +79,37 @@ exports.createPages = ({ graphql, actions }) => {
 };
 
 // TODO Use lodash helper fn?
-const getBlogPostsByLanguage = (blogPosts) => {
-  const blogPostsIntl = {};
+const getCollectionByLanguage = (collection) => {
+  const collectionIntl = {};
+  const isBlogPost = collection[0] && collection[0].node
+  const isIndex = collection[0] && collection[0].htmlAst
 
-  // Create object with properties being empty arrays divided by language
-  Object.keys(supportedLanguages).forEach((supportedLanguage) => {
-    blogPostsIntl[supportedLanguage] = [];
-  });
+  if (isBlogPost) {
+    // Create object with properties being empty arrays divided by language
+    Object.keys(supportedLanguages).forEach((supportedLanguage) => {
+      collectionIntl[supportedLanguage] = [];
+    });
+  }
 
   // Push blog posts to corresponding arrays by language
-  blogPosts.forEach(({ node }) => {
-    if (node.frontmatter.post_published) {
-      const languageKey = node.fileAbsolutePath
-        .match(/index\..*\.md/)[0]
-        .replace(/index\./, "")
-        .replace(/\.md/, "");
-      blogPostsIntl[languageKey].push(node);
+  collection.forEach((item) => {
+    if (isBlogPost) {
+      const blogPost = item.node
+      if (blogPost.frontmatter.post_published) {
+        const languageKey = getLanguageKeyFromFilePath(
+          blogPost.fileAbsolutePath
+        );
+        collectionIntl[languageKey].push(blogPost);
+      }
+    }
+    else if (isIndex) {
+      const index = item
+      const languageKey = getLanguageKeyFromFilePath(index.fileAbsolutePath);
+      collectionIntl[languageKey] = index.htmlAst;
     }
   });
 
-  return blogPostsIntl;
+  return collectionIntl;
 }
 
 const createBlogPages = (createPage, blogPostsIntl) => {
@@ -278,9 +297,30 @@ const createBlogRedirects = (createRedirect) => {
   })
 };
 
-const createIndexes = (createPage, indexes, blogPostsIntl) => {
-  console.log(indexes)
-}
+const createIndexPages = (createPage, indexesIntl, blogPostsIntl) => {
+  const component = path.resolve("src/templates/index.js");
+
+  Object.keys(indexesIntl).forEach((languageKey) => {
+    const path = isAtRootLanguage(languageKey)
+      ? '/'
+      : `/${languageKey}`;
+
+    const htmlAst = indexesIntl[languageKey]
+    const innerHTML = unified().use(links).use(html);
+
+    createPage({
+      path,
+      component,
+      context: {
+        innerHTML,
+      },
+    });
+  });
+
+  for (index in indexesIntl) {
+    
+  }
+};
 
 exports.onCreatePage = ({ page, actions }) => {
   const { deletePage } = actions;
@@ -300,6 +340,13 @@ const pathWithException = (pagePath) => {
 
 const isAtRootLanguage = (locale) =>
   locale === languageSettings.rootLanguageKey;
+
+const getLanguageKeyFromFilePath = (filePath) => {
+  return filePath
+    .match(/index\..*\.md/)[0]
+    .replace(/index\./, "")
+    .replace(/\.md/, "");
+}
 
 exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
   const config = getConfig();

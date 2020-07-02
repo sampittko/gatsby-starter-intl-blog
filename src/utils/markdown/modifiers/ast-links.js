@@ -2,7 +2,7 @@
 
 const visit = require("unist-util-visit");
 
-module.exports = (options) => (tree) => {
+module.exports = (tree) => {
   visit(
     tree,
     // only visit a tags that contain text
@@ -10,7 +10,9 @@ module.exports = (options) => (tree) => {
       node.tagName === "a" && node.children.some((n) => n.tagName === "text"),
     (node) => {
       // set target for a node
-      node.properties?.target = "_blank";
+      if (node.properties) {
+        node.properties.target = "_blank";
+      }
     }
   );
 };

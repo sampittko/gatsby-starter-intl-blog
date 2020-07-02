@@ -4,10 +4,12 @@ import imagePath from '../../../assets/img/the_high_tatras.jpg';
 
 const Image = ({ className }) => (
   <>
-    <div
-      className={`absolute left-0 ${className}`}
-      style={{ backgroundImage: `url(${imagePath})` }}
-    />
+    <div className={`absolute left-0 w-screen`}>
+      <div
+        className={`mx-auto max-w-screen-lg ${className}`}
+        style={{ backgroundImage: `url(${imagePath})` }}
+      />
+    </div>
     <div className={`invisible ${className}`} />
   </>
 );

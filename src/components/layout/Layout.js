@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
         visible ? "transition duration-500 opacity-1" : "opacity-0"
       } font-sans text-black leading-tight antialiased min-h-screen max-w-screen-md mx-auto`}
     >
-      <Header className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col" />
+      <Header className="container px-5 py-8 mx-auto" />
       <Main children={children} />
       <Footer className="absolute bottom-0 px-5 py-8" />
     </div>

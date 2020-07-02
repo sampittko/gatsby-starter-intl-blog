@@ -38,6 +38,14 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
+            indexes: allMarkdownRemark(
+              filter: { fileAbsolutePath: { regex: "/content/index/" } }
+            ) {
+              nodes {
+                htmlAst
+                fileAbsolutePath
+              }
+            }
           }
         `
       ).then((result) => {
@@ -46,9 +54,15 @@ exports.createPages = ({ graphql, actions }) => {
           return reject(result.errors);
         }
 
+        const indexes = result.data.indexes.edges;
+        
         const blogPosts = result.data.blogPosts.edges;
-        createBlogPages(createPage, blogPosts);
+        const blogPostsIntl = getBlogPostsByLanguage(blogPosts);
+        
+        createBlogPages(createPage, blogPostsIntl);
         createBlogRedirects(createRedirect);
+
+        createIndexes(createPage, indexes, blogPostsIntl)
 
         return resolve();
       })
@@ -79,8 +93,7 @@ const getBlogPostsByLanguage = (blogPosts) => {
   return blogPostsIntl;
 }
 
-const createBlogPages = (createPage, blogPosts) => {
-  const blogPostsIntl = getBlogPostsByLanguage(blogPosts);
+const createBlogPages = (createPage, blogPostsIntl) => {
   createBlogIndexPages(createPage, blogPostsIntl);
   createBlogPostPages(createPage, blogPostsIntl);
   createBlogCategoryPages(createPage, blogPostsIntl);
@@ -264,6 +277,10 @@ const createBlogRedirects = (createRedirect) => {
     });
   })
 };
+
+const createIndexes = (createPage, indexes, blogPostsIntl) => {
+  console.log(indexes)
+}
 
 exports.onCreatePage = ({ page, actions }) => {
   const { deletePage } = actions;

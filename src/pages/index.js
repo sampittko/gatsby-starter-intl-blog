@@ -11,17 +11,14 @@ const IndexPage = ({ pageContext, data, intl }) => {
     nodes,
     pageContext.intl.language
   );
-
+    console.log(node.htmlAst)
   return (
     <Layout>
       <SEO
         lang={pageContext.intl.language}
         description={intl.formatMessage({ id: "page.index.description" })}
       />
-      <div
-        className=""
-        dangerouslySetInnerHTML={{ __html: node.html }}
-      />
+      <div dangerouslySetInnerHTML={{__html: node.html}} />
     </Layout>
   );
 };
@@ -32,7 +29,7 @@ export const query = graphql`
       filter: { fileAbsolutePath: { regex: "/content/index/" } }
     ) {
       nodes {
-        html
+        htmlAst
         fileAbsolutePath
       }
     }

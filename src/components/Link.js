@@ -1,21 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
+import classNames from 'classnames';
 
-const LinkComponent = ({ to, foreign, children, onDark, newTab, title, notText, className }) => {
-  const internalClassName = `${onDark ? "text-white" : "text-brown"} hover:underline ${className}`;
+const LinkComponent = ({ to, foreign, children, onDark, newTab, title, notText, className, groupHover }) => {
+  const internalClassName = `${onDark ? "text-white" : "text-brown"} ${className}`;
+  const href = foreign ? to : `/${to}`.replace(/\/\//g, "/");
 
   return (
     <>
       {!foreign ? (
         <>
           {notText ? (
-            <Link to={`/${to}`.replace(/\/\//g, "/")}>{children}</Link>
+            <Link to={href}>{children}</Link>
           ) : (
             <span className={internalClassName}>
               <Link
-                to={`/${to}`.replace(/\/\//g, "/")}
-                activeClassName="text-black"
+                to={href}
+                className={classNames({
+                  group: groupHover,
+                })}
               >
                 {children}
               </Link>
@@ -24,11 +28,13 @@ const LinkComponent = ({ to, foreign, children, onDark, newTab, title, notText, 
         </>
       ) : (
         <a
-          href={to}
+          href={href}
           title={title}
           rel="noopener"
           target={newTab ? "_blank" : "_self"}
-          className={notText ? "" : internalClassName}
+          className={`${!notText ? internalClassName : ""} ${classNames({
+            group: groupHover,
+          })}`}
         >
           {children}
         </a>
@@ -44,6 +50,7 @@ LinkComponent.defaultProps = {
   title: "",
   notText: false,
   className: "",
+  groupHover: false,
 };
 
 LinkComponent.propTypes = {
@@ -54,6 +61,7 @@ LinkComponent.propTypes = {
   title: PropTypes.string,
   notText: PropTypes.bool,
   className: PropTypes.string,
+  groupHover: PropTypes.bool,
 }
 
 export default LinkComponent;

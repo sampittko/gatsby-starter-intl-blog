@@ -2,7 +2,7 @@
 
 const visit = require("unist-util-visit");
 
-module.exports = (tree) => {
+module.exports = (options) => (tree) => {
   visit(
     tree,
     // only visit a tags that contain text

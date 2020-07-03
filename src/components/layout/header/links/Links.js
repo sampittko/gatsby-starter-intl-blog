@@ -5,7 +5,6 @@ import UserName from "./UserName";
 import Socials from "./Socials";
 import gatsbyConfig from "../../../../../gatsby-config";
 
-
 const Links = ({ className }) => {
   const {
     socials,

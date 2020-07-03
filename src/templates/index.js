@@ -4,7 +4,7 @@ import Layout from "../components/layout/Layout";
 import { injectIntl } from "gatsby-plugin-intl";
 
 const IndexPage = ({ pageContext, intl }) => {
-  console.log(pageContext.innerHTML)
+  console.log(pageContext.blogPosts)
 
   return (
     <Layout>

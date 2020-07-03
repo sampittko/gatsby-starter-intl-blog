@@ -5,6 +5,9 @@ const linkLocales = require('./src/locales/links')
 const links = require('./src/utils/markdown/modifiers/ast-links')
 const unified = require('unified')
 const html = require('rehype-stringify')
+const format = require("rehype-format");
+const markdown = require("remark-parse");
+const { report } = require("process");
 
 const slugifySettings = {
   replacement: "-",
@@ -105,7 +108,7 @@ const getCollectionByLanguage = (collection) => {
     else if (isIndex) {
       const index = item
       const languageKey = getLanguageKeyFromFilePath(index.fileAbsolutePath);
-      collectionIntl[languageKey] = index.htmlAst;
+      collectionIntl[languageKey] = index;
     }
   });
 
@@ -305,21 +308,31 @@ const createIndexPages = (createPage, indexesIntl, blogPostsIntl) => {
       ? '/'
       : `/${languageKey}`;
 
-    const htmlAst = indexesIntl[languageKey]
-    const innerHTML = unified().use(links).use(html);
+    const index = indexesIntl[languageKey]
+
+    let innerHTML;
+
+    console.log(index.htmlAst);
+
+    unified()
+      .use(markdown)
+      .use(links)
+      .use(format)
+      .use(html)
+      .process(index.htmlAst, (error, file) => {
+        console.log(String(file));
+        innerHTML = String(file);
+      });
 
     createPage({
       path,
       component,
       context: {
         innerHTML,
+        blogPosts: blogPostsIntl[languageKey]
       },
     });
   });
-
-  for (index in indexesIntl) {
-    
-  }
 };
 
 exports.onCreatePage = ({ page, actions }) => {

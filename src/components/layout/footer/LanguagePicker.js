@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { supportedLanguages, languageSettings } from "../../../config/i18n";
-import { injectIntl } from "gatsby-plugin-intl";
-import { navigate } from "gatsby";
+import { injectIntl, navigate } from "gatsby-plugin-intl";
 import PropTypes from 'prop-types';
 
 const LanguagePicker = ({ intl, className }) => {

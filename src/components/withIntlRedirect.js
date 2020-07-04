@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { navigate } from 'gatsby';
+import { navigate } from "gatsby-plugin-intl";
 import { getRedirectLanguage } from "../utils/i18n";
 
 export const withIntlRedirect = (Component) => {

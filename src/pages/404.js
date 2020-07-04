@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { navigate } from 'gatsby';
+import { navigate } from "gatsby-plugin-intl";
 
 const NotFoundPage = () => {
   useEffect(() => {

@@ -8,7 +8,7 @@ const LatestBlogPosts = ({ blogPosts, limit, intl }) => {
     <>
       {blogPosts.length > 0 ? (
         blogPosts.map((blogPost, index) => {
-          if (index + 1 > limit) return;
+          if (index + 1 > limit) return "";
 
           return (
             <Link

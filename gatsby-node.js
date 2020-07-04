@@ -161,7 +161,7 @@ const createBlogPostPages = (createPage, blogPostsIntl) => {
         ? `/${categoryBasePath}`
         : `/${languageKey}/${categoryBasePath}`;
 
-      const postBasePath = `${categoryBasePath}/${slugifiedTitle}`;
+      const postBasePath = `${linkLocales.blog[languageKey]}/${slugifiedCategory}/${slugifiedTitle}`;
       const path = isAtRootLanguage(languageKey)
         ? `/${postBasePath}`
         : `/${languageKey}/${postBasePath}`;

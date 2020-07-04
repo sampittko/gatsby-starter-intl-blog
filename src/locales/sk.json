@@ -1,5 +1,7 @@
 {
-    "page.index.description": "Osobná stránka Samuela Pitoňáka",
-    "page.index.title": "Moja osobná stránka",
-    "username.hover": "Nájdi si ma na internete"
+  "page.index.description": "Osobná stránka Samuela Pitoňáka",
+  "page.index.title": "Moja osobná stránka",
+  "page.index.section.blog": "Najnovšie články",
+  "page.index.section.aboutme": "Kto som?",
+  "username.hover": "Nájdi si ma na internete"
 }

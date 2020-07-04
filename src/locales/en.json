@@ -1,5 +1,7 @@
 {
-    "page.index.description": "Personal website of Samuel Pitoňák",
-    "page.index.title": "My personal website",
-    "username.hover": "Find me on the Internet"
+  "page.index.description": "Personal website of Samuel Pitoňák",
+  "page.index.title": "My personal website",
+  "page.index.section.blog": "Latest Articles",
+  "page.index.section.aboutme": "Who am I?",
+  "username.hover": "Find me on the Internet"
 }

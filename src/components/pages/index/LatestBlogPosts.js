@@ -23,11 +23,11 @@ const LatestBlogPosts = ({ blogPosts, limit, intl }) => {
                 <h2 className="inline font-medium text-gray-900 title-font">
                   {blogPost.frontmatter.post_title}
                 </h2>
-                <div className="w-5/12 flex items-center justify-around text-center font-light">
+                <div className="w-5/12 flex items-center justify-around text-center font-light text-sm">
                   <span className="w-56">
                     {blogPost.frontmatter.post_category}
                   </span>
-                  <span className="w-24 text-gray-500 font-light">
+                  <span className="w-16 text-gray-500 font-light">
                     {blogPost.frontmatter.post_date}
                   </span>
                 </div>

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby-plugin-intl';
-import classNames from 'classnames';
 
 const LinkComponent = ({
   to,
@@ -9,7 +8,6 @@ const LinkComponent = ({
   children,
   title,
   className,
-  groupHover,
 }) => (
   <>
     {!foreign ? (
@@ -20,11 +18,9 @@ const LinkComponent = ({
       <a
         href={to}
         title={title}
-        rel="noopener"
+        rel="noreferrer"
         target="_blank"
-        className={`${className} ${classNames({
-          group: groupHover,
-        })}`}
+        className={className}
       >
         {children}
       </a>
@@ -36,7 +32,6 @@ LinkComponent.defaultProps = {
   foreign: false,
   title: "",
   className: "",
-  groupHover: false,
 };
 
 LinkComponent.propTypes = {

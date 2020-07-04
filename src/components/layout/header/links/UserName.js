@@ -10,7 +10,7 @@ const UserName = ({ className, userName, intl }) => (
       foreign
       title={intl.formatMessage({ id: "username.hover" })}
     >
-      <span className="transition-colors ease-linear duration-150 hover:bg-gray-700 hover:text-white bg-gray-300 rounded-full px-3 py-1 text-gray-600">
+      <span className="hover:bg-gray-700 hover:text-white bg-gray-300 rounded-full px-3 py-1 text-gray-600">
         @{userName}
       </span>
     </Link>

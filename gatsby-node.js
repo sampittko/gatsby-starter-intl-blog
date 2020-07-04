@@ -1,5 +1,5 @@
 const path = require("path");
-const { getCollectionByLanguage, COLLECTIONS, getPath } = require("./gatsby-node-helpers");
+const { getCollectionByLanguage, COLLECTIONS, getPath, isExceptionPath } = require("./gatsby-node-helpers");
 const { createBlog } = require("./gatsby-node-blog");
 
 exports.createPages = ({ graphql, actions }) => {
@@ -88,16 +88,19 @@ const createIndex = (createPage, indexes, blogPosts) => {
   });
 };
 
-// exports.onCreatePage = ({ page, actions }) => {
-//   const { deletePage } = actions;
+exports.onCreatePage = ({ page, actions }) => {
+  const { deletePage } = actions;
 
-//   // Remove pages created by gatsby-plugin-intl (using translated URLs myself)
-//   if (page.context.intl.originalPath !== page.path && !pathWithException(page.path)) {
-//     if (!page.component.includes('/pages/')) {
-//       deletePage(page)
-//     }
-//   }
-// };
+  // Remove pages created by gatsby-plugin-intl (using translated URLs myself)
+  if (
+    page.context.intl.originalPath !== page.path &&
+    !isExceptionPath(page.path)
+  ) {
+    if (!page.component.includes("/pages/")) {
+      deletePage(page);
+    }
+  }
+};
 
 exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
   const config = getConfig();

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import Link from '../../../Link';
 import { injectIntl } from 'gatsby-plugin-intl';
 
-const Home = ({ className, photoUrl, fullName }) => (
-  <Link to="/" className={className} groupHover>
+const Home = ({ className, photoUrl, fullName, intl }) => (
+  <Link to="/" className={`${className} group`}>
     <img
       src={photoUrl}
       alt=""

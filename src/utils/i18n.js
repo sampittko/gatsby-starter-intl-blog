@@ -1,7 +1,7 @@
 import { languageSettings, supportedLanguages } from '../config/i18n';
 
-export const isAtRootLanguage = (locale) =>
-  locale === languageSettings.rootLanguageKey;
+export const isRootLanguage = (languageKey) =>
+  languageKey === languageSettings.rootLanguageKey;
 
 export const getRedirectLanguage = () => {
   if (typeof navigator === `undefined`) {

@@ -7,7 +7,3 @@
 - generalize styles
   - colors
   - animations
-- refactoring
-  - Link
-    - use navigate from gatsby-plugin-intl
-    - simplify / make more straightforward to use

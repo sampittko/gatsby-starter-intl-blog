@@ -42,7 +42,6 @@ const Socials = ({ className, socials }) => (
           to={socialDetails.social.url}
           title={socialDetails.social.name}
           foreign
-          newTab
         >
           <IconComponent className="transition-colors ease-linear duration-150 w-5 h-auto fill-gray-500 hover:fill-gray-700 inline mx-1" />
         </Link>

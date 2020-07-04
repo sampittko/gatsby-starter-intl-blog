@@ -7,7 +7,6 @@ const UserName = ({ className, userName, intl }) => (
   <p className={className}>
     <Link
       to={`https://www.google.com/search?q=${userName}`}
-      newTab
       foreign
       title={intl.formatMessage({ id: "username.hover" })}
     >

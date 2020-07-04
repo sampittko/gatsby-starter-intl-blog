@@ -3,5 +3,6 @@
   "page.index.title": "My personal website",
   "page.index.section.blog": "Latest Articles",
   "page.index.section.aboutme": "Who am I?",
-  "username.hover": "Find me on the Internet"
+  "username.hover": "Find me on the Internet",
+  "blog.noposts": "There are no posts yet"
 }

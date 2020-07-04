@@ -1,19 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from '../../../Link';
+import { injectIntl } from 'gatsby-plugin-intl';
+import { isAtRootLanguage } from '../../../../utils/i18n';
 
-const Home = ({ className, photoUrl, fullName }) => (
-  <Link to="/" className={className} groupHover>
-    <img
-      src={photoUrl}
-      alt=""
-      className="block sm:inline-block mx-auto sm:mx-0 transition-colors ease-linear duration-150 rounded-full h-10 w-10 border-4 border-gray-300 box-content group-hover:border-gray-700"
-    />
-    <span className="block sm:inline-block transition-colors ease-linear duration-150 h-full ml-0 mt-3 sm:mt-0 sm:ml-3 text-xl align-middle group-hover:text-gray-700">
-      {fullName}
-    </span>
-  </Link>
-);
+const Home = ({ className, photoUrl, fullName, intl }) => {
+  const to = isAtRootLanguage(intl.locale) ? "/" : `/${intl.locale}`
+
+  return (
+    <Link to={to} className={className} groupHover>
+      <img
+        src={photoUrl}
+        alt=""
+        className="block sm:inline-block mx-auto sm:mx-0 transition-colors ease-linear duration-150 rounded-full h-10 w-10 border-4 border-gray-300 box-content group-hover:border-gray-700"
+      />
+      <span className="block sm:inline-block transition-colors ease-linear duration-150 h-full ml-0 mt-3 sm:mt-0 sm:ml-3 text-xl align-middle group-hover:text-gray-700">
+        {fullName}
+      </span>
+    </Link>
+  );
+};
 
 Home.defaultProps = {
   className: "",
@@ -25,4 +31,4 @@ Home.propTypes = {
   fullName: PropTypes.string.isRequired,
 };
 
-export default Home;
+export default injectIntl(Home);

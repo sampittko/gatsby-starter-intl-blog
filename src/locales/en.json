@@ -1,11 +1,5 @@
 {
     "page.index.description": "Personal website of Samuel Pitoňák",
     "page.index.title": "My personal website",
-    "profile.description.item1": "CS Student",
-    "profile.description.item2": "Front-end Developer",
-    "menu.blog": "Articles",
-    "menu.projects": "Projects",
-    "menu.timeline": "Timeline",
-    "blog.readmore": "Read more",
     "username.hover": "Find me on the Internet"
 }

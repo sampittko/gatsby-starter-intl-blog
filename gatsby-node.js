@@ -150,15 +150,27 @@ const createBlogPostPages = (createPage, blogPostsIntl) => {
         node.frontmatter.post_title,
         slugifySettings
       );
+
       const slugifiedCategory = slugify(
         node.frontmatter.post_category,
         slugifySettings
       );
-      const basePath = `${linkLocales.blog[languageKey]}/${slugifiedCategory}/${slugifiedTitle}`;
-      const path =
-        isAtRootLanguage(languageKey)
-          ? `/${basePath}`
-          : `/${languageKey}/${basePath}`;
+
+      const categoryBasePath = `${linkLocales.blog[languageKey]}/${linkLocales.blog.categories[languageKey]}/${slugifiedCategory}`;
+      const categoryPath = isAtRootLanguage(languageKey)
+        ? `/${categoryBasePath}`
+        : `/${languageKey}/${categoryBasePath}`;
+
+      const postBasePath = `${categoryBasePath}/${slugifiedTitle}`;
+      const path = isAtRootLanguage(languageKey)
+        ? `/${postBasePath}`
+        : `/${languageKey}/${postBasePath}`;
+
+      node.slugs = {
+        post: path,
+        category: categoryPath
+      }
+      
       createPage({
         path,
         component,
@@ -241,6 +253,7 @@ const createBlogTagPages = (createPage, blogPostsIntl) => {
         isAtRootLanguage(languageKey)
           ? `/${basePath}`
           : `/${languageKey}/${basePath}`;
+          
       createPage({
         path,
         component: blogTagTemplate,
@@ -310,25 +323,25 @@ const createIndexPages = (createPage, indexesIntl, blogPostsIntl) => {
 
     const index = indexesIntl[languageKey]
 
-    let innerHTML;
+    // let innerHTML;
 
-    console.log(index.htmlAst);
+    // console.log(index.htmlAst);
 
-    unified()
-      .use(markdown)
-      .use(links)
-      .use(format)
-      .use(html)
-      .process(index.htmlAst, (error, file) => {
-        console.log(String(file));
-        innerHTML = String(file);
-      });
+    // unified()
+    //   .use(markdown)
+    //   .use(links)
+    //   .use(format)
+    //   .use(html)
+    //   .process(index.htmlAst, (error, file) => {
+    //     console.log(String(file));
+    //     innerHTML = String(file);
+    //   });
 
     createPage({
       path,
       component,
       context: {
-        innerHTML,
+        index,
         blogPosts: blogPostsIntl[languageKey]
       },
     });

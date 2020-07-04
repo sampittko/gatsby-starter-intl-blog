@@ -1,10 +1,10 @@
 ---
 page_description: Toto je super blog
 page_image: hey.png
-post_title: Prispevok B
-post_tags: ['docasne', 'horuce']
-post_category: Namyslené
-post_date: '2020-04-25'
+post_title: Ako čistiť digitálne obrazovky
+post_tags: ['praktické', 'digitálny svet']
+post_category: Spontánne články
+post_date: '25. sep. 2020'
 post_published: true
 ---
 

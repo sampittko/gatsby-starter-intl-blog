@@ -16,7 +16,7 @@ const Links = ({ className }) => {
   return (
     <div className={className}>
       <Home
-        className="flex font-medium items-center md:justify-start justify-center"
+        className="block sm:flex font-medium items-center md:justify-start justify-center"
         fullName={fullName}
         photoUrl={photoUrl}
       />

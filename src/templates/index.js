@@ -11,9 +11,9 @@ const IndexPage = ({ pageContext, intl }) => (
       lang={pageContext.intl.language}
       description={intl.formatMessage({ id: "page.index.description" })}
     />
-    <Section title={intl.formatMessage({ id: "page.index.section.aboutme" })}>
-      {/* <div dangerouslySetInnerHTML={{ __html: pageContext.index }} /> */}
-    </Section>
+    {/* <Section title={intl.formatMessage({ id: "page.index.section.aboutme" })}>
+      <div dangerouslySetInnerHTML={{ __html: pageContext.index }} />
+    </Section> */}
     <Section title={intl.formatMessage({ id: "page.index.section.blog" })}>
       <LatestBlogPosts blogPosts={pageContext.blogPosts} limit={3} />
     </Section>

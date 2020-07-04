@@ -16,12 +16,14 @@ This list contains all the features that are planned for the future versions of 
     - Tags
   - Projects [*In Progress*]
   - Timeline [*In Progress*]
-- Multilingual [*Finished*]
+- Multilingual [*Fixing*]
 - Internationalized Links [*Finished*]
 
 ### v2
 
+- Dark Theme
 - Gatsby Theme
+- Internationalized Links Plugin
 
 
 

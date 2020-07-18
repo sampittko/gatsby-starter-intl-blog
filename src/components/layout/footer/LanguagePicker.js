@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { injectIntl, navigate } from "gatsby-plugin-intl";
+import { injectIntl } from "gatsby-plugin-intl";
 import {
   getRootLanguage,
   getSupportedLanguages,
   getSupportedLanguageStrings,
 } from "../../../utils/i18n";
+import { navigate } from "gatsby";
 
 const LanguagePicker = ({ intl }) => {
   const [value, setValue] = useState(intl.locale);
@@ -13,13 +14,11 @@ const LanguagePicker = ({ intl }) => {
   const supportedLanguageStrings = getSupportedLanguageStrings();
 
   const onChange = (language) => {
-    if (intl.locale !== language) {
-      setValue(language);
-      if (language === getRootLanguage()) {
-        navigate(`/`);
-      } else {
-        navigate(`/${language}`);
-      }
+    setValue(language);
+    if (language === getRootLanguage()) {
+      navigate(`/`);
+    } else {
+      navigate(`/${language}`);
     }
   };
 

@@ -1,9 +1,0 @@
-- generation of pages in gatsby-node.js
-  - overridden /en page
-    - could be cause of the following issue
-  - not generating /en pages
-- FIX internationalization
-  - switching to /en route does not change language
-- generalize styles
-  - colors
-  - animations

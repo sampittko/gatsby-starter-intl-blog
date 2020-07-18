@@ -5,12 +5,18 @@ import Tailwind from "../../../../assets/img/poweredbys/tailwind.svg";
 import Gatsby from "../../../../assets/img/poweredbys/gatsby.svg";
 import Logo from "./Logo";
 
+const poweredBys = [
+  Vercel,
+  Gatsby,
+  Tailwind,
+  Egghead
+]
+
 const PoweredBys = (props) => (
-  <div className="absolute right-0 bottom-0">
-    <Logo SVG={Gatsby} />
-    <Logo SVG={Tailwind} />
-    <Logo SVG={Vercel} />
-    <Logo SVG={Egghead} />
+  <div className="py-3">
+    {poweredBys.map((poweredBy, index) => (
+      <Logo SVG={poweredBy} key={`powered-by-${index}`} />
+    ))}
   </div>
 );
 

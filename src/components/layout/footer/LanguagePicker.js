@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { supportedLanguages, languageSettings } from "../../../config/i18n";
 import { injectIntl, navigate } from "gatsby-plugin-intl";
-import PropTypes from "prop-types";
 
-const LanguagePicker = ({ intl, className }) => {
+const LanguagePicker = ({ intl }) => {
   const [value, setValue] = useState(intl.locale);
 
   const onChange = (languageKey) => {
@@ -19,7 +18,7 @@ const LanguagePicker = ({ intl, className }) => {
 
   return (
     <select
-      className={className}
+      className="py-3 block text-gray-600 text-sm appearance-none w-auto bg-white rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 cursor-pointer text-center hover:underline"
       onChange={(event) => onChange(event.target.value.toLowerCase())}
       value={value}
     >
@@ -34,14 +33,6 @@ const LanguagePicker = ({ intl, className }) => {
       })}
     </select>
   );
-};
-
-LanguagePicker.defaultProps = {
-  className: "",
-};
-
-LanguagePicker.propTypes = {
-  className: PropTypes.string,
 };
 
 export default injectIntl(LanguagePicker);

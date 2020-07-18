@@ -14,14 +14,12 @@ This list contains all the features that are planned for the future versions of 
     - Tags
   - Projects [*In Progress*]
   - Timeline [*In Progress*]
-- Multilingual [*Fixing*]
-- Internationalized Links [*Finished*]
+- Multilingual [*In Progress*]
 
 ### v2
 
-- Dark Theme
-- Gatsby Theme
-- Internationalized Links Plugin
+- Dark Mode
+- Internationalized Links as Gatsby Plugin - e.g. <u>/domov</u> & <u>/en/home</u> are equivalent
 
 ## Contributing
 

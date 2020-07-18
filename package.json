@@ -6,6 +6,7 @@
   "homepage": "https://sampittko.sk",
   "version": "0.0.0-unversioned",
   "license": "MIT",
+  "keywords": ["gatsby", "vercel", "tailwind", "egghead"],
   "scripts": {
     "start": "npm run watch:css && gatsby develop",
     "develop": "npm run watch:css && gatsby develop",
@@ -40,7 +41,6 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "@hot-loader/react-dom": "^16.13.0",
     "autoprefixer": "^9.8.5",
     "postcss-cli": "^7.1.1",
     "prettier": "^2.0.5",

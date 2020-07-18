@@ -31,7 +31,7 @@ const getSocialDetails = (socials, socialName) => {
 };
 
 const Socials = ({ className, socials }) => (
-  <span className={className}>
+  <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
     {Object.keys(socials).map((socialPage, index) => {
       const socialDetails = getSocialDetails(socials, socials[socialPage].name);
       const { IconComponent } = socialDetails;

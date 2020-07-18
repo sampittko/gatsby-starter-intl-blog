@@ -1,27 +1,33 @@
-import { languageSettings, supportedLanguages } from "../config/i18n";
+import gatsbyConfig from "../../gatsby-config";
 
-export const isRootLanguage = (languageKey) =>
-  languageKey === languageSettings.rootLanguageKey;
+export const getIntlConfig = () =>
+  gatsbyConfig.plugins.find(
+    (plugin) => plugin.resolve === "gatsby-plugin-intl"
+  );
 
-export const getRedirectLanguage = () => {
+export const getSupportedLanguages = () => getIntlConfig().options.languages;
+
+export const getSupportedLanguageStrings = () =>
+  getIntlConfig().options.external.languageStrings;
+
+export const getRootLanguage = () =>
+  getIntlConfig().options.external.rootLanguage;
+
+export const getDefaultLanguage = () =>
+  getIntlConfig().options.external.defaultLanguage;
+
+export const getRedirectPath = () => {
   if (typeof navigator === `undefined`) {
-    return languageSettings.defaultLanguageKey;
+    return getDefaultLanguage();
   }
 
-  const languageKey =
+  const language =
     navigator && navigator.language && navigator.language.split("-")[0];
 
-  if (!languageKey) return languageSettings.defaultLanguageKey;
+  if (!language) return getDefaultLanguage();
 
-  switch (languageKey) {
-    case supportedLanguages.sk.key:
-      return "";
-    case supportedLanguages.en.key:
-      return supportedLanguages.en.key;
-    default:
-      return languageSettings.defaultLanguageKey ===
-        languageSettings.rootLanguageKey
-        ? ""
-        : languageSettings.defaultLanguageKey;
-  }
+  getSupportedLanguages().forEach((supportedLanguage) => {
+    if (supportedLanguage === getRootLanguage()) return "";
+    else return supportedLanguage;
+  });
 };

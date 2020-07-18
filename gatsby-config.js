@@ -1,11 +1,8 @@
-const { languageSettings, supportedLanguages } = require("./src/config/i18n");
-
 module.exports = {
   siteMetadata: {
     title: "Samuel Pitoňák (@sampittko)",
     author: {
       fullName: "Samuel Pitoňák",
-      photoUrl: "https://avatars3.githubusercontent.com/u/38221262",
       email: "sampittko@gmail.com",
       userName: "sampittko",
       socials: {
@@ -27,17 +24,26 @@ module.exports = {
     gitHubUrl: "https://github.com/sampittko/sampittko.sk",
   },
   plugins: [
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
-    `gatsby-plugin-sitemap`,
-    `gatsby-remark-copy-linked-files`,
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-purgecss`,
       options: {
-        plugins: [`gatsby-remark-copy-linked-files`],
+        printRejected: true,
+        develop: false,
+        tailwind: true,
       },
     },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /src\/assets\/img/,
+        },
+      },
+    },
+    `gatsby-plugin-sitemap`,
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
@@ -58,11 +64,12 @@ module.exports = {
         icon: `src/assets/img/favicon.png`,
       },
     },
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `content`,
-        path: `${__dirname}/src/content`,
+        name: `blog`,
+        path: `${__dirname}/src/content/blog`,
       },
     },
     {
@@ -75,48 +82,22 @@ module.exports = {
     {
       resolve: `gatsby-plugin-intl`,
       options: {
-        path: `${__dirname}/src/locales`,
-        languages: Object.keys(supportedLanguages),
-        defaultLanguage: languageSettings.rootLanguageKey,
-        redirect: false,
+        path: `${__dirname}/src/locales`, // location of translations
+        languages: ["sk", "en"], // languages to generate routes for
+        defaultLanguage: "sk", // located at root
+        redirect: false, // redirect to /{defaultLanguage} when requesting root
+        // additional settings for various needs
+        external: {
+          rootLanguage: "sk", // located at root (eq {defaultLanguage} above but {rootLanguage} is more exact)
+          defaultLanguage: "en", // language to redirect to by default
+          languageStrings: ["Slovenčina", "English"], // full language names in the same order as {languages} above
+        },
       },
     },
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        printRejected: true,
-        develop: false,
-        tailwind: true,
-      },
-    },
-    // TODO Configure
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID",
-    //     head: false,
-    //     anonymize: true,
-    //     respectDNT: true,
-    //     exclude: [],
-    //     pageTransitionDelay: 0,
-    //     optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID",
-    //     experimentId: "YOUR_GOOGLE_EXPERIMENT_ID",
-    //     variationId: "YOUR_GOOGLE_OPTIMIZE_VARIATION_ID",
-    //     defer: false,
-    //   },
-    // },
     // TODO Configure
     // {
     //   resolve: `gatsby-plugin-feed`,
     //   options: {},
     // },
-    {
-      resolve: "gatsby-plugin-react-svg",
-      options: {
-        rule: {
-          include: /src\/assets\/img/,
-        },
-      },
-    },
   ],
 };

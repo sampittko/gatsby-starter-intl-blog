@@ -2,9 +2,6 @@ module.exports = {
   purge: false,
   theme: {
     extend: {
-      screens: {
-        xl: "1280px",
-      },
       fill: (theme) => ({
         "gray-100": theme("colors.gray.100"),
         "gray-200": theme("colors.gray.200"),

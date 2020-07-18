@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import { navigate } from "gatsby-plugin-intl";
-import { getRedirectLanguage } from "../utils/i18n";
+import { getRedirectPath } from "../utils/i18n";
 
 export const withIntlRedirect = (Component) => {
   return (props) => {
     useEffect(() => {
       if (!sessionStorage.getItem("language")) {
-        const redirectLanguage = getRedirectLanguage();
+        const redirectPath = getRedirectPath();
         sessionStorage.setItem("language", true);
-        navigate(`/${redirectLanguage}`);
+        navigate(`/${redirectPath}`);
       }
     }, []);
 

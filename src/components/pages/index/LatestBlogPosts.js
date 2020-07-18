@@ -2,8 +2,36 @@ import React from "react";
 import PropTypes from "prop-types";
 import Link from "../../Link";
 import { injectIntl } from "gatsby-plugin-intl";
+import { graphql, useStaticQuery } from "gatsby";
 
-const LatestBlogPosts = ({ blogPosts, limit, intl }) => {
+const query = graphql`
+  query {
+    blogPosts: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/content/blog/" } }
+      sort: { order: ASC, fields: [frontmatter___post_date] }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            page_description
+            page_image
+            post_title
+            post_tags
+            post_category
+            post_date
+            post_published
+          }
+          excerpt
+          fileAbsolutePath
+        }
+      }
+    }
+  }
+`;
+
+const LatestBlogPosts = ({ limit, intl }) => {
+  const { blogPosts } = useStaticQuery(query);
+
   return (
     <>
       {blogPosts.length > 0 ? (
@@ -45,12 +73,10 @@ const LatestBlogPosts = ({ blogPosts, limit, intl }) => {
 };
 
 LatestBlogPosts.defaultProps = {
-  blogPosts: [],
   limit: 3,
 };
 
 LatestBlogPosts.propTypes = {
-  blogPosts: PropTypes.arrayOf(PropTypes.object),
   limit: PropTypes.number,
 };
 

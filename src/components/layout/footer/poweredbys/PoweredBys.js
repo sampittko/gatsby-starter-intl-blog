@@ -5,12 +5,7 @@ import Tailwind from "../../../../assets/img/poweredbys/tailwind.svg";
 import Gatsby from "../../../../assets/img/poweredbys/gatsby.svg";
 import Logo from "./Logo";
 
-const poweredBys = [
-  Vercel,
-  Gatsby,
-  Tailwind,
-  Egghead
-]
+const poweredBys = [Vercel, Gatsby, Tailwind, Egghead];
 
 const PoweredBys = (props) => (
   <div className="py-3">

@@ -1,4 +1,0 @@
-- studying Computer Science @ [TUKE](https://www.tuke.sk/)
-- learning new web stuff via [@eggheadio](https://twitter.com/eggheadio)
-- liking performant, simple, practical and good looking UIs
-- living under [The High Tatras](https://www.google.com/maps/place/Vysoké+Tatry/) and who would not want to

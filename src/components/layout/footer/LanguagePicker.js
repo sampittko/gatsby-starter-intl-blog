@@ -1,17 +1,24 @@
 import React, { useState } from "react";
-import { supportedLanguages, languageSettings } from "../../../config/i18n";
 import { injectIntl, navigate } from "gatsby-plugin-intl";
+import {
+  getRootLanguage,
+  getSupportedLanguages,
+  getSupportedLanguageStrings,
+} from "../../../utils/i18n";
 
 const LanguagePicker = ({ intl }) => {
   const [value, setValue] = useState(intl.locale);
 
-  const onChange = (languageKey) => {
-    if (intl.locale !== languageKey) {
-      setValue(languageKey);
-      if (languageKey === languageSettings.rootLanguageKey) {
+  const supportedLanguages = getSupportedLanguages();
+  const supportedLanguageStrings = getSupportedLanguageStrings();
+
+  const onChange = (language) => {
+    if (intl.locale !== language) {
+      setValue(language);
+      if (language === getRootLanguage()) {
         navigate(`/`);
       } else {
-        navigate(`/${languageKey}`);
+        navigate(`/${language}`);
       }
     }
   };
@@ -22,11 +29,10 @@ const LanguagePicker = ({ intl }) => {
       onChange={(event) => onChange(event.target.value.toLowerCase())}
       value={value}
     >
-      {Object.keys(supportedLanguages).map((supportedLanguage) => {
-        const language = supportedLanguages[supportedLanguage].string;
-        const languageKey = supportedLanguages[supportedLanguage].key;
+      {supportedLanguages.map((supportedLanguage, index) => {
+        const language = supportedLanguageStrings[index];
         return (
-          <option key={languageKey} value={languageKey}>
+          <option key={supportedLanguage} value={supportedLanguage}>
             {language}
           </option>
         );

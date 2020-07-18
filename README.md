@@ -29,18 +29,24 @@ Check [CONTRIBUTING.md](https://github.com/sampittko/sampittko.sk/blob/master/CO
 
 Check what is new but also the history of changes for this project in [CHANGELOG.md](https://github.com/sampittko/sampittko.sk/blob/master/CHANGELOG.md).
 
+## Adding Support For a New Language
+
+Follow these instructions in order to add support for a new language.
+
+_To be added._
+
 ## Adding Pages
 
 You are able to add a new page to each section this theme supports. You need to follow some rules in order to successfully add a page.
 
 ### Adding a Blog Post
 
-To be added.
+_To be added._
 
 ### Adding a Project
 
-To be added.
+_To be added._
 
 ### Adding a Timeline Item
 
-To be added.
+_To be added._

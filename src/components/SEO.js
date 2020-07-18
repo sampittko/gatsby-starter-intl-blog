@@ -2,8 +2,8 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
-import { languageSettings } from "../config/i18n";
 import { injectIntl } from "gatsby-plugin-intl";
+import { getDefaultLanguage } from "../utils/i18n";
 
 const SEO = ({
   intl,
@@ -12,7 +12,7 @@ const SEO = ({
   title,
   description,
   slug,
-  lang = languageSettings.defaultLanguageKey,
+  lang = getDefaultLanguage(),
 }) => (
   <StaticQuery
     query={query}

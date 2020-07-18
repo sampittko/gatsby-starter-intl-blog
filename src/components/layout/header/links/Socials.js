@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Link from '../../../Link';
-import GitHub from "../../../../assets/img/social/GitHub";
-import LinkedIn from "../../../../assets/img/social/LinkedIn";
-import Twitter from "../../../../assets/img/social/Twitter";
+import React from "react";
+import PropTypes from "prop-types";
+import Link from "../../../Link";
+import GitHub from "../../../../assets/img/social/github.svg";
+import LinkedIn from "../../../../assets/img/social/linkedin.svg";
+import Twitter from "../../../../assets/img/social/twitter.svg";
 
 const getSocialDetails = (socials, socialName) => {
   let socialDetails = {};
@@ -26,9 +26,9 @@ const getSocialDetails = (socials, socialName) => {
       socialDetails.IconComponent = Twitter;
       break;
   }
-  
+
   return socialDetails;
-}
+};
 
 const Socials = ({ className, socials }) => (
   <span className={className}>
@@ -52,7 +52,7 @@ const Socials = ({ className, socials }) => (
 
 Socials.defaultProps = {
   className: "",
-}
+};
 
 Socials.propTypes = {
   className: PropTypes.string,

@@ -55,7 +55,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#ffffff`,
         display: `minimal-ui`,
-        icon: `src/assets/img/favicon.png`,
+        icon: `src/assets/img/favicon.jpg`,
       },
     },
     {
@@ -110,5 +110,13 @@ module.exports = {
     //   resolve: `gatsby-plugin-feed`,
     //   options: {},
     // },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /src\/assets\/img/,
+        },
+      },
+    },
   ],
 };

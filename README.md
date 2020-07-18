@@ -2,8 +2,6 @@
 
 Personal website of Samuel Pitoňák.
 
-
-
 ## Planned Features
 
 This list contains all the features that are planned for the future versions of this project.
@@ -25,19 +23,13 @@ This list contains all the features that are planned for the future versions of 
 - Gatsby Theme
 - Internationalized Links Plugin
 
-
-
 ## Contributing
 
 Check [CONTRIBUTING.md](https://github.com/sampittko/sampittko.sk/blob/master/CONTRIBUTING.md) in order to see how to contribute to this open-source project.
 
-
-
 ## Changelog
 
 Check what is new but also the history of changes for this project in [CHANGELOG.md](https://github.com/sampittko/sampittko.sk/blob/master/CHANGELOG.md).
-
-
 
 ## Adding Pages
 

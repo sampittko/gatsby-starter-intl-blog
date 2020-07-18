@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
-import PropTypes from 'prop-types';
-import Image from './Image';
-import Links from './links/Links';
+import PropTypes from "prop-types";
+import Image from "./Image";
+import Links from "./links/Links";
 
 const Header = ({ className }) => (
   <header className={className}>

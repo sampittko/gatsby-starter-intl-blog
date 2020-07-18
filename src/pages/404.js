@@ -3,10 +3,10 @@ import { navigate } from "gatsby-plugin-intl";
 
 const NotFoundPage = () => {
   useEffect(() => {
-    navigate('/')
-  })
+    navigate("/");
+  });
 
   return "";
-}
+};
 
 export default NotFoundPage;

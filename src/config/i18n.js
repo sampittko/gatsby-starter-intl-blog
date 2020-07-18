@@ -11,5 +11,5 @@ exports.supportedLanguages = {
 
 exports.languageSettings = {
   rootLanguageKey: "sk",
-  defaultLanguageKey: "en"
+  defaultLanguageKey: "en",
 };

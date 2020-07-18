@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Link from '../../../Link';
-import { injectIntl } from 'gatsby-plugin-intl';
+import React from "react";
+import PropTypes from "prop-types";
+import Link from "../../../Link";
+import { injectIntl } from "gatsby-plugin-intl";
 
 const Home = ({ className, photoUrl, fullName, intl }) => (
   <Link to="/" className={`${className} group`}>
@@ -18,7 +18,7 @@ const Home = ({ className, photoUrl, fullName, intl }) => (
 
 Home.defaultProps = {
   className: "",
-}
+};
 
 Home.propTypes = {
   className: PropTypes.string,

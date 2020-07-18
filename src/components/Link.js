@@ -1,14 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'gatsby-plugin-intl';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "gatsby-plugin-intl";
 
-const LinkComponent = ({
-  to,
-  foreign,
-  children,
-  title,
-  className,
-}) => (
+const LinkComponent = ({ to, foreign, children, title, className }) => (
   <>
     {!foreign ? (
       <Link to={to} className={className}>
@@ -39,6 +33,6 @@ LinkComponent.propTypes = {
   foreign: PropTypes.bool,
   title: PropTypes.string,
   className: PropTypes.string,
-}
+};
 
 export default LinkComponent;

@@ -1,6 +1,6 @@
 const { languageSettings, supportedLanguages } = require("./src/config/i18n");
 
-const EXCEPTION_PATHS = ['/en/blog'];
+const EXCEPTION_PATHS = ["/en/blog"];
 
 exports.SLUGIFY_SETTINGS = {
   replacement: "-",
@@ -47,9 +47,9 @@ exports.getCollectionByLanguage = (collection, collectionType) => {
   });
 
   return collectionIntl;
-}
+};
 
-exports.isExceptionPath = (path) => EXCEPTION_PATHS.includes(path)
+exports.isExceptionPath = (path) => EXCEPTION_PATHS.includes(path);
 
 const getLanguageFromFilePath = (filePath) => {
   return filePath

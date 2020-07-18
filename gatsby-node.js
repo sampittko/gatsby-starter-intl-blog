@@ -1,5 +1,10 @@
 const path = require("path");
-const { getCollectionByLanguage, COLLECTIONS, getPath, isExceptionPath } = require("./gatsby-node-helpers");
+const {
+  getCollectionByLanguage,
+  COLLECTIONS,
+  getPath,
+  isExceptionPath,
+} = require("./gatsby-node-helpers");
 const { createBlog } = require("./gatsby-node-blog");
 
 exports.createPages = ({ graphql, actions }) => {
@@ -45,11 +50,11 @@ exports.createPages = ({ graphql, actions }) => {
           console.error(result.errors);
           return reject(result.errors);
         }
-    
+
         const indexes = result.data.indexes.nodes;
         const blogPosts = result.data.blogPosts.edges;
-    
-        createBlog(createPage, createRedirect, blogPosts)
+
+        createBlog(createPage, createRedirect, blogPosts);
 
         createIndex(createPage, indexes, blogPosts);
 
@@ -60,10 +65,7 @@ exports.createPages = ({ graphql, actions }) => {
 };
 
 const createIndex = (createPage, indexes, blogPosts) => {
-  const indexesIntl = getCollectionByLanguage(
-    indexes,
-    COLLECTIONS.INDEXES
-  );
+  const indexesIntl = getCollectionByLanguage(indexes, COLLECTIONS.INDEXES);
 
   const blogPostsIntl = getCollectionByLanguage(
     blogPosts,
@@ -73,7 +75,7 @@ const createIndex = (createPage, indexes, blogPosts) => {
   const component = path.resolve("src/templates/index.js");
 
   Object.keys(indexesIntl).forEach((languageKey) => {
-    const path = getPath(languageKey, '/');
+    const path = getPath(languageKey, "/");
 
     const index = indexesIntl[languageKey];
 

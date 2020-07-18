@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { injectIntl } from 'gatsby-plugin-intl';
-import Link from '../../../Link';
+import React from "react";
+import PropTypes from "prop-types";
+import { injectIntl } from "gatsby-plugin-intl";
+import Link from "../../../Link";
 
 const UserName = ({ className, userName, intl }) => (
   <p className={className}>
@@ -19,11 +19,11 @@ const UserName = ({ className, userName, intl }) => (
 
 UserName.defaultProps = {
   className: "",
-}
+};
 
 UserName.propTypes = {
   className: PropTypes.string,
-  userName: PropTypes.string.isRequired
+  userName: PropTypes.string.isRequired,
 };
 
 export default injectIntl(UserName);

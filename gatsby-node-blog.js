@@ -3,7 +3,7 @@ const { default: slugify } = require("slugify");
 const linkLocales = require("./src/locales/links");
 const { supportedLanguages } = require("./src/config/i18n");
 const { getPath, getCollectionByLanguage } = require("./gatsby-node-helpers");
-const path = require('path')
+const path = require("path");
 
 exports.createBlog = (createPage, createRedirect, blogPosts) => {
   const blogPostsIntl = getCollectionByLanguage(
@@ -11,9 +11,9 @@ exports.createBlog = (createPage, createRedirect, blogPosts) => {
     COLLECTIONS.BLOG_POSTS
   );
 
-  createBlogPages(createPage, blogPostsIntl)
-  createBlogRedirects(createRedirect)
-}
+  createBlogPages(createPage, blogPostsIntl);
+  createBlogRedirects(createRedirect);
+};
 
 const createBlogPages = (createPage, blogPostsIntl) => {
   createBlogIndexPages(createPage, blogPostsIntl);
@@ -54,7 +54,7 @@ const createBlogPostPages = (createPage, blogPostsIntl) => {
       );
 
       const categoryBasePath = `${linkLocales.blog[languageKey]}/${linkLocales.blog.categories[languageKey]}/${slugifiedCategory}`;
-      const categoryPath = getPath(languageKey, categoryBasePath)
+      const categoryPath = getPath(languageKey, categoryBasePath);
 
       const blogPostBasePath = `${linkLocales.blog[languageKey]}/${slugifiedCategory}/${slugifiedTitle}`;
       const blogPostPath = getPath(languageKey, blogPostBasePath);
@@ -110,7 +110,7 @@ const createBlogCategoryPages = (createPage, blogPostsIntl) => {
   Object.keys(blogPostsIntlByCategory).forEach((languageKey) => {
     Object.keys(blogPostsIntlByCategory[languageKey]).forEach((category) => {
       const basePath = `${linkLocales.blog[languageKey]}/${linkLocales.blog.categories[languageKey]}/${category}`;
-      const path = getPath(languageKey, basePath)
+      const path = getPath(languageKey, basePath);
       createPage({
         path,
         component,
@@ -145,7 +145,7 @@ const createBlogTagPages = (createPage, blogPostsIntl) => {
   Object.keys(blogPostsIntlByTag).forEach((languageKey) => {
     Object.keys(blogPostsIntlByTag[languageKey]).forEach((tag) => {
       const basePath = `${linkLocales.blog[languageKey]}/${linkLocales.blog.tags[languageKey]}/${tag}`;
-      const path = getPath(languageKey, basePath)
+      const path = getPath(languageKey, basePath);
 
       createPage({
         path,
@@ -180,8 +180,8 @@ const createBlogRedirects = (createRedirect) => {
 
     // Internationalized redirects from /blog/categories && /blog/categories/ to /blog
     baseFromPath = `${blogBasePath}/${linkLocales.blog.categories[supportedLanguageKey]}`;
-    fromPath = getPath(supportedLanguageKey, baseFromPath)
-    toPath = getPath(supportedLanguageKey, blogBasePath)
+    fromPath = getPath(supportedLanguageKey, baseFromPath);
+    toPath = getPath(supportedLanguageKey, blogBasePath);
     createRedirect({
       fromPath,
       toPath,

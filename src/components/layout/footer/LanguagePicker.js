@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { supportedLanguages, languageSettings } from "../../../config/i18n";
 import { injectIntl, navigate } from "gatsby-plugin-intl";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const LanguagePicker = ({ intl, className }) => {
   const [value, setValue] = useState(intl.locale);
@@ -11,12 +11,11 @@ const LanguagePicker = ({ intl, className }) => {
       setValue(languageKey);
       if (languageKey === languageSettings.rootLanguageKey) {
         navigate(`/`);
-      }
-      else {
+      } else {
         navigate(`/${languageKey}`);
       }
     }
-  }
+  };
 
   return (
     <select
@@ -38,11 +37,11 @@ const LanguagePicker = ({ intl, className }) => {
 };
 
 LanguagePicker.defaultProps = {
-  className: ""
-}
+  className: "",
+};
 
 LanguagePicker.propTypes = {
   className: PropTypes.string,
-}
+};
 
 export default injectIntl(LanguagePicker);

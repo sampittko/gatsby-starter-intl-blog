@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import "../../assets/css/main.css";
-import Header from './header/Header';
-import Main from './Main';
+import Header from "./header/Header";
+import Main from "./Main";
 import Footer from "./footer/Footer";
-import { withIntlRedirect } from '../withIntlRedirect';
-import classNames from 'classnames'
+import { withIntlRedirect } from "../withIntlRedirect";
+import classNames from "classnames";
 
 const Layout = ({ children }) => {
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    setVisible(true)
-  }, [])
+    setVisible(true);
+  }, []);
 
   return (
     <div

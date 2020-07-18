@@ -1,4 +1,4 @@
-import { languageSettings, supportedLanguages } from '../config/i18n';
+import { languageSettings, supportedLanguages } from "../config/i18n";
 
 export const isRootLanguage = (languageKey) =>
   languageKey === languageSettings.rootLanguageKey;

@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 import Home from "./Home";
 import UserName from "./UserName";
 import Socials from "./Socials";
@@ -33,11 +33,11 @@ const Links = ({ className }) => {
 };
 
 Links.defaultProps = {
-  className: ""
-}
+  className: "",
+};
 
 Links.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default Links;

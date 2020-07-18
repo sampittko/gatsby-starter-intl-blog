@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Link from '../../Link';
-import { injectIntl } from 'gatsby-plugin-intl';
+import React from "react";
+import PropTypes from "prop-types";
+import Link from "../../Link";
+import { injectIntl } from "gatsby-plugin-intl";
 
 const LatestBlogPosts = ({ blogPosts, limit, intl }) => {
   return (
@@ -37,7 +37,7 @@ const LatestBlogPosts = ({ blogPosts, limit, intl }) => {
         })
       ) : (
         <h2 className="block text-center px-5 py-3 border-2 border-white bg-gray-100 rounded-full mb-2">
-          {intl.formatMessage({ id: 'blog.noposts' })}
+          {intl.formatMessage({ id: "blog.noposts" })}
         </h2>
       )}
     </>
@@ -47,7 +47,7 @@ const LatestBlogPosts = ({ blogPosts, limit, intl }) => {
 LatestBlogPosts.defaultProps = {
   blogPosts: [],
   limit: 3,
-}
+};
 
 LatestBlogPosts.propTypes = {
   blogPosts: PropTypes.arrayOf(PropTypes.object),

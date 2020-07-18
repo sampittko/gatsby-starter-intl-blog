@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
-import { languageSettings } from '../config/i18n'
+import { languageSettings } from "../config/i18n";
 import { injectIntl } from "gatsby-plugin-intl";
 
 const SEO = ({
@@ -30,7 +30,9 @@ const SEO = ({
                 title,
               }
             : {
-                title: `${siteMetadata.title} — ${intl.formatMessage({ id: "page.index.title" })}`,
+                title: `${siteMetadata.title} — ${intl.formatMessage({
+                  id: "page.index.title",
+                })}`,
               })}
           meta={[
             {

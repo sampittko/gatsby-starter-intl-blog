@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { injectIntl } from "gatsby-plugin-intl";
 import { graphql, useStaticQuery } from "gatsby";
 import BlogPost from "./BlogPost";
+import NoBlogPost from "./NoBlogPost";
 
 const query = graphql`
   query {
@@ -55,32 +56,24 @@ const query = graphql`
 
 const LatestBlogPosts = ({ limit, intl }) => {
   const data = useStaticQuery(query);
-
   const blogPosts = data[intl.locale].edges
 
-  return (
-    <>
-      {blogPosts.length > 0 ? (
-        blogPosts.map((blogPost, index) => {
-          if (index + 1 > limit) return "";
+  if (blogPosts.length === 0) return <NoBlogPost />;
 
-          const { frontmatter, fields } = blogPost.node.childMarkdownRemark
+  return blogPosts.map((blogPost, index) => {
+    if (index + 1 > limit) return "";
 
-          return (
-            <BlogPost
-              frontmatter={frontmatter}
-              slug={fields.slug}
-              index={index}
-            />
-          );
-        })
-      ) : (
-        <h2 className="block text-center px-5 py-3 border-2 border-white bg-gray-100 rounded-full mb-2">
-          {intl.formatMessage({ id: "blog.noposts" })}
-        </h2>
-      )}
-    </>
-  );
+    const { frontmatter, fields } = blogPost.node.childMarkdownRemark
+    const { slug } = fields
+
+    return (
+      <BlogPost
+        frontmatter={frontmatter}
+        slug={slug}
+        index={index}
+      />
+    );
+  })
 };
 
 LatestBlogPosts.defaultProps = {

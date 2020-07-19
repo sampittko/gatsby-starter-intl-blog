@@ -68,6 +68,7 @@ const LatestBlogPosts = ({ limit, intl }) => {
 
     return (
       <BlogPost
+        key={`blog-post-${index}`}
         frontmatter={frontmatter}
         slug={slug}
         index={index}

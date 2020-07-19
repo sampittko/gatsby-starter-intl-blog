@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
       className={`${classNames({
         "transition duration-1000 opacity-1": visible,
         "opacity-0": !visible,
-      })} font-sans text-black leading-tight antialiased min-h-screen max-w-screen-md mx-auto`}
+      })} font-sans text-black leading-tight antialiased min-h-screen max-w-screen-md mx-auto bg-white`}
     >
       <Header />
       <main>{children}</main>

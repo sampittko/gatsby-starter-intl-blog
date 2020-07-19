@@ -13,14 +13,16 @@ const Layout = ({ children }) => {
   }, []);
 
   return (
-    <div
-      className={`${classNames({
-        "transition duration-1000 opacity-1": visible,
-        "opacity-0": !visible,
-      })} font-sans text-black leading-tight antialiased min-h-screen max-w-screen-md mx-auto bg-white`}
-    >
+    <div className="font-sans text-black leading-tight antialiased min-h-screen max-w-screen-md mx-auto bg-white">
       <Header />
-      <main>{children}</main>
+      <main
+        className={classNames({
+          "transition duration-1000 opacity-1": visible,
+          "opacity-0": !visible,
+        })}
+      >
+        {children}
+      </main>
       <Footer />
     </div>
   );

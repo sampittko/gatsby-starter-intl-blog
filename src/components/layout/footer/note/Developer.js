@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStaticQuery } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import Link from '../../../Link';
 import { injectIntl } from 'gatsby-plugin-intl';
 

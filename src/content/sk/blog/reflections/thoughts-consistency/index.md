@@ -1,6 +1,6 @@
 ---
 page_description: Toto je super blog 2
-page_image: hey.png
+page_image: hey.jpg
 post_title: Stálosť myšlienok
 post_tags: ["duchovný svet", "človek"]
 post_category: Zamyslenia
@@ -9,3 +9,4 @@ post_published: true
 ---
 
 Všetko je len dočasné. Skoro.
+![ ](/hey.png)

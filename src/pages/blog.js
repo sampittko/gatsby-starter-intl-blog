@@ -3,7 +3,7 @@ import { injectIntl } from "gatsby-plugin-intl";
 import Layout from "../components/layout/Layout";
 import SEO from "../components/SEO";
 import Section from "../components/pages/index/Section";
-import { useBlogPosts } from "../utils/graphql/useBlogPosts";
+import { useBlogPosts } from "../hooks/useBlogPosts";
 
 const BlogIndexTemplate = ({ intl }) => {
   const blogPosts = useBlogPosts(intl.locale, 100);

@@ -69,7 +69,19 @@ module.exports = {
         icon: `src/assets/img/favicon.png`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-copy-linked-files",
+            options: {
+              destinationDir: (file) => `${file.hash}`,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

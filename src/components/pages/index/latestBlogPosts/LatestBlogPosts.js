@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { injectIntl } from "gatsby-plugin-intl";
 import BlogPost from "./BlogPost";
 import NoBlogPost from "./NoBlogPost";
-import { useBlogPosts } from "../../../../utils/graphql/useBlogPosts";
+import { useBlogPosts } from "../../../../hooks/useBlogPosts";
 
 const LatestBlogPosts = ({ limit, intl }) => {
   const blogPosts = useBlogPosts(intl.locale, limit);

@@ -56,7 +56,9 @@ export const useBlogPosts = (locale, limit) => {
     `
   );
 
-  const blogPosts = data[locale].edges.slice(0, limit);
+  const blogPosts = data[locale].edges
+    .slice(0, limit)
+    .filter((blogPost) => blogPost.node.childMarkdownRemark !== null);
 
   return blogPosts;
 };

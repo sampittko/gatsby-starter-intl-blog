@@ -20,6 +20,7 @@ This list contains all the features that are planned for the future versions of 
 
 - Dark Mode
 - Internationalized Links as Gatsby Plugin - e.g. <u>/domov</u> & <u>/en/home</u> are equivalent
+- Automatically Generate Blog Post Images
 
 ## Contributing
 
@@ -41,7 +42,8 @@ Follow these instructions in order to add support for a new language.
       1. *To be added*
 2. Open [locales](https://github.com/sampittko/sampittko.sk/blob/master/src/locales/) folder and create a new <pre>[language-key].json</pre> file with correct translations (copy the existing one and change it)
 3. Open [content](https://github.com/sampittko/sampittko.sk/blob/master/src/content/) folder and create a new <pre>[language-key]</pre> folder with subfolder structure tree (copy the existing one and change it)
-4. **You are done.** If you wish to change default language or language that is at the root of your website, follow the comments that can be found inside configuration of <u>gatsby-plugin-intl</u> (open [gatsby-config.js](https://github.com/sampittko/sampittko.sk/blob/master/gatsby-config.js) again)
+4. Extend existing GraphQL queries in the [hooks](https://github.com/sampittko/sampittko.sk/blob/master/src/hooks/) folder by adding the newly added language (copy existing part of the query and change it so that it uses new language key).
+5. **You are done.** If you wish to change default language or language that is at the root of your website, follow the comments that can be found inside configuration of <u>gatsby-plugin-intl</u> (open [gatsby-config.js](https://github.com/sampittko/sampittko.sk/blob/master/gatsby-config.js) again)
 
 ## Adding Pages
 

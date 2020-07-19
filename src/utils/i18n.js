@@ -1,9 +1,27 @@
 import gatsbyConfig from "../../gatsby-config";
 
-const getIntlConfig = () =>
+export const getIntlConfig = () =>
   gatsbyConfig.plugins.find(
     (plugin) => plugin.resolve === "gatsby-plugin-intl"
   );
+
+const getLanguageSetKey = (intlConfig) =>
+  intlConfig.options.external.storageKeys.session.languageSet;
+
+export const isLanguageSet = (intlConfig) =>
+         sessionStorage.getItem(getLanguageSetKey(intlConfig));
+
+export const setLanguageSet = (intlConfig, value) =>
+         sessionStorage.setItem(getLanguageSetKey(intlConfig), value);
+
+const getLanguagePreferenceKey = (intlConfig) =>
+  intlConfig.options.external.storageKeys.local.languagePreference;
+
+export const getLanguagePreference = (intlConfig) =>
+         localStorage.getItem(getLanguagePreferenceKey(intlConfig));
+
+export const setLanguagePreference = (intlConfig, value) =>
+         localStorage.setItem(getLanguagePreferenceKey(intlConfig), value);
 
 export const getSupportedLanguages = () => getIntlConfig().options.languages;
 
@@ -15,12 +33,6 @@ export const getRootLanguage = () =>
 
 export const getDefaultLanguage = () =>
   getIntlConfig().options.external.defaultLanguage;
-
-export const getLanguageSetStorageKey = () =>
-  getIntlConfig().options.external.storageKeys.session.languageSet;
-
-export const getLanguagePreferenceStorageKey = () =>
-  getIntlConfig().options.external.storageKeys.local.languagePreference;
 
 export const getRedirectPath = () => {
   if (typeof navigator === `undefined`) {
@@ -34,8 +46,6 @@ export const getRedirectPath = () => {
     return getDefaultLanguage();
   }
 
-  const rootLanguage = getRootLanguage();
-
-  if (language === rootLanguage) return ""
+  if (language === getRootLanguage()) return ""
   return language
 };

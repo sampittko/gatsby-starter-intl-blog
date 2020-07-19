@@ -4,7 +4,8 @@ import {
   getRootLanguage,
   getSupportedLanguages,
   getSupportedLanguageStrings,
-  getLanguagePreferenceStorageKey,
+  setLanguagePreference,
+  getIntlConfig
 } from "../../../utils/i18n";
 import { navigate } from "gatsby";
 
@@ -16,7 +17,7 @@ const LanguagePicker = ({ intl }) => {
 
   const onChange = (language) => {
     setValue(language);
-    localStorage.setItem(getLanguagePreferenceStorageKey(), language);
+    setLanguagePreference(getIntlConfig(), language)
     if (language === getRootLanguage()) {
       navigate(`/`);
     } else {
@@ -27,7 +28,7 @@ const LanguagePicker = ({ intl }) => {
   return (
     <select
       className="py-3 block text-gray-600 text-sm appearance-none w-auto bg-white rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 cursor-pointer text-center hover:underline"
-      onChange={(event) => onChange(event.target.value.toLowerCase())}
+      onChange={(event) => onChange(event.target.value)}
       value={value}
     >
       {supportedLanguages.map((supportedLanguage, index) => {

@@ -3,35 +3,35 @@ import { navigate } from "gatsby-plugin-intl";
 import {
   getRedirectPath,
   getRootLanguage,
-  getLanguagePreferenceStorageKey,
-  getLanguagePreferenceStorageKey,
-  getLanguageSetStorageKey,
+  getIntlConfig,
+  isLanguageSet,
+  getLanguagePreference,
+  setLanguagePreference,
+  setLanguageSet
 } from "../utils/i18n";
 
 export const withIntlRedirect = (Component) => {
-  const langSetKey = getLanguageSetStorageKey();
-  const langPrefKey = getLanguagePreferenceStorageKey();
+  const intlConfig = getIntlConfig();
 
   return (props) => {
     useEffect(() => {
-      if (!sessionStorage.getItem(langSetKey)) {
-        const langPref = localStorage.getItem(langPrefKey);
+      if (!isLanguageSet(intlConfig)) {
+        const langPref = getLanguagePreference(intlConfig);
         let redirectPath;
         if (langPref) {
           redirectPath = langPref;
         }
         else {
           redirectPath = getRedirectPath();
-          localStorage.setItem(langPrefKey, redirectPath);
+          setLanguagePreference(intlConfig, redirectPath)
         }
-        sessionStorage.setItem(langSetKey, true);
-        redirectPath = redirectPath === getRootLanguage() ? "" : redirectPath
-        navigate(`/${redirectPath}`);
+        setLanguageSet(intlConfig, true)
+        navigate(`/${redirectPath === getRootLanguage() ? "" : redirectPath}`);
       }
     }, []);
 
     return typeof window !== "undefined" &&
-      sessionStorage.getItem(langSetKey) ? (
+      isLanguageSet(intlConfig) ? (
       <Component {...props} />
     ) : (
       ""

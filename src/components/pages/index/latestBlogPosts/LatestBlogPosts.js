@@ -4,7 +4,7 @@ import { injectIntl } from "gatsby-plugin-intl";
 import BlogPost from "./BlogPost";
 import NoBlogPost from "../../../NoBlogPost";
 import { useBlogPosts } from "../../../../hooks/useBlogPosts";
-import More from "./More";
+import All from "./All";
 
 const LatestBlogPosts = ({ limit, intl }) => {
   const blogPosts = useBlogPosts(intl.locale, limit);
@@ -29,7 +29,7 @@ const LatestBlogPosts = ({ limit, intl }) => {
         })}
       </div>
       {blogPosts.length < limit && (
-        <More />
+        <All />
       )}
     </>
   );

@@ -33,7 +33,15 @@ Check what is new but also the history of changes for this project in [CHANGELOG
 
 Follow these instructions in order to add support for a new language.
 
-_To be added._
+1. Open [gatsby-config.js](https://github.com/sampittko/sampittko.sk/blob/master/gatsby-config.js) file and:
+   1. Extend configuration of <u>gatsby-plugin-intl</u> as follows:
+      - Add a new language to <pre>options.languages</pre> array
+      - Add a new language to <pre>options.external.languageStrings</pre> array
+   2. Extend configuration of <u>gatsby-source-filesystem</u> as follows:
+      1. *To be added*
+2. Open [locales](https://github.com/sampittko/sampittko.sk/blob/master/src/locales/) folder and create a new <pre>[language-key].json</pre> file with correct translations (copy the existing one and change it)
+3. Open [content](https://github.com/sampittko/sampittko.sk/blob/master/src/content/) folder and create a new <pre>[language-key]</pre> folder with subfolder structure tree (copy the existing one and change it)
+4. **You are done.** If you wish to change default language or language that is at your root of the website, follow the comments that can be found inside configuration of <u>gatsby-plugin-intl</u> (open [gatsby-config.js](https://github.com/sampittko/sampittko.sk/blob/master/gatsby-config.js) again)
 
 ## Adding Pages
 

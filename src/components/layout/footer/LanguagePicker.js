@@ -21,7 +21,7 @@ const LanguagePicker = ({ intl }) => {
     if (language === getRootLanguage()) {
       navigate(`/`);
     } else {
-      navigate(`/${language}`);
+      navigate(`/${language}/`);
     }
   };
 

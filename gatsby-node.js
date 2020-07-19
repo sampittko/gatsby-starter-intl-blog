@@ -14,7 +14,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
         node,
         getNode,
         basePath: `src/content`,
-        trailingSlash: false,
+        trailingSlash: true,
       });
 
       createNodeField({

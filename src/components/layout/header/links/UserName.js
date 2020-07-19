@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { injectIntl } from "gatsby-plugin-intl";
 import Link from "../../../Link";
 
-const UserName = ({ className, userName, intl }) => (
+const UserName = ({ userName, intl }) => (
   <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
     <Link
       to={`https://www.google.com/search?q=${userName}`}
@@ -17,12 +17,7 @@ const UserName = ({ className, userName, intl }) => (
   </p>
 );
 
-UserName.defaultProps = {
-  className: "",
-};
-
 UserName.propTypes = {
-  className: PropTypes.string,
   userName: PropTypes.string.isRequired,
 };
 

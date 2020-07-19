@@ -4,5 +4,8 @@
   "page.index.section.blog": "Latest Articles",
   "page.index.section.aboutme": "Who am I?",
   "username.hover": "Find me on the Internet",
-  "blog.noposts": "There are no posts yet"
+  "blog.noposts": "There are no posts yet",
+  "footer.note.madeby": "made by {developer}",
+  "footer.note.madeby.hover": "GitHub page of the project",
+  "footer.note.using": "using"
 }

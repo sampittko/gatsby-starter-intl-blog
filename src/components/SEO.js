@@ -15,7 +15,19 @@ const SEO = ({
   lang = getDefaultLanguage(),
 }) => (
   <StaticQuery
-    query={query}
+    query={graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            siteUrl
+            author {
+              userName
+            }
+          }
+        }
+      }
+    `}
     render={(data) => {
       const { siteMetadata } = data.site;
       const metaDescription = description;
@@ -88,21 +100,6 @@ const SEO = ({
     }}
   />
 );
-
-const query = graphql`
-  query getSiteMetadata {
-    site {
-      siteMetadata {
-        title
-        author {
-          fullName
-          userName
-        }
-        siteUrl
-      }
-    }
-  }
-`;
 
 SEO.defaultProps = {
   meta: [],

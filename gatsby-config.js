@@ -1,10 +1,11 @@
 module.exports = {
   siteMetadata: {
     title: "Samuel Pitoňák (@sampittko)",
+    siteUrl: "https://sampittko.sk",
     author: {
       fullName: "Samuel Pitoňák",
       email: "sampittko@gmail.com",
-      userName: "sampittko",
+      userName: "sampittko", // change this
       socials: {
         twitter: {
           name: "Twitter",
@@ -20,8 +21,11 @@ module.exports = {
         },
       },
     },
-    siteUrl: "https://sampittko.sk",
-    gitHubUrl: "https://github.com/sampittko/sampittko.sk",
+    developer: {
+      gitHubUrl: "https://github.com/sampittko/sampittko.sk",
+      userName: "sampittko",
+      fullName: "Samuel Pitoňák",
+    },
   },
   plugins: [
     `gatsby-plugin-postcss`,
@@ -98,13 +102,14 @@ module.exports = {
           rootLanguage: "sk", // located at root (eq {defaultLanguage} above but {rootLanguage} is more exact)
           defaultLanguage: "en", // language to redirect to by default
           languageStrings: ["Slovenčina", "English"], // full language names in the same order as {languages} above
-          storageKeys: { // for {LanguagePicker} and {withIntlRedirect}
+          storageKeys: {
+            // for {LanguagePicker} and {withIntlRedirect}
             session: {
               languageSet: "lang_set", // waiting for initialization of this every new session so that Layout can be animation-renderred with corresponding content and appropriate language
             },
             local: {
               languagePreference: "lang_pref", // if set, always redirecting to this language in a new session
-            }
+            },
           },
         },
       },

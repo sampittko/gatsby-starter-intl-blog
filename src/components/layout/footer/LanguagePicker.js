@@ -27,7 +27,7 @@ const LanguagePicker = ({ intl }) => {
 
   return (
     <select
-      className="py-3 block text-gray-600 text-sm appearance-none w-auto bg-white rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 cursor-pointer text-center hover:underline"
+      className="py-3 block text-gray-600 text-xs appearance-none w-auto bg-white rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 cursor-pointer text-center hover:underline"
       onChange={(event) => onChange(event.target.value)}
       value={value}
     >

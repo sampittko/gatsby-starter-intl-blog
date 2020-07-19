@@ -98,6 +98,14 @@ module.exports = {
           rootLanguage: "sk", // located at root (eq {defaultLanguage} above but {rootLanguage} is more exact)
           defaultLanguage: "en", // language to redirect to by default
           languageStrings: ["Slovenčina", "English"], // full language names in the same order as {languages} above
+          storageKeys: { // for {LanguagePicker} and {withIntlRedirect}
+            session: {
+              languageSet: "lang_set", // waiting for initialization of this every new session so that Layout can be animation-renderred with corresponding content and appropriate language
+            },
+            local: {
+              languagePreference: "lang_pref", // if set, always redirecting to this language in a new session
+            }
+          },
         },
       },
     },

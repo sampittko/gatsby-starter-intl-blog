@@ -4,6 +4,7 @@ import {
   getRootLanguage,
   getSupportedLanguages,
   getSupportedLanguageStrings,
+  getLanguagePreferenceStorageKey,
 } from "../../../utils/i18n";
 import { navigate } from "gatsby";
 
@@ -15,6 +16,7 @@ const LanguagePicker = ({ intl }) => {
 
   const onChange = (language) => {
     setValue(language);
+    localStorage.setItem(getLanguagePreferenceStorageKey(), language);
     if (language === getRootLanguage()) {
       navigate(`/`);
     } else {

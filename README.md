@@ -61,4 +61,4 @@ _To be added._
 
 ## License
 
-This project is under the MIT license which is great! Read more [here](https://github.com/sampittko/sampittko.sk/blob/master/LICENSE.md.
+This project is under the MIT license which is great! Read more [here](https://github.com/sampittko/sampittko.sk/blob/master/LICENSE.md).

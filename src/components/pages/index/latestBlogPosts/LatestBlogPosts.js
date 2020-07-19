@@ -1,62 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { injectIntl } from "gatsby-plugin-intl";
-import { graphql, useStaticQuery } from "gatsby";
 import BlogPost from "./BlogPost";
 import NoBlogPost from "./NoBlogPost";
-
-const query = graphql`
-  query {
-    sk: allFile(
-      filter: { sourceInstanceName: { eq: "sk/blog" } }
-      sort: {
-        order: ASC
-        fields: childMarkdownRemark___frontmatter___post_date
-      }
-    ) {
-      edges {
-        node {
-          childMarkdownRemark {
-            frontmatter {
-              post_title
-              post_category
-              post_date
-            }
-            fields {
-              slug
-            }
-          }
-        }
-      }
-    }
-    en: allFile(
-      filter: { sourceInstanceName: { eq: "en/blog" } }
-      sort: {
-        order: ASC
-        fields: childMarkdownRemark___frontmatter___post_date
-      }
-    ) {
-      edges {
-        node {
-          childMarkdownRemark {
-            frontmatter {
-              post_title
-              post_category
-              post_date
-            }
-            fields {
-              slug
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+import { useBlogPosts } from "../../../../utils/graphql/useBlogPosts";
 
 const LatestBlogPosts = ({ limit, intl }) => {
-  const data = useStaticQuery(query);
-  const blogPosts = data[intl.locale].edges
+  const blogPosts = useBlogPosts(intl.locale, limit);
 
   if (blogPosts.length === 0) return <NoBlogPost />;
 
@@ -82,7 +32,7 @@ LatestBlogPosts.defaultProps = {
 };
 
 LatestBlogPosts.propTypes = {
-  limit: PropTypes.number,
+  limit: PropTypes.oneOf([2, 3, 4, 5]),
 };
 
 export default injectIntl(LatestBlogPosts);

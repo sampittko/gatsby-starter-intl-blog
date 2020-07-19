@@ -1,13 +1,5 @@
 const { createFilePath } = require(`gatsby-source-filesystem`);
-const slugify = require('slugify');
 const path = require("path")
-
-const SLUGIFY_OPTIONS = {
-  replacement: "-",
-  remove: undefined,
-  lower: true,
-  strict: true,
-};
 
 const polishSlug = (slug) => slug.replace(/\/\//g, "/");
 
@@ -17,11 +9,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   if (node.internal.type === `MarkdownRemark`) {
     if (node.fileAbsolutePath.match(/\/blog\//)) {
       const blogSlug = '/blog'
-
-      const categorySlug = `/${slugify(
-        node.frontmatter.post_category,
-        SLUGIFY_OPTIONS
-      )}`;
 
       const postSlug = createFilePath({
         node,
@@ -33,7 +20,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       createNodeField({
         node,
         name: `slug`,
-        value: polishSlug(`${blogSlug}${categorySlug}${postSlug}`),
+        value: polishSlug(`${blogSlug}${postSlug}`),
       });
     }
   }

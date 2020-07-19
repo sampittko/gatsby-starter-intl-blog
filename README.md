@@ -9,12 +9,12 @@ This list contains all the features that are planned for the future versions of 
 ### **v1**
 
 - Multiple Sections
-  - Blog [*In Progress*]
+  - Blog
     - Categories
     - Tags
-  - Projects [*In Progress*]
-  - Timeline [*In Progress*]
-- Multilingual [*In Progress*]
+  - Projects
+  - Timeline
+- Multilingual
 
 ### v2
 
@@ -41,7 +41,7 @@ Follow these instructions in order to add support for a new language.
       1. *To be added*
 2. Open [locales](https://github.com/sampittko/sampittko.sk/blob/master/src/locales/) folder and create a new <pre>[language-key].json</pre> file with correct translations (copy the existing one and change it)
 3. Open [content](https://github.com/sampittko/sampittko.sk/blob/master/src/content/) folder and create a new <pre>[language-key]</pre> folder with subfolder structure tree (copy the existing one and change it)
-4. **You are done.** If you wish to change default language or language that is at your root of the website, follow the comments that can be found inside configuration of <u>gatsby-plugin-intl</u> (open [gatsby-config.js](https://github.com/sampittko/sampittko.sk/blob/master/gatsby-config.js) again)
+4. **You are done.** If you wish to change default language or language that is at the root of your website, follow the comments that can be found inside configuration of <u>gatsby-plugin-intl</u> (open [gatsby-config.js](https://github.com/sampittko/sampittko.sk/blob/master/gatsby-config.js) again)
 
 ## Adding Pages
 
@@ -58,3 +58,7 @@ _To be added._
 ### Adding a Timeline Item
 
 _To be added._
+
+## License
+
+This project is under the MIT license which is great! Read more [here](https://github.com/sampittko/sampittko.sk/blob/master/LICENSE.md.

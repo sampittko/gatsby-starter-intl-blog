@@ -16,6 +16,7 @@ const query = graphql`
   }
 `;
 
+// Thanks for giving me credits by letting my nickname be displayed with the link to the repo!
 const Developer = ({ intl }) => {
   const data = useStaticQuery(query)
   const { developer } = data.site.siteMetadata

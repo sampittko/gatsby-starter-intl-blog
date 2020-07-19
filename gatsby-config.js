@@ -21,6 +21,7 @@ module.exports = {
         },
       },
     },
+    // Thanks for giving me credits by letting my nickname be displayed with the link to the repo inside {Footer}!
     developer: {
       gitHubUrl: "https://github.com/sampittko/sampittko.sk",
       userName: "sampittko",
@@ -93,17 +94,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-intl`,
       options: {
-        path: `${__dirname}/src/locales`, // location of translations
-        languages: ["sk", "en"], // languages to generate routes for
-        defaultLanguage: "sk", // located at root
-        redirect: false, // redirect to /{defaultLanguage} when requesting root
-        // additional settings for various needs
+        path: `${__dirname}/src/locales`, // language JSON resource path
+        languages: ["sk", "en"], // supported language keys
+        defaultLanguage: "sk", // default language when visiting /page instead of sk/page
+        redirect: false, // if the value is true, / or /page-2 will be redirected to the user’s preferred language router. e.g) /ko or /ko/page-2. Otherwise, the pages will render defaultLangugage language.
+        // additional settings for the needs of site components
         external: {
-          rootLanguage: "sk", // located at root (eq {defaultLanguage} above but {rootLanguage} is more exact)
-          defaultLanguage: "en", // language to redirect to by default
-          languageStrings: ["Slovenčina", "English"], // full language names in the same order as {languages} above
+          rootLanguage: "sk", // located at the root (equals to defaultLanguage above)
+          defaultLanguage: "en", // language to redirect to by default if language was not set
+          languageStrings: ["Slovenčina", "English"], // full language names in the same order as languages above
           storageKeys: {
-            // for {LanguagePicker} and {withIntlRedirect}
             session: {
               languageSet: "lang_set", // waiting for initialization of this every new session so that Layout can be animation-renderred with corresponding content and appropriate language
             },

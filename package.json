@@ -4,7 +4,7 @@
   "description": "Personal website of Samuel Pitoňák",
   "author": "Samuel Pitoňák <sampittko@gmail.com>",
   "homepage": "https://sampittko.sk",
-  "version": "0.0.0-unversioned",
+  "version": "1.0.0",
   "license": "MIT",
   "keywords": [
     "gatsby",

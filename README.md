@@ -8,17 +8,19 @@ This list contains all the features that are planned for the future versions of 
 
 ### **v1**
 
-- Layout
 - Multilingual
 - Blog with Categories and Tags
+- Projects
+- Timeline
 
 ### v2
 
-- Projects
-- Timeline
 - Dark Mode
-- Internationalized Links as Gatsby Plugin - e.g. <u>/domov</u> & <u>/en/home</u> are equivalent
 - Automatically Generate Blog Post Images
+
+### v3
+
+- Internationalized Links as Gatsby Plugin - e.g. <u>/domov</u> & <u>/en/home</u> are equivalent
 
 ## Contributing
 

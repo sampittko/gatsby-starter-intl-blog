@@ -126,6 +126,7 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-offline`,
     // TODO Configure
     // {
     //   resolve: `gatsby-plugin-feed`,

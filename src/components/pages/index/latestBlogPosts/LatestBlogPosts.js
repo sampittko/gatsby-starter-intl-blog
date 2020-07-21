@@ -28,7 +28,7 @@ const LatestBlogPosts = ({ limit, intl }) => {
           );
         })}
       </div>
-      {blogPosts.length < limit && (
+      {blogPosts.length >= limit && (
         <All />
       )}
     </>

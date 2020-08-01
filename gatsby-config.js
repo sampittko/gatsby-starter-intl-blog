@@ -135,6 +135,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    `gatsby-plugin-feed`,
+    // TODO
+    // `gatsby-plugin-feed`,
   ],
 };

@@ -21,7 +21,7 @@ const OpenToWork = ({ intl }) => {
 
   return (
     <div className="h-8">
-      <div className="fixed top-0 left-0 w-screen h-8 bg-green text-white text-center text-xs">
+      <div className="absolute top-0 left-0 w-screen h-8 bg-green text-white text-center text-xs">
         <span className="leading-8">
           {intl.formatMessage(
             { id: "opentowork" },

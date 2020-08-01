@@ -13823,6 +13823,14 @@ video {
   fill: #1a202c;
 }
 
+.fill-white {
+  fill: #fff;
+}
+
+.fill-green {
+  fill: #1db954;
+}
+
 .hover\:fill-current:hover {
   fill: currentColor;
 }
@@ -13861,6 +13869,14 @@ video {
 
 .hover\:fill-gray-900:hover {
   fill: #1a202c;
+}
+
+.hover\:fill-white:hover {
+  fill: #fff;
+}
+
+.hover\:fill-green:hover {
+  fill: #1db954;
 }
 
 .stroke-current {
@@ -32291,6 +32307,14 @@ video {
     fill: #1a202c;
   }
 
+  .sm\:fill-white {
+    fill: #fff;
+  }
+
+  .sm\:fill-green {
+    fill: #1db954;
+  }
+
   .sm\:hover\:fill-current:hover {
     fill: currentColor;
   }
@@ -32329,6 +32353,14 @@ video {
 
   .sm\:hover\:fill-gray-900:hover {
     fill: #1a202c;
+  }
+
+  .sm\:hover\:fill-white:hover {
+    fill: #fff;
+  }
+
+  .sm\:hover\:fill-green:hover {
+    fill: #1db954;
   }
 
   .sm\:stroke-current {
@@ -50760,6 +50792,14 @@ video {
     fill: #1a202c;
   }
 
+  .md\:fill-white {
+    fill: #fff;
+  }
+
+  .md\:fill-green {
+    fill: #1db954;
+  }
+
   .md\:hover\:fill-current:hover {
     fill: currentColor;
   }
@@ -50798,6 +50838,14 @@ video {
 
   .md\:hover\:fill-gray-900:hover {
     fill: #1a202c;
+  }
+
+  .md\:hover\:fill-white:hover {
+    fill: #fff;
+  }
+
+  .md\:hover\:fill-green:hover {
+    fill: #1db954;
   }
 
   .md\:stroke-current {
@@ -69229,6 +69277,14 @@ video {
     fill: #1a202c;
   }
 
+  .lg\:fill-white {
+    fill: #fff;
+  }
+
+  .lg\:fill-green {
+    fill: #1db954;
+  }
+
   .lg\:hover\:fill-current:hover {
     fill: currentColor;
   }
@@ -69267,6 +69323,14 @@ video {
 
   .lg\:hover\:fill-gray-900:hover {
     fill: #1a202c;
+  }
+
+  .lg\:hover\:fill-white:hover {
+    fill: #fff;
+  }
+
+  .lg\:hover\:fill-green:hover {
+    fill: #1db954;
   }
 
   .lg\:stroke-current {
@@ -87698,6 +87762,14 @@ video {
     fill: #1a202c;
   }
 
+  .xl\:fill-white {
+    fill: #fff;
+  }
+
+  .xl\:fill-green {
+    fill: #1db954;
+  }
+
   .xl\:hover\:fill-current:hover {
     fill: currentColor;
   }
@@ -87736,6 +87808,14 @@ video {
 
   .xl\:hover\:fill-gray-900:hover {
     fill: #1a202c;
+  }
+
+  .xl\:hover\:fill-white:hover {
+    fill: #fff;
+  }
+
+  .xl\:hover\:fill-green:hover {
+    fill: #1db954;
   }
 
   .xl\:stroke-current {

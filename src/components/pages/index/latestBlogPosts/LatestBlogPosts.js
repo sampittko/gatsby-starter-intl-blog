@@ -2,14 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import { injectIntl } from "gatsby-plugin-intl";
 import BlogPost from "./BlogPost";
-import NoBlogPost from "../../../NoBlogPost";
+import NoBlogPosts from "../../../NoBlogPosts";
 import { useBlogPosts } from "../../../../hooks/useBlogPosts";
 import All from "./All";
 
 const LatestBlogPosts = ({ limit, intl }) => {
   const blogPosts = useBlogPosts(intl.locale, limit);
 
-  if (blogPosts.length === 0) return <NoBlogPost />;
+  if (blogPosts.length === 0) return <NoBlogPosts />;
 
   return (
     <>

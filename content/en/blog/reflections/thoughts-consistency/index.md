@@ -4,7 +4,7 @@ page_image: hey.png
 post_title: Thoughts consistency
 post_tags: ["spiritual world", "human"]
 post_category: Reflections
-post_date: "2015-05-06T23:46:37.121Z"
+post_date: "2015-05-06"
 post_published: true
 ---
 

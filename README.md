@@ -43,6 +43,7 @@ Replace `[language-key]` with the actual language key that represents the langua
 3. Open [content](https://github.com/sampittko/gatsby-starter-intl-blog/blob/master/content/) folder and create a new `/[language-key]/blog/` folder (ideally with translated existing articles included)
 
    - Important note: **keep the folder names of individual articles consistent across supported languages** (e.g. <u>/content/en/blog/this-is-my-first-blog-post/</u>, <u>/content/sk/blog/this-is-my-first-blog-post/</u> and <u>/content/si/blog/this-is-my-first-blog-post/</u>)
+   - Suggestion: keep folders names of articles (blog posts titles in other words) and their categories in the default language (e.g. default language of the website in the example mentioned above would be English)
 
 4. Extend existing GraphQL queries in the [hooks](https://github.com/sampittko/gatsby-starter-intl-blog/blob/master/src/hooks/) folder by adding the newly added language
 

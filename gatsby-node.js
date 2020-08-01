@@ -17,12 +17,10 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
         trailingSlash: true,
       });
 
-      console.log(postSlug)
-
       createNodeField({
         node,
         name: `slug`,
-        value: polishSlug(`${blogSlug}${postSlug}`),
+        value: polishSlug(`/${blogSlug}/${postSlug}/`),
       });
     }
   }

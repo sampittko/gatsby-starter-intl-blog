@@ -1,15 +1,11 @@
 {
   "name": "@sampittko/gatsby-starter-intl-blog",
   "private": true,
-  "description": "Personal blog of Samuel Pitoňák",
+  "description": "Gatsby starter for creating an internationalized personal blog website.",
   "author": "Samuel Pitoňák <sampittko@gmail.com>",
   "homepage": "https://sampittko.sk",
   "version": "1.0.0",
   "license": "MIT",
-  "keywords": [
-    "gatsby",
-    "tailwind"
-  ],
   "scripts": {
     "start": "npm run watch:css && gatsby develop",
     "develop": "npm run watch:css && gatsby develop",

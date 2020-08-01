@@ -1,10 +1,10 @@
 {
-  "page.index.description": "Osobná stránka Samuela Pitoňáka",
-  "page.index.title": "Moja osobná stránka",
+  "page.index.title": "Môj osobný web",
+  "page.index.description": "Osobný blog Samuela Pitoňáka",
   "page.index.section.blog": "Najnovšie články",
   "page.index.section.blog.all": "Zobraziť všetky",
-  "page.index.section.aboutme": "Kto som?",
   "page.blog.title": "Články",
+  "page.blog.description": "Nejaké myšlienky na zdieľanie z môjho profesionálneho a súkromného života",
   "username.hover": "Nájdi si ma na internete",
   "blog.noposts": "Zatiaľ tu nie sú žiadne články",
   "footer.note.madeby": "vyrobil {developer}",

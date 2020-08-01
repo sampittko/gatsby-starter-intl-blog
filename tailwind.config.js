@@ -2,6 +2,9 @@ module.exports = {
   purge: false,
   theme: {
     extend: {
+      backgroundColor: {
+        green: "#1db954",
+      },
       fill: (theme) => ({
         "gray-100": theme("colors.gray.100"),
         "gray-200": theme("colors.gray.200"),

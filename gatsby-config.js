@@ -20,6 +20,7 @@ module.exports = {
           url: "https://github.com/sampittko",
         },
       },
+      openToWork: true,
     },
     // Thanks for giving me credits by letting my nickname be displayed with the link to the repo inside footer!
     developer: {

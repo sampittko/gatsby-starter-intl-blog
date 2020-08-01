@@ -1,4 +1,7 @@
 {
+  "opentowork": "Práve som otvorený pre prácu, {contactMe}!",
+  "opentowork.contactme": "kontaktujte ma",
+  "opentowork.email.subject": "Ponuka práce",
   "page.index.title": "Môj osobný web",
   "page.index.description": "Osobný blog Samuela Pitoňáka",
   "page.index.section.blog": "Najnovšie články",

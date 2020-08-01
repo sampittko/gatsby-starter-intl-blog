@@ -1,4 +1,7 @@
 {
+  "opentowork": "I am currently open to work, {contactMe}!",
+  "opentowork.contactme": "contact me",
+  "opentowork.email.subject": "Job Offer",
   "page.index.title": "My personal website",
   "page.index.description": "Personal website of Samuel Pitoňák",
   "page.index.section.blog": "Latest Articles",

@@ -5,7 +5,7 @@ module.exports = {
     author: {
       fullName: "Samuel Pitoňák",
       email: "sampittko@gmail.com",
-      userName: "sampittko", // change this
+      userName: "sampittko",
       socials: {
         twitter: {
           name: "Twitter",
@@ -21,9 +21,9 @@ module.exports = {
         },
       },
     },
-    // Thanks for giving me credits by letting my nickname be displayed with the link to the repo inside {Footer}!
+    // Thanks for giving me credits by letting my nickname be displayed with the link to the repo inside footer!
     developer: {
-      gitHubUrl: "https://github.com/sampittko/sampittko.sk",
+      gitHubUrl: "https://github.com/sampittko/gatsby-starter-intl-blog",
       userName: "sampittko",
       fullName: "Samuel Pitoňák",
     },
@@ -79,6 +79,13 @@ module.exports = {
               destinationDir: (file) => `${file.hash}`,
             },
           },
+          `gatsby-remark-smartypants`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 768,
+            },
+          },
         ],
       },
     },
@@ -127,10 +134,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    // TODO Configure
-    // {
-    //   resolve: `gatsby-plugin-feed`,
-    //   options: {},
-    // },
+    `gatsby-plugin-feed`,
   ],
 };

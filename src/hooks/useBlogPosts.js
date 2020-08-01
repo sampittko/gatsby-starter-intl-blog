@@ -18,7 +18,7 @@ export const useBlogPosts = (locale, limit) => {
                 frontmatter {
                   post_title
                   post_category
-                  post_date
+                  post_date(formatString: "MMMM DD, YYYY")
                 }
                 fields {
                   slug
@@ -42,7 +42,7 @@ export const useBlogPosts = (locale, limit) => {
                 frontmatter {
                   post_title
                   post_category
-                  post_date
+                  post_date(formatString: "MMMM DD, YYYY")
                 }
                 fields {
                   slug

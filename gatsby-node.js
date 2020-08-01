@@ -17,6 +17,8 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
         trailingSlash: true,
       });
 
+      console.log(postSlug)
+
       createNodeField({
         node,
         name: `slug`,
@@ -35,6 +37,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         allMarkdownRemark {
           edges {
             node {
+              frontmatter {
+                post_published
+              }
               fields {
                 slug
               }
@@ -55,12 +60,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     const path = node.fields.slug
 
-    createPage({
-      path,
-      component: blogPostTemplate,
-      context: {
-        slug: path,
-      },
-    })
+    if (node.frontmatter.post_published) {
+      createPage({
+        path,
+        component: blogPostTemplate,
+        context: {
+          slug: path,
+        },
+      })
+    }
   })
 }

@@ -26,7 +26,11 @@ export const withIntlRedirect = (Component) => {
           setLanguagePreference(intlConfig, redirectPath)
         }
         setLanguageSet(intlConfig, true)
-        navigate(`/${redirectPath === getRootLanguage() ? "" : redirectPath}/`);
+        navigate(
+          `/${
+            redirectPath === getRootLanguage() ? "" : `${redirectPath}/`
+          }`
+        );
       }
     }, []);
 

@@ -1,16 +1,14 @@
 {
-  "name": "@sampittko/sampittko.sk",
+  "name": "@sampittko/gatsby-starter-intl-blog",
   "private": true,
-  "description": "Personal website of Samuel Pitoňák",
+  "description": "Personal blog of Samuel Pitoňák",
   "author": "Samuel Pitoňák <sampittko@gmail.com>",
   "homepage": "https://sampittko.sk",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "license": "MIT",
   "keywords": [
     "gatsby",
-    "vercel",
-    "tailwind",
-    "egghead"
+    "tailwind"
   ],
   "scripts": {
     "start": "npm run watch:css && gatsby develop",

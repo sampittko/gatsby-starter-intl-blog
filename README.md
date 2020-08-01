@@ -1,26 +1,65 @@
-# [www.sampittko.sk](https://sampittko.sk/)
+# Gatsby i18lized Blog Starter
 
-Personal website of Samuel Pitoňák.
+Kick off your project with this internationalized blog boilerplate created with ❤️ by [Samuel Pitoňák](https://twitter.com/sampittko).
 
-## Planned Features
+## Features
 
-This list contains all the features that are planned for the future versions of this project.
+- Easily configurable through [gatsby-config.js](https://github.com/sampittko/sampittko.sk/blob/master/gatsby-config.js) file
+- Built to support as many languages as needed out of the box
+- Dark mode
+- Blog categories and tags
+- Styling through [Tailwind CSS](https://tailwindcss.com/)
 
-### **v1**
+## Internationalization
 
-- Multilingual
-- Blog with Categories and Tags
-- Projects
-- Timeline
+This starter supports addition of new languages out of the box. Subsections of this section show how to manage settings regarding internationalization of your website that is powered by this starter.
 
-### v2
+### Adding Support For a New Language
 
-- Dark Mode
-- Automatically Generate Blog Post Images
+Replace `[language-key]` with the actual language key that represents the language that is to be added.
 
-### v3
+1. Open [gatsby-config.js](https://github.com/sampittko/sampittko.sk/blob/master/gatsby-config.js) file
+   1. Extend configuration of <u>gatsby-plugin-intl</u>
+      - Add a new `[language-key]` to `options.languages` array
+      - Add a new `[language-key]` to `options.external.languageStrings` array
+      
+   2. Extend configuration of <u>gatsby-source-filesystem</u> by adding the following entry
 
-- Internationalized Links as Gatsby Plugin - e.g. <u>/domov</u> & <u>/en/home</u> are equivalent
+        ```javascript
+        {
+          resolve: `gatsby-source-filesystem`,
+          options: {
+          name: `[language-key]/blog`,
+          path: `${__dirname}/content/[language-key]/blog`,
+        },
+        ```
+
+2. Open [locales](https://github.com/sampittko/sampittko.sk/blob/master/src/locales/) folder and create a new `[language-key].json` file with corresponding translations
+
+3. Open [content](https://github.com/sampittko/sampittko.sk/blob/master/content/) folder and create a new `/[language-key]/blog/` folder (ideally with translated existing articles included)
+
+   - Important note: **keep the folder names of individual articles consistent across supported languages** (e.g. <u>/content/en/blog/this-is-my-first-blog-post/</u>, <u>/content/sk/blog/this-is-my-first-blog-post/</u> and <u>/content/si/blog/this-is-my-first-blog-post/</u>)
+
+4. Extend existing GraphQL queries in the [hooks](https://github.com/sampittko/sampittko.sk/blob/master/src/hooks/) folder by adding the newly added language
+
+5. **You are done.**
+
+### Change <u>default</u> language
+
+**Default language** is selected at the very first load of the website if the browser language of a visitor does not match any of the supported languages or it cannot be read correctly. Execute the following steps in order to change it:
+
+1. Open [gatsby-config.js](https://github.com/sampittko/sampittko.sk/blob/master/gatsby-config.js) file and navigate to the configuration of <u>gatsby-plugin-intl</u>
+2. Change the value of `options.external.defaultLanguage` key with wanted language key
+3. **You are done.**
+
+### Change <u>root</u> language
+
+**Root language** is the language that the website is displayed in at the root path (e.g. at www.sampittko.sk). Execute the following steps in order to change it:
+
+1. Open [gatsby-config.js](https://github.com/sampittko/sampittko.sk/blob/master/gatsby-config.js) file and navigate to the configuration of <u>gatsby-plugin-intl</u>
+2. Change the value of `options.external.rootLanguage` key with wanted language key
+3. Change the value of `options.defaultLanguage` so that it matches the value of  `options.external.rootLanguage` key that was set previously
+4. **You are done.**
 
 ## Contributing
 
@@ -30,37 +69,6 @@ Check [CONTRIBUTING.md](https://github.com/sampittko/sampittko.sk/blob/master/CO
 
 Check what is new but also the history of changes for this project in [CHANGELOG.md](https://github.com/sampittko/sampittko.sk/blob/master/CHANGELOG.md).
 
-## Adding Support For a New Language
-
-Follow these instructions in order to add support for a new language.
-
-1. Open [gatsby-config.js](https://github.com/sampittko/sampittko.sk/blob/master/gatsby-config.js) file and:
-   1. Extend configuration of <u>gatsby-plugin-intl</u> as follows:
-      - Add a new language to <pre>options.languages</pre> array
-      - Add a new language to <pre>options.external.languageStrings</pre> array
-   2. Extend configuration of <u>gatsby-source-filesystem</u> as follows:
-      1. *To be added*
-2. Open [locales](https://github.com/sampittko/sampittko.sk/blob/master/src/locales/) folder and create a new <pre>[language-key].json</pre> file with correct translations (copy the existing one and change it)
-3. Open [content](https://github.com/sampittko/sampittko.sk/blob/master/src/content/) folder and create a new <pre>[language-key]</pre> folder with subfolder structure tree (copy the existing one and change it)
-4. Extend existing GraphQL queries in the [hooks](https://github.com/sampittko/sampittko.sk/blob/master/src/hooks/) folder by adding the newly added language (copy existing part of the query and change it so that it uses new language key).
-5. **You are done.** If you wish to change default language or language that is at the root of your website, follow the comments that can be found inside configuration of <u>gatsby-plugin-intl</u> (open [gatsby-config.js](https://github.com/sampittko/sampittko.sk/blob/master/gatsby-config.js) again)
-
-## Adding Pages
-
-You are able to add a new page to each section this theme supports. You need to follow some rules in order to successfully add a page.
-
-### Adding a Blog Post
-
-_To be added._
-
-### Adding a Project
-
-_To be added._
-
-### Adding a Timeline Item
-
-_To be added._
-
 ## License
 
-This project is under the MIT license which is great! Read more [here](https://github.com/sampittko/sampittko.sk/blob/master/LICENSE.md).
+This project is under the MIT license which is great! Read more inside [LICENSE.md](https://github.com/sampittko/sampittko.sk/blob/master/LICENSE.md).

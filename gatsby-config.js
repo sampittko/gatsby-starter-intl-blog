@@ -86,14 +86,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `sk/blog`,
-        path: `${__dirname}/src/content/sk/blog`,
+        path: `${__dirname}/content/sk/blog`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `en/blog`,
-        path: `${__dirname}/src/content/en/blog`,
+        path: `${__dirname}/content/en/blog`,
       },
     },
     {

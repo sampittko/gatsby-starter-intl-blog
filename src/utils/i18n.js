@@ -34,7 +34,7 @@ export const getRootLanguage = () =>
 export const getDefaultLanguage = () =>
   getIntlConfig().options.external.defaultLanguage;
 
-export const getRedirectPath = () => {
+export const getRedirectLanguage = () => {
   if (typeof navigator === `undefined`) {
     return getDefaultLanguage();
   }

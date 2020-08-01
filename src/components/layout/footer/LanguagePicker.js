@@ -1,35 +1,26 @@
-import React, { useState } from "react";
-import { injectIntl } from "gatsby-plugin-intl";
+import React from "react";
+import { injectIntl, changeLocale } from "gatsby-plugin-intl";
 import {
-  getRootLanguage,
   getSupportedLanguages,
   getSupportedLanguageStrings,
   setLanguagePreference,
   getIntlConfig,
 } from "../../../utils/i18n";
-import { navigate } from "gatsby";
 
 const LanguagePicker = ({ intl }) => {
-  const [value, setValue] = useState(intl.locale);
-
   const supportedLanguages = getSupportedLanguages();
   const supportedLanguageStrings = getSupportedLanguageStrings();
 
   const onChange = (language) => {
-    setValue(language);
+    changeLocale(language)
     setLanguagePreference(getIntlConfig(), language);
-    if (language === getRootLanguage()) {
-      navigate(`/`);
-    } else {
-      navigate(`/${language}/`);
-    }
   };
 
   return (
     <select
       className="py-3 block text-gray-600 text-xs appearance-none w-auto bg-white rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 cursor-pointer text-center hover:underline"
       onChange={(event) => onChange(event.target.value)}
-      value={value}
+      value={intl.locale}
     >
       {supportedLanguages.map((supportedLanguage, index) => {
         const language = supportedLanguageStrings[index];

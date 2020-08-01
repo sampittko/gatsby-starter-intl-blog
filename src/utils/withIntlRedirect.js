@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import { navigate } from "gatsby-plugin-intl";
 import {
-  getRedirectPath,
+  getRedirectLanguage,
   getRootLanguage,
   getIntlConfig,
   isLanguageSet,
   getLanguagePreference,
   setLanguagePreference,
   setLanguageSet,
-} from "../utils/i18n";
+} from "./i18n";
 
 export const withIntlRedirect = (Component) => {
   const intlConfig = getIntlConfig();
@@ -16,20 +16,20 @@ export const withIntlRedirect = (Component) => {
   return (props) => {
     useEffect(() => {
       if (!isLanguageSet(intlConfig)) {
-        const langPref = getLanguagePreference(intlConfig);
-        let redirectPath;
-        if (langPref) {
-          redirectPath = langPref;
+        const languagePreference = getLanguagePreference(intlConfig);
+        let redirectLanguage;
+
+        if (languagePreference) {
+          redirectLanguage = languagePreference;
         } else {
-          redirectPath = getRedirectPath();
-          setLanguagePreference(intlConfig, redirectPath);
+          redirectLanguage = getRedirectLanguage();
+          setLanguagePreference(intlConfig, redirectLanguage);
         }
 
-        console.log(redirectPath)
-
         setLanguageSet(intlConfig, true);
+
         navigate(
-          `/${redirectPath === getRootLanguage() ? "" : `${redirectPath}/`}`
+          `/${redirectLanguage === getRootLanguage() ? "" : `${redirectLanguage}/`}`
         );
       }
     }, []);

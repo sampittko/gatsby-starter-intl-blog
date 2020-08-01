@@ -23,20 +23,22 @@ This starter supports addition of new languages out of the box. Subsections of t
 Replace `[language-key]` with the actual language key that represents the language that is to be added.
 
 1. Open [gatsby-config.js](https://github.com/sampittko/gatsby-starter-intl-blog/blob/master/gatsby-config.js) file
+
    1. Extend configuration of <u>gatsby-plugin-intl</u>
+
       - Add a new `[language-key]` to `options.languages` array
       - Add a new `[language-key]` to `options.external.languageStrings` array
-      
+
    2. Extend configuration of <u>gatsby-source-filesystem</u> by adding the following entry
 
-        ```javascript
-        {
-          resolve: `gatsby-source-filesystem`,
-          options: {
-          name: `[language-key]/blog`,
-          path: `${__dirname}/content/[language-key]/blog`,
-        },
-        ```
+      ```javascript
+      {
+        resolve: `gatsby-source-filesystem`,
+        options: {
+        name: `[language-key]/blog`,
+        path: `${__dirname}/content/[language-key]/blog`,
+      },
+      ```
 
 2. Open [locales](https://github.com/sampittko/gatsby-starter-intl-blog/blob/master/src/locales/) folder and create a new `[language-key].json` file with corresponding translations
 
@@ -63,7 +65,7 @@ Replace `[language-key]` with the actual language key that represents the langua
 
 1. Open [gatsby-config.js](https://github.com/sampittko/gatsby-starter-intl-blog/blob/master/gatsby-config.js) file and navigate to the configuration of <u>gatsby-plugin-intl</u>
 2. Change the value of `options.external.rootLanguage` key with wanted language key
-3. Change the value of `options.defaultLanguage` so that it matches the value of  `options.external.rootLanguage` key that was set previously
+3. Change the value of `options.defaultLanguage` so that it matches the value of `options.external.rootLanguage` key that was set previously
 4. **You are done.**
 
 ## Contributing

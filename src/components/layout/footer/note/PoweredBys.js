@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import Vercel from "../../../../assets/img/poweredbys/vercel.svg";
 import Egghead from "../../../../assets/img/poweredbys/egghead.svg";
 import Tailwind from "../../../../assets/img/poweredbys/tailwind.svg";

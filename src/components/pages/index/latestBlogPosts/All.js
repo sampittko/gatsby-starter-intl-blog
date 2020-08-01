@@ -1,6 +1,6 @@
-import React from 'react';
-import ButtonLink from '../../../ButtonLink';
-import { injectIntl } from 'gatsby-plugin-intl';
+import React from "react";
+import ButtonLink from "../../../ButtonLink";
+import { injectIntl } from "gatsby-plugin-intl";
 
 const All = ({ intl }) => (
   <div className="px-5 py-3 mb-2 flex justify-center">

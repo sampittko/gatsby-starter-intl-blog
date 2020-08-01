@@ -1,7 +1,7 @@
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import Link from '../../../Link';
-import { injectIntl } from 'gatsby-plugin-intl';
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import Link from "../../../Link";
+import { injectIntl } from "gatsby-plugin-intl";
 
 const query = graphql`
   query {
@@ -18,8 +18,8 @@ const query = graphql`
 
 // Thanks for giving me credits by letting my nickname be displayed with the link to the repo!
 const Developer = ({ intl }) => {
-  const data = useStaticQuery(query)
-  const { developer } = data.site.siteMetadata
+  const data = useStaticQuery(query);
+  const { developer } = data.site.siteMetadata;
 
   return (
     <span className="text-xs text-gray-600">

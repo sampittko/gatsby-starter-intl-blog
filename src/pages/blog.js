@@ -9,15 +9,12 @@ import NoBlogPost from "../components/NoBlogPost";
 const BlogIndexTemplate = ({ intl }) => {
   const blogPosts = useBlogPosts(intl.locale, 100);
 
-  const title = intl.formatMessage({ id: "page.blog.title" })
+  const title = intl.formatMessage({ id: "page.blog.title" });
 
   return (
     <Layout>
       <SEO title={title} />
-      <Section
-        title={title}
-        render={() => <NoBlogPost />}
-      />
+      <Section title={title} render={() => <NoBlogPost />} />
     </Layout>
   );
 };

@@ -1,7 +1,7 @@
-import React from 'react';
-import { injectIntl } from 'gatsby-plugin-intl';
-import Link from '../Link';
-import { useStaticQuery, graphql } from 'gatsby';
+import React from "react";
+import { injectIntl } from "gatsby-plugin-intl";
+import Link from "../Link";
+import { useStaticQuery, graphql } from "gatsby";
 
 const query = graphql`
   query {
@@ -16,8 +16,8 @@ const query = graphql`
 `;
 
 const OpenToWork = ({ intl }) => {
-  const data = useStaticQuery(query)
-  const { email } = data.site.siteMetadata.author
+  const data = useStaticQuery(query);
+  const { email } = data.site.siteMetadata.author;
 
   return (
     <div className="h-8">

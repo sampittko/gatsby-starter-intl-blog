@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
   const [visible, setVisible] = useState(false);
 
   const data = useStaticQuery(query);
-  const { openToWork } = data.site.siteMetadata.author
+  const { openToWork } = data.site.siteMetadata.author;
 
   useEffect(() => {
     setVisible(true);

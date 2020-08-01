@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Link from '../../../Link';
-import { injectIntl } from 'gatsby-plugin-intl';
+import React from "react";
+import PropTypes from "prop-types";
+import Link from "../../../Link";
+import { injectIntl } from "gatsby-plugin-intl";
 
 const BlogPost = ({ intl, frontmatter, slug, index }) => (
   <Link
@@ -30,7 +30,7 @@ const BlogPost = ({ intl, frontmatter, slug, index }) => (
 
 BlogPost.propTypes = {
   frontmatter: PropTypes.object.isRequired,
-  slug: PropTypes.string.isRequired
+  slug: PropTypes.string.isRequired,
 };
 
 export default injectIntl(BlogPost);

@@ -1,5 +1,5 @@
 const { createFilePath } = require(`gatsby-source-filesystem`);
-const path = require("path")
+const path = require("path");
 
 const polishSlug = (slug) => slug.replace(/\/\//g, "/");
 
@@ -8,7 +8,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     if (node.fileAbsolutePath.match(/\/blog\//)) {
-      const blogSlug = '/blog'
+      const blogSlug = "/blog";
 
       const postSlug = createFilePath({
         node,
@@ -27,8 +27,8 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 };
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions
-  
+  const { createPage } = actions;
+
   const result = await graphql(
     `
       {
@@ -47,16 +47,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       }
     `
   );
-  
+
   if (result.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`)
-    return
+    reporter.panicOnBuild(`Error while running GraphQL query.`);
+    return;
   }
-  
-  const blogPostTemplate = path.resolve(`src/templates/blog/post.js`)
+
+  const blogPostTemplate = path.resolve(`src/templates/blog/post.js`);
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    const path = node.fields.slug
+    const path = node.fields.slug;
 
     if (node.frontmatter.post_published) {
       createPage({
@@ -65,7 +65,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         context: {
           slug: path,
         },
-      })
+      });
     }
-  })
-}
+  });
+};

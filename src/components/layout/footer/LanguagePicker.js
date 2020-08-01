@@ -5,7 +5,7 @@ import {
   getSupportedLanguages,
   getSupportedLanguageStrings,
   setLanguagePreference,
-  getIntlConfig
+  getIntlConfig,
 } from "../../../utils/i18n";
 import { navigate } from "gatsby";
 
@@ -17,7 +17,7 @@ const LanguagePicker = ({ intl }) => {
 
   const onChange = (language) => {
     setValue(language);
-    setLanguagePreference(getIntlConfig(), language)
+    setLanguagePreference(getIntlConfig(), language);
     if (language === getRootLanguage()) {
       navigate(`/`);
     } else {

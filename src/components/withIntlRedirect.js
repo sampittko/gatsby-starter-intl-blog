@@ -7,7 +7,7 @@ import {
   isLanguageSet,
   getLanguagePreference,
   setLanguagePreference,
-  setLanguageSet
+  setLanguageSet,
 } from "../utils/i18n";
 
 export const withIntlRedirect = (Component) => {
@@ -20,22 +20,18 @@ export const withIntlRedirect = (Component) => {
         let redirectPath;
         if (langPref) {
           redirectPath = langPref;
-        }
-        else {
+        } else {
           redirectPath = getRedirectPath();
-          setLanguagePreference(intlConfig, redirectPath)
+          setLanguagePreference(intlConfig, redirectPath);
         }
-        setLanguageSet(intlConfig, true)
+        setLanguageSet(intlConfig, true);
         navigate(
-          `/${
-            redirectPath === getRootLanguage() ? "" : `${redirectPath}/`
-          }`
+          `/${redirectPath === getRootLanguage() ? "" : `${redirectPath}/`}`
         );
       }
     }, []);
 
-    return typeof window !== "undefined" &&
-      isLanguageSet(intlConfig) ? (
+    return typeof window !== "undefined" && isLanguageSet(intlConfig) ? (
       <Component {...props} />
     ) : (
       ""

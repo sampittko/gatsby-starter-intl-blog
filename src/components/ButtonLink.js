@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Link from './Link';
+import React from "react";
+import PropTypes from "prop-types";
+import Link from "./Link";
 
 const ButtonLink = ({ to, className, children, onClick }) => (
   <button onClick={onClick}>
@@ -13,7 +13,7 @@ const ButtonLink = ({ to, className, children, onClick }) => (
 ButtonLink.defaultProps = {
   className: "",
   onClick: null,
-}
+};
 
 ButtonLink.propTypes = {
   className: PropTypes.string,

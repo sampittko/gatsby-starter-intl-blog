@@ -9,19 +9,19 @@ const getLanguageSetKey = (intlConfig) =>
   intlConfig.options.external.storageKeys.session.languageSet;
 
 export const isLanguageSet = (intlConfig) =>
-         sessionStorage.getItem(getLanguageSetKey(intlConfig));
+  sessionStorage.getItem(getLanguageSetKey(intlConfig));
 
 export const setLanguageSet = (intlConfig, value) =>
-         sessionStorage.setItem(getLanguageSetKey(intlConfig), value);
+  sessionStorage.setItem(getLanguageSetKey(intlConfig), value);
 
 const getLanguagePreferenceKey = (intlConfig) =>
   intlConfig.options.external.storageKeys.local.languagePreference;
 
 export const getLanguagePreference = (intlConfig) =>
-         localStorage.getItem(getLanguagePreferenceKey(intlConfig));
+  localStorage.getItem(getLanguagePreferenceKey(intlConfig));
 
 export const setLanguagePreference = (intlConfig, value) =>
-         localStorage.setItem(getLanguagePreferenceKey(intlConfig), value);
+  localStorage.setItem(getLanguagePreferenceKey(intlConfig), value);
 
 export const getSupportedLanguages = () => getIntlConfig().options.languages;
 
@@ -46,6 +46,6 @@ export const getRedirectPath = () => {
     return getDefaultLanguage();
   }
 
-  if (language === getRootLanguage()) return ""
-  return language
+  if (language === getRootLanguage()) return "";
+  return language;
 };

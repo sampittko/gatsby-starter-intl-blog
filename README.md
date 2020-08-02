@@ -8,6 +8,7 @@ Kick off your project with this internationalized blog boilerplate created with 
 - Built to support as many languages as needed out of the box
 - Dark mode
 - Blog categories and tags
+- Blog pagination
 - Styling through [Tailwind CSS](https://tailwindcss.com/)
 
 ## Live Demo

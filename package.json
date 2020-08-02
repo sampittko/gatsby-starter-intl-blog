@@ -43,9 +43,11 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.8.5",
+    "lodash": "^4.17.19",
     "postcss-cli": "^7.1.1",
     "prettier": "^2.0.5",
-    "tailwindcss": "^1.5.1"
+    "tailwindcss": "^1.5.1",
+    "tailwindcss-dark-mode": "^1.1.5"
   },
   "repository": {
     "type": "git",

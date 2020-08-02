@@ -1,4 +1,4 @@
-import gatsbyConfig from "../../gatsby-config";
+const gatsbyConfig = require("../../gatsby-config");
 
 export const getIntlConfig = () =>
   gatsbyConfig.plugins.find(

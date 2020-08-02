@@ -1,10 +1,10 @@
 ---
 page_description: This is a super blog 2
-page_image: hey.png
 post_title: Thoughts consistency
+post_description: How to get consistent thoughts
 post_tags: ["spiritual world", "human"]
 post_category: Reflections
-post_date: "2015-05-06"
+post_date: "2020-05-06"
 post_published: true
 ---
 

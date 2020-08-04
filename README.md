@@ -24,7 +24,7 @@ Visit [www.gatsby-starter-intl-blog.now.sh](https://gatsby-starter-intl-blog.now
     ├── content                     # Markdown files used by Gatsby to generate pages
     │   ├── sk                      # Content translated to Slovak langauge
     │   └── en                      # Content translated to English language
-    ├── src                         # All React Gatsby-friendly components
+    ├── src
     │   ├── assets                  # Static assets (e.g. CSS and images)
     │   ├── components              # All React and Gatsby-friendly components
     │   ├── hooks                   # React hooks for better reusability

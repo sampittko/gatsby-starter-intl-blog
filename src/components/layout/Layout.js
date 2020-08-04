@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
   }, []);
 
   return (
-    <div className="font-sans text-black leading-tight antialiased min-h-screen max-w-screen-md mx-auto bg-white dark:bg-black">
+    <div className="font-sans text-black leading-tight antialiased min-h-screen max-w-screen-md mx-auto bg-white">
       <Header />
       <main
         className={`transition duration-1000 ${

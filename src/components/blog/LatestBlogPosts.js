@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { injectIntl } from "gatsby-plugin-intl";
 import BlogPost from "./BlogPost";
-import NoBlogPosts from "../../../NoBlogPosts";
-import { useBlogPosts } from "../../../../hooks/useBlogPosts";
-import All from "./All";
+import NoBlogPosts from "../blog/NoBlogPosts";
+import { useBlogPosts } from "../../hooks/useBlogPosts";
+import All from "../pages/index/BlogLink";
 
 const LatestBlogPosts = ({ limit, intl }) => {
   const blogPosts = useBlogPosts(intl.locale, limit);

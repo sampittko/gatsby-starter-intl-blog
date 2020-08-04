@@ -47,5 +47,6 @@ export const getRedirectLanguage = () => {
   }
 
   if (language === getRootLanguage()) return "";
+  
   return language;
 };

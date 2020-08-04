@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
-import { useSessionStorage } from 'beautiful-react-hooks';
+import { useLocalStorage } from 'beautiful-react-hooks';
 
 const useDarkMode = () => {
-  const [darkMode, setDarkMode] = useSessionStorage(
-    "dark_mode",
-    window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)")
+  const [darkMode, setDarkMode] = useLocalStorage(
+    "dark-mode",
+    window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
   );
 
   useEffect(() => {

@@ -1,9 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Link from "../../../Link";
-import { injectIntl } from "gatsby-plugin-intl";
+import Link from "../Link";
 
-const BlogPost = ({ intl, frontmatter, slug, index }) => (
+const BlogPost = ({ frontmatter, slug, index }) => (
   <Link
     key={`blog-post-${index}`}
     to={slug}
@@ -33,4 +32,4 @@ BlogPost.propTypes = {
   slug: PropTypes.string.isRequired,
 };
 
-export default injectIntl(BlogPost);
+export default BlogPost;

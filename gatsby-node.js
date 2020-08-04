@@ -52,6 +52,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           edges {
             node {
               frontmatter {
+                post_title
                 post_published
               }
               fields {
@@ -77,7 +78,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   _.forOwn(blogPostsIntl, (blogPosts) => {
     blogPosts.forEach(({ node }, index) => {
       const path = node.fields.slug;
-      const previous =
+      const prev =
         index === blogPosts.length - 1 ? null : blogPosts[index + 1].node;
       const next = index === 0 ? null : blogPosts[index - 1].node;
 
@@ -87,7 +88,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           component: blogPostTemplate,
           context: {
             slug: path,
-            previous,
+            language: node.fields.language,
+            prev,
             next,
           },
         });

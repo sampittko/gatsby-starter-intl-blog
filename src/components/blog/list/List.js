@@ -5,6 +5,7 @@ import Item from "./Item";
 import IsEmpty from "./IsEmpty";
 import { useBlogPosts } from "../../../hooks/useBlogPosts";
 import BlogLink from "../../pages/index/BlogLink";
+import Pagination from "../../pagination/Pagination";
 
 const List = ({ latest, intl }) => {
   const blogPosts = useBlogPosts(intl.locale, latest ? 3 : 1000);
@@ -28,7 +29,7 @@ const List = ({ latest, intl }) => {
           );
         })}
       </div>
-      {latest && <BlogLink />}
+      {latest ? <BlogLink /> : <Pagination />}
     </>
   );
 };

@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/sk(.*)", "status": 302, "dest": "/" },
-    { "src": "/en(.*)", "status": 404, "dest": "/en/404" },
-    { "src": "/(.*)", "status": 404, "dest": "/404" }
-  ]
-}

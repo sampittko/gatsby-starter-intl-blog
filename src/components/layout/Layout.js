@@ -3,27 +3,13 @@ import "../../assets/css/main.css";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import { withIntlRedirect } from "../../utils/withIntlRedirect";
-
-const checkDarkMode = () => {
-  if (
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-  ) {
-    return true;
-  }
-  return false; 
-}
+import useDarkMode from "../../hooks/useDarkMode";
 
 const Layout = ({ children }) => {
   const [visible, setVisible] = useState(false);
+  const darkMode = useDarkMode();
 
   useEffect(() => {
-    if (checkDarkMode()) {
-      document.documentElement.classList.add("mode-dark");
-    } else {
-      document.documentElement.classList.remove("mode-dark");
-    }
-
     setVisible(true);
   }, []);
 

@@ -33,7 +33,12 @@ const BlogPostTemplate = ({ data, pageContext, intl }) => {
   const { excerpt } = post;
 
   return (
-    <Layout>
+    <Layout
+      backTo="/blog/"
+      backToTitle={`${intl.formatMessage({
+        id: "backto",
+      })} ${intl.formatMessage({ id: "backto.blog" })}`}
+    >
       <SEO
         title={`${title} — ${intl.formatMessage({ id: "page.blog.title" })}`}
         slug={slug}

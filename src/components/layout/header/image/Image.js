@@ -1,13 +1,16 @@
 import React from "react";
 import Img from "gatsby-image";
+import BackArrow from "./BackArrow"
 import { graphql, StaticQuery } from "gatsby";
+import PropTypes from 'prop-types'
 
-const Image = () => {
+const Image = ({ backTo, backToTitle }) => {
   const className = "h-24 w-full mt-5";
 
   return (
     <>
       <div className={`absolute left-0 w-screen`}>
+        {backTo && <BackArrow to={backTo} title={backToTitle} />}
         <StaticQuery
           query={graphql`
             query {
@@ -33,6 +36,14 @@ const Image = () => {
       <div className={`invisible ${className}`} />
     </>
   );
+};
+
+Image.defaultProps = {
+  backTo: null,
+};
+
+Image.propTypes = {
+  backTo: PropTypes.string,
 };
 
 export default Image;

@@ -9,12 +9,14 @@ const BlogIndexTemplate = ({ intl }) => {
   const title = intl.formatMessage({ id: "page.blog.title" });
 
   return (
-    <Layout>
+    <Layout
+      backTo="/"
+      backToTitle={`${intl.formatMessage({
+        id: "backto",
+      })} ${intl.formatMessage({ id: "backto.homepage" })}`}
+    >
       <SEO title={title} />
-      <Section
-        title={title}
-        render={() => <BlogPosts />}
-      />
+      <Section title={title} render={() => <BlogPosts />} />
     </Layout>
   );
 };

@@ -5,7 +5,7 @@ import { Link } from "gatsby-plugin-intl";
 const LinkComponent = ({ to, foreign, children, title, className }) => (
   <>
     {!foreign ? (
-      <Link to={to} className={className}>
+      <Link to={to} title={title} className={className}>
         {children}
       </Link>
     ) : (

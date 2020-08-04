@@ -120,7 +120,6 @@ module.exports = {
         redirect: true, // if the value is true, / or /page-2 will be redirected to the user’s preferred language router. e.g) /ko or /ko/page-2. Otherwise, the pages will render defaultLangugage language.
         // additional settings for the needs of site components
         external: {
-          rootLanguage: "sk", // located at the root (equals to defaultLanguage above)
           defaultLanguage: "en", // language to redirect to by default if language was not set
           languageStrings: ["Slovenčina", "English"], // full language names in the same order as languages above
           storageKeys: {

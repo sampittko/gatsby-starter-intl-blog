@@ -20,16 +20,10 @@ const getLanguagePreferenceKey = (intlConfig) =>
 export const getLanguagePreference = (intlConfig) =>
   localStorage.getItem(getLanguagePreferenceKey(intlConfig));
 
-export const setLanguagePreference = (intlConfig, value) =>
-  localStorage.setItem(getLanguagePreferenceKey(intlConfig), value);
-
 export const getSupportedLanguages = () => getIntlConfig().options.languages;
 
 export const getSupportedLanguageStrings = () =>
   getIntlConfig().options.external.languageStrings;
-
-export const getRootLanguage = () =>
-  getIntlConfig().options.external.rootLanguage;
 
 export const getDefaultLanguage = () =>
   getIntlConfig().options.external.defaultLanguage;
@@ -46,7 +40,5 @@ export const getRedirectLanguage = () => {
     return getDefaultLanguage();
   }
 
-  if (language === getRootLanguage()) return "";
-  
   return language;
 };

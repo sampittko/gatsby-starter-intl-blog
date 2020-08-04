@@ -4,12 +4,14 @@ Kick off your project with this internationalized blog boilerplate created with 
 
 ## Features
 
-- Easily configurable through [gatsby-config.js](https://github.com/sampittko/gatsby-starter-intl-blog/blob/master/gatsby-config.js) file
-- Built to support as many languages as needed out of the box
+- Built to support as many languages as needed right out of the box
 - Dark mode
-- Blog categories and tags
-- Blog pagination
-- Styling through [Tailwind CSS](https://tailwindcss.com/)
+- Categorizable and taggable blog posts
+- RSS feeds separated by language
+- Easy navigation
+- Simple & clean look achieved with [Tailwind CSS](https://tailwindcss.com/)
+- Accessible & fast for great SEO and high usability
+- Easily configurable through [gatsby-config.js](https://github.com/sampittko/gatsby-starter-intl-blog/blob/master/gatsby-config.js) file
 
 ## Live Demo
 
@@ -17,7 +19,7 @@ Visit [www.gatsby-starter-intl-blog.now.sh](https://gatsby-starter-intl-blog.now
 
 ## Internationalization
 
-This starter supports addition of new languages out of the box. Subsections of this section show how to manage settings regarding internationalization of your website that is powered by this starter.
+This starter supports addition of new languages out of the box.
 
 ### Adding Support For a New Language
 
@@ -52,22 +54,13 @@ Replace `[language-key]` with the actual language key that represents the langua
 
 5. **You are done.**
 
-### Change <u>Default Language</u>
+### Change Default Language
 
 **Default language** is selected at the very first load of the website if the browser language of a visitor does not match any of the supported languages or it cannot be read correctly. Execute the following steps in order to change it:
 
 1. Open [gatsby-config.js](https://github.com/sampittko/gatsby-starter-intl-blog/blob/master/gatsby-config.js) file and navigate to the configuration of <u>gatsby-plugin-intl</u>
 2. Change the value of `options.external.defaultLanguage` key with wanted language key
 3. **You are done.**
-
-### Change <u>Root Language</u>
-
-**Root language** is the language that the website is displayed in at the root path (e.g. at [www.sampittko.sk](https://sampittko.sk)). Execute the following steps in order to change it:
-
-1. Open [gatsby-config.js](https://github.com/sampittko/gatsby-starter-intl-blog/blob/master/gatsby-config.js) file and navigate to the configuration of <u>gatsby-plugin-intl</u>
-2. Change the value of `options.external.rootLanguage` key with wanted language key
-3. Change the value of `options.defaultLanguage` so that it matches the value of `options.external.rootLanguage` key that was set previously
-4. **You are done.**
 
 ## Contributing
 

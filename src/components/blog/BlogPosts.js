@@ -2,12 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import { injectIntl } from "gatsby-plugin-intl";
 import BlogPost from "./BlogPost";
-import NoBlogPosts from "../blog/NoBlogPosts";
+import NoBlogPosts from "./NoBlogPosts";
 import { useBlogPosts } from "../../hooks/useBlogPosts";
-import All from "../pages/index/BlogLink";
+import BlogLink from "../pages/index/BlogLink";
 
-const LatestBlogPosts = ({ limit, intl }) => {
-  const blogPosts = useBlogPosts(intl.locale, limit);
+const BlogPosts = ({ latest, intl }) => {
+  const blogPosts = useBlogPosts(intl.locale, latest ? 3 : 1000);
 
   if (blogPosts.length === 0) return <NoBlogPosts />;
 
@@ -28,17 +28,17 @@ const LatestBlogPosts = ({ limit, intl }) => {
           );
         })}
       </div>
-      {blogPosts.length >= limit && <All />}
+      {latest && <BlogLink />}
     </>
   );
 };
 
-LatestBlogPosts.defaultProps = {
-  limit: 3,
+BlogPosts.defaultProps = {
+  latest: false
 };
 
-LatestBlogPosts.propTypes = {
-  limit: PropTypes.oneOf([2, 3, 4, 5]),
+BlogPosts.propTypes = {
+  latest: PropTypes.bool,
 };
 
-export default injectIntl(LatestBlogPosts);
+export default injectIntl(BlogPosts);

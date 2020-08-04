@@ -2,7 +2,7 @@ import React from "react";
 import SEO from "../components/SEO";
 import Layout from "../components/layout/Layout";
 import { injectIntl } from "gatsby-plugin-intl";
-import LatestBlogPosts from "../components/blog/LatestBlogPosts";
+import BlogPosts from "../components/blog/BlogPosts";
 import Section from "../components/Section";
 
 const IndexPage = ({ intl }) => (
@@ -13,7 +13,7 @@ const IndexPage = ({ intl }) => (
     />
     <Section
       title={intl.formatMessage({ id: "page.index.section.blog" })}
-      render={() => <LatestBlogPosts />}
+      render={() => <BlogPosts latest />}
     />
   </Layout>
 );

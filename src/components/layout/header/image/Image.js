@@ -1,8 +1,8 @@
 import React from "react";
 import Img from "gatsby-image";
-import BackArrow from "./BackArrow"
+import BackArrow from "./BackArrow";
 import { graphql, StaticQuery } from "gatsby";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
 const Image = ({ backTo, backToTitle }) => {
   const className = "h-24 w-full mt-5";

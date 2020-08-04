@@ -35,7 +35,7 @@ const List = ({ latest, intl }) => {
 };
 
 List.defaultProps = {
-  latest: false
+  latest: false,
 };
 
 List.propTypes = {

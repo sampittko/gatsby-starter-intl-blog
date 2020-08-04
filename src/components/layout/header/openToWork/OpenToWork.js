@@ -1,15 +1,15 @@
 import React from "react";
-import { useSessionStorage } from 'beautiful-react-hooks'
+import { useSessionStorage } from "beautiful-react-hooks";
 import Message from "./Message";
 import Close from "./Close";
 
 const OpenToWork = () => {
-  const [visible, setVisible] = useSessionStorage("show-work-status", true)
+  const [visible, setVisible] = useSessionStorage("show-work-status", true);
 
   const onClick = (e) => {
-    e.preventDefault()
-    setVisible(false)
-  }
+    e.preventDefault();
+    setVisible(false);
+  };
 
   return visible ? (
     <div className="h-8">

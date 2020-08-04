@@ -8,7 +8,9 @@ import Navigation from "../../components/blog/post/navigation/Navigation";
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!, $language: String!) {
-    markdownRemark(fields: { slug: { eq: $slug }, language: { eq: $language } }) {
+    markdownRemark(
+      fields: { slug: { eq: $slug }, language: { eq: $language } }
+    ) {
       excerpt(pruneLength: 160)
       html
       fields {
@@ -23,7 +25,7 @@ export const pageQuery = graphql`
   }
 `;
 
-const BlogPostTemplate = ({ data, pageContext, intl }) => { 
+const BlogPostTemplate = ({ data, pageContext, intl }) => {
   const post = data.markdownRemark;
   const { prev, next } = pageContext;
 
@@ -63,6 +65,7 @@ const BlogPostTemplate = ({ data, pageContext, intl }) => {
         )}
       />
     </Layout>
-  );};
+  );
+};
 
 export default injectIntl(BlogPostTemplate);

@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Chevron from '../../../../assets/img/chevron.svg'
-import Link from '../../../Link'
+import React from "react";
+import PropTypes from "prop-types";
+import Chevron from "../../../../assets/img/chevron.svg";
+import Link from "../../../Link";
 
 const BackArrow = ({ to, title }) => (
   <div className="invisible sm:visible absolute h-24 mt-5 z-50 w-screen">

@@ -4,7 +4,7 @@ import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import { withIntlRedirect } from "../../utils/withIntlRedirect";
 import useDarkMode from "../../hooks/useDarkMode";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
 const Layout = ({ children, backTo, backToTitle }) => {
   const [visible, setVisible] = useState(false);
@@ -37,6 +37,6 @@ Layout.defaultProps = {
 Layout.propTypes = {
   backTo: PropTypes.string,
   backToTitle: PropTypes.string,
-}
+};
 
 export default withIntlRedirect(Layout);

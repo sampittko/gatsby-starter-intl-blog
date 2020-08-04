@@ -1,6 +1,6 @@
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const path = require("path");
-const _ = require("lodash")
+const _ = require("lodash");
 
 const polishSlug = (slug) => slug.replace(/\/\//g, "/");
 
@@ -73,7 +73,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const blogPostTemplate = path.resolve(`src/templates/blog/post.js`);
 
-  const blogPostsIntl = _.groupBy(result.data.allMarkdownRemark.edges, ({ node }) => node.fields.language);
+  const blogPostsIntl = _.groupBy(
+    result.data.allMarkdownRemark.edges,
+    ({ node }) => node.fields.language
+  );
 
   _.forOwn(blogPostsIntl, (blogPosts) => {
     blogPosts.forEach(({ node }, index) => {

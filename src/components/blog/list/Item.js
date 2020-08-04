@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Link from "../Link";
+import Link from "../../Link";
 
-const BlogPost = ({ frontmatter, slug, index }) => (
+const Item = ({ frontmatter, slug, index }) => (
   <Link
     key={`blog-post-${index}`}
     to={slug}
@@ -27,9 +27,9 @@ const BlogPost = ({ frontmatter, slug, index }) => (
   </Link>
 );
 
-BlogPost.propTypes = {
+Item.propTypes = {
   frontmatter: PropTypes.object.isRequired,
   slug: PropTypes.string.isRequired,
 };
 
-export default BlogPost;
+export default Item;

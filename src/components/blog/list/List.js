@@ -1,15 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { injectIntl } from "gatsby-plugin-intl";
-import BlogPost from "./BlogPost";
-import NoBlogPosts from "./NoBlogPosts";
-import { useBlogPosts } from "../../hooks/useBlogPosts";
-import BlogLink from "../pages/index/BlogLink";
+import Item from "./Item";
+import IsEmpty from "./IsEmpty";
+import { useBlogPosts } from "../../../hooks/useBlogPosts";
+import BlogLink from "../../pages/index/BlogLink";
 
-const BlogPosts = ({ latest, intl }) => {
+const List = ({ latest, intl }) => {
   const blogPosts = useBlogPosts(intl.locale, latest ? 3 : 1000);
 
-  if (blogPosts.length === 0) return <NoBlogPosts />;
+  if (blogPosts.length === 0) return <IsEmpty />;
 
   return (
     <>
@@ -19,7 +19,7 @@ const BlogPosts = ({ latest, intl }) => {
           const { slug } = fields;
 
           return (
-            <BlogPost
+            <Item
               key={`blog-post-${index}`}
               frontmatter={frontmatter}
               slug={slug}
@@ -33,12 +33,12 @@ const BlogPosts = ({ latest, intl }) => {
   );
 };
 
-BlogPosts.defaultProps = {
+List.defaultProps = {
   latest: false
 };
 
-BlogPosts.propTypes = {
+List.propTypes = {
   latest: PropTypes.bool,
 };
 
-export default injectIntl(BlogPosts);
+export default injectIntl(List);

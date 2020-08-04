@@ -2,7 +2,7 @@ import React from "react";
 import SEO from "../components/SEO";
 import Layout from "../components/layout/Layout";
 import { injectIntl } from "gatsby-plugin-intl";
-import BlogPosts from "../components/blog/BlogPosts";
+import BlogPosts from "../components/blog/list/List";
 import Section from "../components/Section";
 
 const IndexPage = ({ intl }) => (

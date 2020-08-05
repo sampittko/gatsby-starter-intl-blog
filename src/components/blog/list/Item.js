@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Link from "../../Link";
 
-const Item = ({ frontmatter, slug, index }) => (
+const Item = ({ frontmatter, slug, categorySlug, index }) => (
   <Link
     key={`blog-post-${index}`}
     to={slug}
@@ -17,7 +17,9 @@ const Item = ({ frontmatter, slug, index }) => (
       </h2>
       <div className="md:w-5/12 md:flex md:items-center md:justify-around text-center font-light text-sm">
         <span className="hidden md:inline w-56">
-          {frontmatter.post_category}
+          <Link to={categorySlug} className="hover:underline">
+            {frontmatter.post_category}
+          </Link>
         </span>
         <span className="block md:inline w-16 text-gray-500 font-light">
           {frontmatter.post_date}
@@ -30,6 +32,8 @@ const Item = ({ frontmatter, slug, index }) => (
 Item.propTypes = {
   frontmatter: PropTypes.object.isRequired,
   slug: PropTypes.string.isRequired,
+  categorySlug: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
 };
 
 export default Item;

@@ -17,13 +17,14 @@ const List = ({ latest, intl }) => {
       <div>
         {blogPosts.map((blogPost, index) => {
           const { frontmatter, fields } = blogPost.node.childMarkdownRemark;
-          const { slug } = fields;
+          const { slug, categorySlug } = fields;
 
           return (
             <Item
               key={`blog-post-${index}`}
               frontmatter={frontmatter}
               slug={slug}
+              categorySlug={categorySlug}
               index={index}
             />
           );

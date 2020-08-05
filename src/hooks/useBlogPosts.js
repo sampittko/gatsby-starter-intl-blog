@@ -22,6 +22,7 @@ export const useBlogPosts = (locale, limit) => {
                 }
                 fields {
                   slug
+                  categorySlug
                 }
                 excerpt
               }

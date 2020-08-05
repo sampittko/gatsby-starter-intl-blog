@@ -590,6 +590,10 @@ video {
   height: auto;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .container {
   width: 100%;
 }

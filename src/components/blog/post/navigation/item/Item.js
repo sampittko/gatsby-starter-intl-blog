@@ -6,7 +6,7 @@ import Text from "./Text";
 
 const Item = ({ title, slug, back }) => (
   <Link
-    className={`flex px-5 py-3 border-2 border-white hover:border-gray-100 bg-gray-100 hover:bg-transparent rounded-full w-full sm:w-auto ${
+    className={`flex justify-end px-5 py-3 border-2 border-white hover:border-gray-100 bg-gray-100 hover:bg-transparent rounded-full w-full sm:w-auto my-1 ${
       back ? "flex-row-reverse" : "flex-row"
     }`}
     to={slug}

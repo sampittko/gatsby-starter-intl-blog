@@ -19,7 +19,7 @@ export const pageQuery = graphql`
       }
       frontmatter {
         post_title
-        post_date(formatString: "D. MMM YYYY")
+        post_date(formatString: "D. MMM YYYY", locale: $language)
         post_description
         post_category
       }
@@ -63,7 +63,7 @@ const BlogPostTemplate = ({ data, pageContext, intl }) => {
         }}
         render={() => (
           <div>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            <div dangerouslySetInnerHTML={{ __html: post.html }} className="text-center" />
             <Navigation
               prev={{
                 title: prev?.frontmatter.post_title,

@@ -8,6 +8,7 @@ Kick off your project with this internationalized blog boilerplate created with 
 - Designed to be extensible so that the starter fits anyones needs
 - Dark mode
 - Categorizable blog posts
+- Completely Git-hosted content through Markdown files
 - Easy navigation
 - Simple & clean look achieved with amazing [Tailwind CSS](https://tailwindcss.com/)
 - Accessible & fast for great SEO and high usability

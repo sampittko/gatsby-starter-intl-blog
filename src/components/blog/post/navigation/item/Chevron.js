@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Icon from '../../../../../assets/img/chevron.svg'
+import React from "react";
+import PropTypes from "prop-types";
+import Icon from "../../../../../assets/img/chevron.svg";
 
 const Chevron = ({ back }) => (
   <Icon
@@ -12,7 +12,7 @@ const Chevron = ({ back }) => (
 
 Chevron.defaultProps = {
   back: false,
-}
+};
 
 Chevron.propTypes = {
   back: PropTypes.bool,

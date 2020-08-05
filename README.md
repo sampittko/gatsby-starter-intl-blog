@@ -7,13 +7,13 @@ Kick off your project with this internationalized blog boilerplate created with 
 - Built to support as many languages as needed right out of the box
 - Designed to be extensible so that anyone can add anything that one may need apart from blog
 - Dark mode
-- Categorizable and taggable blog posts
-- Separate blog RSS feeds divided by language
+- Categorizable blog posts
 - Easy navigation
 - Simple & clean look achieved with amazing [Tailwind CSS](https://tailwindcss.com/)
 - Accessible & fast for great SEO and high usability
 - Easily configurable through [gatsby-config.js](https://github.com/sampittko/gatsby-starter-intl-blog/blob/master/gatsby-config.js) file
-- Offline support for PWA
+- Pre-installed Gatsby plugins that might be also useful (PWA, Google Analytics, RSS feed)
+- Cookie consent for GDPR compliance
 
 ## Live Demo
 
@@ -43,7 +43,7 @@ Visit [www.gatsby-starter-intl-blog.now.sh](https://gatsby-starter-intl-blog.now
     ├── postcss.config.js           # Post CSS config file that is used by Tailwind CSS
     ├── README.md
     └── tailwind.config.js          # Tailwind CSS config file
-    
+
 ```
 
 ## Internationalization

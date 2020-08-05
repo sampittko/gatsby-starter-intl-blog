@@ -10,7 +10,7 @@ const supportedLanguageStrings = getSupportedLanguageStrings();
 
 const LanguagePicker = ({ intl }) => (
   <select
-    className="py-3 block text-gray-600 text-xs appearance-none w-auto bg-white rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 cursor-pointer text-center hover:underline"
+    className="block text-gray-600 text-xs appearance-none w-auto bg-white rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 cursor-pointer text-center hover:underline"
     onChange={(event) => changeLocale(event.target.value)}
     value={intl.locale}
   >

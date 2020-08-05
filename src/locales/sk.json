@@ -17,5 +17,7 @@
   "blog.post.navigation.next": "Nasledujúci",
   "footer.note.madeby": "vyrobil {developer}",
   "footer.note.madeby.hover": "GitHub stránka projektu",
-  "footer.note.using": "pomocou"
+  "footer.note.using": "pomocou",
+  "footer.cookies.accept": "Prijať",
+  "footer.cookies.consent": "Prehliadaním webu vyjadrujete súhlas s používaním súborov cookies."
 }

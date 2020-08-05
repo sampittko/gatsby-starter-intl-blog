@@ -17,5 +17,7 @@
   "blog.post.navigation.next": "Up next",
   "footer.note.madeby": "made by {developer}",
   "footer.note.madeby.hover": "GitHub page of the project",
-  "footer.note.using": "using"
+  "footer.note.using": "using",
+  "footer.cookies.accept": "Accept",
+  "footer.cookies.consent": "You agree with the use of cookies by browsing the website."
 }

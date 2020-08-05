@@ -20,6 +20,7 @@ export const pageQuery = graphql`
         post_title
         post_date(formatString: "D. MMM YYYY")
         post_description
+        post_category
       }
     }
   }
@@ -31,6 +32,8 @@ const BlogPostTemplate = ({ data, pageContext, intl }) => {
 
   const description = post.frontmatter.post_description;
   const title = post.frontmatter.post_title;
+  const date = post.frontmatter.post_date;
+  const category = post.frontmatter.post_category;
   const { slug } = post.fields;
   const { excerpt } = post;
 
@@ -48,6 +51,7 @@ const BlogPostTemplate = ({ data, pageContext, intl }) => {
       />
       <Section
         title={title}
+        subTitle={`${category} | ${date}`}
         render={() => (
           <div>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />

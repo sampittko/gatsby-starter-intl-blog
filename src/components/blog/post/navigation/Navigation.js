@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Item from "./item/Item";
 
 const Navigation = ({ prev, next }) => (
-  <div className="relative w-full">
+  <div className="relative w-full mt-8">
     {prev.title && <Item slug={prev.slug} title={prev.title} back />}
     {next.title && <Item slug={next.slug} title={next.title} />}
   </div>

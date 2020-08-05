@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Link from '../../../../Link';
-import Chevron from './Chevron';
-import Text from './Text';
+import React from "react";
+import PropTypes from "prop-types";
+import Link from "../../../../Link";
+import Chevron from "./Chevron";
+import Text from "./Text";
 
 const Item = ({ title, slug, back }) => (
   <Link
@@ -18,7 +18,7 @@ const Item = ({ title, slug, back }) => (
 
 Item.defaultProps = {
   back: false,
-}
+};
 
 Item.propTypes = {
   title: PropTypes.string.isRequired,

@@ -4,13 +4,13 @@ import BackArrow from "./BackTo";
 import { graphql, StaticQuery } from "gatsby";
 import PropTypes from "prop-types";
 
-const Image = ({ backTo, backToTitle }) => {
+const Image = ({ backTo }) => {
   const className = "h-24 w-full mt-5";
 
   return (
     <>
       <div className={`absolute left-0 w-screen`}>
-        {backTo && <BackArrow to={backTo} title={backToTitle} />}
+        {backTo && <BackArrow data={backTo} />}
         <StaticQuery
           query={graphql`
             query {
@@ -43,7 +43,10 @@ Image.defaultProps = {
 };
 
 Image.propTypes = {
-  backTo: PropTypes.string,
+  backTo: PropTypes.shape({
+    to: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }),
 };
 
 export default Image;

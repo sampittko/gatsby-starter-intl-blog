@@ -18,7 +18,7 @@ const query = graphql`
   }
 `;
 
-const Header = ({ backTo, backToTitle }) => {
+const Header = ({ backTo }) => {
   const data = useStaticQuery(query);
   const { openToWork } = data.site.siteMetadata.author;
 
@@ -26,19 +26,20 @@ const Header = ({ backTo, backToTitle }) => {
     <header className="container px-5 py-8 mx-auto">
       {openToWork && <OpenToWork />}
       <Links />
-      <Image backTo={backTo} backToTitle={backToTitle} />
+      <Image backTo={backTo} />
     </header>
   );
 };
 
 Header.defaultProps = {
   backTo: null,
-  backToTitle: "",
 };
 
 Header.propTypes = {
-  backTo: PropTypes.string,
-  backToTitle: PropTypes.string,
+  backTo: PropTypes.shape({
+    to: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }),
 };
 
 export default Header;

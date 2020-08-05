@@ -2,6 +2,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 const path = require("path");
 const _ = require("lodash");
 
+// Helper fn to polish accidental 2+ consequent slashes
 const polishSlug = (slug) => slug.replace(/\/\//g, "/");
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
@@ -12,6 +13,10 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
     if (nodePath.match(/\/blog\//)) {
       const blogSlug = "/blog";
+
+      //
+      // Create blog post slug
+      //
 
       const postSlug = createFilePath({
         node,
@@ -26,14 +31,32 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
         value: polishSlug(`/${blogSlug}/${postSlug}/`),
       });
 
-      const language = nodePath
+      //
+      // Create blog post category slug
+      //
+
+      const categorySlug = polishSlug(`/${postSlug}/`).match(
+        /(^\/([a-z-])+\/){1}/
+      )[0];
+
+      createNodeField({
+        node,
+        name: `categorySlug`,
+        value: polishSlug(`/${blogSlug}/${categorySlug}/`),
+      });
+
+      //
+      // Get blog post language from file absolute path
+      //
+
+      const postLanguage = nodePath
         .match(/\/content\/([a-z]{2})\/blog\//)[0]
         .slice(9, 11);
 
       createNodeField({
         node,
         name: `language`,
-        value: language,
+        value: postLanguage,
       });
     }
   }
@@ -57,6 +80,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               }
               fields {
                 slug
+                categorySlug
                 language
               }
             }
@@ -91,6 +115,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           component: blogPostTemplate,
           context: {
             slug: path,
+            categorySlug: node.fields.categorySlug,
             language: node.fields.language,
             prev,
             next,

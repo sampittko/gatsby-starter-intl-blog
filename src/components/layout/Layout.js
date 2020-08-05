@@ -6,7 +6,7 @@ import { withIntlRedirect } from "../../utils/withIntlRedirect";
 import useDarkMode from "../../hooks/useDarkMode";
 import PropTypes from "prop-types";
 
-const Layout = ({ children, backTo, backToTitle }) => {
+const Layout = ({ children, backTo }) => {
   const [visible, setVisible] = useState(false);
   const darkMode = useDarkMode();
 
@@ -16,7 +16,7 @@ const Layout = ({ children, backTo, backToTitle }) => {
 
   return (
     <div className="font-sans text-black leading-tight antialiased min-h-screen max-w-screen-md mx-auto bg-white">
-      <Header backTo={backTo} backToTitle={backToTitle} />
+      <Header backTo={backTo} />
       <main
         className={`transition duration-1000 ${
           visible ? "opacity-1" : "opacity-0"
@@ -31,12 +31,13 @@ const Layout = ({ children, backTo, backToTitle }) => {
 
 Layout.defaultProps = {
   backTo: null,
-  backToTitle: "",
 };
 
 Layout.propTypes = {
-  backTo: PropTypes.string,
-  backToTitle: PropTypes.string,
+  backTo: PropTypes.shape({
+    to: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }),
 };
 
 export default withIntlRedirect(Layout);

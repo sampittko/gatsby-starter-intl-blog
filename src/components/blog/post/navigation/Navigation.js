@@ -6,7 +6,11 @@ const placeholder = <div />;
 
 const Navigation = ({ prev, next }) => (
   <div className="w-full mt-8 flex justify-between flex-wrap-reverse">
-    {prev.title ? <Item slug={prev.slug} title={prev.title} back /> : placeholder}
+    {prev.title ? (
+      <Item slug={prev.slug} title={prev.title} back />
+    ) : (
+      placeholder
+    )}
     {next.title ? <Item slug={next.slug} title={next.title} /> : placeholder}
   </div>
 );

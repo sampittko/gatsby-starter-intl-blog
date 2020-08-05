@@ -133,30 +133,5 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-offline`,
-    // TODO
-    // `gatsby-plugin-feed`,
-    // TODO
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        // The property ID; the tracking code won't be generated without it
-        trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID",
-        head: false,
-        anonymize: true,
-        respectDNT: false,
-        pageTransitionDelay: 0,
-        // Enables Google Optimize using your container Id
-        optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID",
-        // Enables Google Optimize Experiment ID
-        experimentId: "YOUR_GOOGLE_EXPERIMENT_ID",
-        // Set Variation ID. 0 for original 1,2,3....
-        variationId: "YOUR_GOOGLE_OPTIMIZE_VARIATION_ID",
-        defer: false,
-        sampleRate: 5,
-        siteSpeedSampleRate: 10,
-        cookieDomain: "sampittko.sk",
-      },
-    },
   ],
 };

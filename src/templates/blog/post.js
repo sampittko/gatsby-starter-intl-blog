@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../../components/layout/Layout";
 import SEO from "../../components/SEO";
-import Section from "../../components/Section";
+import Section from "../../components/section/Section";
 import { graphql } from "gatsby";
 import { injectIntl } from "gatsby-plugin-intl";
 import Navigation from "../../components/blog/post/navigation/Navigation";
@@ -15,6 +15,7 @@ export const pageQuery = graphql`
       html
       fields {
         slug
+        categorySlug
       }
       frontmatter {
         post_title
@@ -34,15 +35,17 @@ const BlogPostTemplate = ({ data, pageContext, intl }) => {
   const title = post.frontmatter.post_title;
   const date = post.frontmatter.post_date;
   const category = post.frontmatter.post_category;
-  const { slug } = post.fields;
+  const { slug, categorySlug } = post.fields;
   const { excerpt } = post;
 
   return (
     <Layout
-      backTo="/blog/"
-      backToTitle={`${intl.formatMessage({
-        id: "backto",
-      })} ${intl.formatMessage({ id: "backto.blog" })}`}
+      backTo={{
+        to: "/blog/",
+        title: `${intl.formatMessage({ id: "backto" })} ${intl.formatMessage({
+          id: "backto.blog",
+        })}`,
+      }}
     >
       <SEO
         title={`${title} — ${intl.formatMessage({ id: "page.blog.title" })}`}
@@ -51,7 +54,13 @@ const BlogPostTemplate = ({ data, pageContext, intl }) => {
       />
       <Section
         title={title}
-        subTitle={`${category} | ${date}`}
+        blogPostMeta={{
+          category: {
+            name: category,
+            slug: categorySlug,
+          },
+          publishedDate: date,
+        }}
         render={() => (
           <div>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />

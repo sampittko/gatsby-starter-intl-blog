@@ -13,6 +13,8 @@
   "page.blog.description": "Some thoughts to share from my both professional and private lives",
   "username.hover": "Find me on the Internet",
   "blog.noposts": "There are no posts yet",
+  "blog.post.navigation.prev": "Previous",
+  "blog.post.navigation.next": "Up next",
   "footer.note.madeby": "made by {developer}",
   "footer.note.madeby.hover": "GitHub page of the project",
   "footer.note.using": "using"

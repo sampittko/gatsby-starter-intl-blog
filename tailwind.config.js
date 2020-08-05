@@ -21,12 +21,13 @@ module.exports = {
     },
   },
   variants: {
-    fill: ["responsive", "hover"],
+    fill: ["responsive", "hover", "group-hover"],
     borderColor: ["responsive", "hover", "focus", "group-hover"],
     borderWidth: ["responsive", "hover"],
     textColor: ["responsive", "hover", "focus", "group-hover"],
     cursor: ["responsive", "hover"],
-    backgroundColor: ["responsive", "hover", "focus", "dark"],
+    backgroundColor: ["responsive", "hover", "focus", "group-hover", "dark"],
+    boxShadow: ["responsive", "hover", "focus", "group-hover"],
   },
   plugins: [require("tailwindcss-dark-mode")()],
 };

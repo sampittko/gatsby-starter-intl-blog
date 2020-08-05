@@ -5,13 +5,15 @@ Kick off your project with this internationalized blog boilerplate created with 
 ## Features
 
 - Built to support as many languages as needed right out of the box
+- Designed to be extensible so that anyone can add anything that one may need apart from blog
 - Dark mode
 - Categorizable and taggable blog posts
-- RSS feeds separated by language
+- Separate blog RSS feeds divided by language
 - Easy navigation
-- Simple & clean look achieved with [Tailwind CSS](https://tailwindcss.com/)
+- Simple & clean look achieved with amazing [Tailwind CSS](https://tailwindcss.com/)
 - Accessible & fast for great SEO and high usability
 - Easily configurable through [gatsby-config.js](https://github.com/sampittko/gatsby-starter-intl-blog/blob/master/gatsby-config.js) file
+- Offline support for PWA
 
 ## Live Demo
 

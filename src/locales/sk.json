@@ -13,6 +13,8 @@
   "page.blog.description": "Nejaké myšlienky na zdieľanie z môjho profesionálneho a súkromného života",
   "username.hover": "Nájdi si ma na internete",
   "blog.noposts": "Zatiaľ tu nie sú žiadne články",
+  "blog.post.navigation.prev": "Predošlý",
+  "blog.post.navigation.next": "Nasledujúci",
   "footer.note.madeby": "vyrobil {developer}",
   "footer.note.madeby.hover": "GitHub stránka projektu",
   "footer.note.using": "pomocou"

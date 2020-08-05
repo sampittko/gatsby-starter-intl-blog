@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 import CookieConsent from "react-cookie-consent";
 import { injectIntl } from "gatsby-plugin-intl";
 
@@ -11,6 +11,8 @@ const Cookies = ({ intl, onAccept }) => (
     cookieName={COOKIES_ACCEPTED_KEY}
     acceptOnScroll={true}
     disableStyles={true}
+    sameSite="strict"
+    cookieSecurity={true}
     onAccept={onAccept}
     containerClasses="fixed bottom-0 left-0 w-screen bg-gray-700 z-50 h-8 flex justify-between items-center sm:justify-center"
     contentClasses="text-white text-left sm:text-center text-xs w-9/12 px-2 leading-none"

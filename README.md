@@ -12,7 +12,7 @@ Kick off your project with this internationalized blog boilerplate created with 
 - Simple & clean look achieved with amazing [Tailwind CSS](https://tailwindcss.com/)
 - Accessible & fast for great SEO and high usability
 - Easily configurable through [gatsby-config.js](https://github.com/sampittko/gatsby-starter-intl-blog/blob/master/gatsby-config.js) file
-- Pre-installed Gatsby plugins that might be also useful (PWA, Google Analytics, RSS feed)
+- Pre-installed Gatsby plugins that might also be useful (PWA, Google Analytics, RSS feed)
 - Cookie consent for GDPR compliance
 
 ## Live Demo

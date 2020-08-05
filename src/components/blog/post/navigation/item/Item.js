@@ -6,8 +6,8 @@ import Text from "./Text";
 
 const Item = ({ title, slug, back }) => (
   <Link
-    className={`absolute flex px-5 py-3 border-2 border-white hover:border-gray-100 bg-gray-100 hover:bg-transparent rounded-full ${
-      back ? "left-0 flex-row-reverse" : "right-0 flex-row"
+    className={`flex px-5 py-3 border-2 border-white hover:border-gray-100 bg-gray-100 hover:bg-transparent rounded-full w-full sm:w-auto ${
+      back ? "flex-row-reverse" : "flex-row"
     }`}
     to={slug}
   >

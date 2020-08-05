@@ -7,7 +7,7 @@ export const useBlogPosts = (locale, limit) => {
         sk: allFile(
           filter: { sourceInstanceName: { eq: "sk/blog" } }
           sort: {
-            order: ASC
+            order: DESC
             fields: childMarkdownRemark___frontmatter___post_date
           }
           limit: 100
@@ -31,7 +31,7 @@ export const useBlogPosts = (locale, limit) => {
         en: allFile(
           filter: { sourceInstanceName: { eq: "en/blog" } }
           sort: {
-            order: ASC
+            order: DESC
             fields: childMarkdownRemark___frontmatter___post_date
           }
           limit: 100

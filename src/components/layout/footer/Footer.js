@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import LanguagePicker from "./LanguagePicker";
 import Note from "./note/Note";
 import CookiesComponent, { COOKIES_ACCEPTED_KEY } from "./Cookies";
-import { Cookies } from 'react-cookie-consent'
+import { Cookies } from "react-cookie-consent";
 
 const Footer = () => {
   const [cookiesAccepted, setCookiesAccepted] = useState(

@@ -5,6 +5,7 @@ import Section from "../../components/section/Section";
 import { graphql } from "gatsby";
 import { injectIntl } from "gatsby-plugin-intl";
 import Navigation from "../../components/blog/post/navigation/Navigation";
+import MissingTranslation from "../../utils/MissingTranslation";
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -44,6 +45,8 @@ export const pageQuery = graphql`
 `;
 
 const BlogPostTemplate = ({ data, pageContext, intl }) => {
+  if (!data[intl.locale]) return <MissingTranslation />
+
   const post = data[intl.locale];
   const { prev, next } = pageContext;
 

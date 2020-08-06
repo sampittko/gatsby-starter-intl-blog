@@ -3,6 +3,8 @@ import { graphql } from "gatsby";
 import Layout from "../../components/layout/Layout";
 import SEO from "../../components/SEO";
 import { injectIntl } from "gatsby-plugin-intl";
+import Section from "../../components/section/Section";
+import MissingTranslation from "../../utils/MissingTranslation";
 
 export const pageQuery = graphql`
   query BlogPostsByCategory($slug: String!) {
@@ -52,6 +54,8 @@ export const pageQuery = graphql`
 `;
 
 const BlogCategoryTemplate = ({ data, pageContext, intl }) => {
+  if (data[intl.locale].edges.length === 0) return <MissingTranslation />;
+
   const posts = data[intl.locale].edges;
 
   const { slug } = pageContext
@@ -72,6 +76,10 @@ const BlogCategoryTemplate = ({ data, pageContext, intl }) => {
         title={`${category} — ${intl.formatMessage({ id: "page.blog.title" })}`}
         slug={slug}
         description={description}
+      />
+      <Section
+        title={category}
+        render={() => null}
       />
     </Layout>
   );

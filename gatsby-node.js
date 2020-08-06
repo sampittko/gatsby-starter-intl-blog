@@ -120,8 +120,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             slug,
             categorySlug,
             language,
-            prev,
-            next,
+            prev, // May not be applicable in every language the page is in
+            next, // May not be applicable in every language the page is in
           },
         });
 

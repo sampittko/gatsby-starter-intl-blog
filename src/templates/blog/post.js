@@ -7,9 +7,9 @@ import { injectIntl } from "gatsby-plugin-intl";
 import Navigation from "../../components/blog/post/navigation/Navigation";
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!, $language: String!) {
-    markdownRemark(
-      fields: { slug: { eq: $slug }, language: { eq: $language } }
+  query BlogPostBySlug($slug: String!) {
+    sk: markdownRemark(
+      fields: { slug: { eq: $slug }, language: { eq: "sk" } }
     ) {
       excerpt(pruneLength: 160)
       html
@@ -19,7 +19,23 @@ export const pageQuery = graphql`
       }
       frontmatter {
         post_title
-        post_date(formatString: "D. MMM YYYY", locale: $language)
+        post_date(formatString: "D. MMM YYYY", locale: "sk")
+        post_description
+        post_category
+      }
+    }
+    en: markdownRemark(
+      fields: { slug: { eq: $slug }, language: { eq: "en" } }
+    ) {
+      excerpt(pruneLength: 160)
+      html
+      fields {
+        slug
+        categorySlug
+      }
+      frontmatter {
+        post_title
+        post_date(formatString: "D. MMM YYYY", locale: "en")
         post_description
         post_category
       }
@@ -28,7 +44,7 @@ export const pageQuery = graphql`
 `;
 
 const BlogPostTemplate = ({ data, pageContext, intl }) => {
-  const post = data.markdownRemark;
+  const post = data[intl.locale];
   const { prev, next } = pageContext;
 
   const description = post.frontmatter.post_description;
@@ -63,7 +79,10 @@ const BlogPostTemplate = ({ data, pageContext, intl }) => {
         }}
         render={() => (
           <div>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} className="text-center" />
+            <div
+              dangerouslySetInnerHTML={{ __html: post.html }}
+              className="text-center"
+            />
             <Navigation
               prev={{
                 title: prev?.frontmatter.post_title,

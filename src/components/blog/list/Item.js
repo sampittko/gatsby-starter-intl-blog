@@ -8,10 +8,7 @@ const Item = ({ frontmatter, slug, categorySlug, index }) => (
     to={slug}
     className="block px-5 py-3 border-2 border-white hover:border-gray-100 bg-gray-100 hover:bg-transparent rounded-full mb-2"
   >
-    <div
-      className="flex items-center justify-between"
-      key={`blog-post-${index}`}
-    >
+    <div className="flex items-center justify-between">
       <h2 className="inline font-medium text-gray-900 title-font">
         {frontmatter.post_title}
       </h2>

@@ -1,6 +1,6 @@
 import React from "react";
 import { injectIntl } from "gatsby-plugin-intl";
-import Link from "../../Link";
+import Link from "./Link";
 
 const BlogLink = ({ intl }) => (
   <div className="px-5 py-3 mb-2 flex justify-center">

@@ -31,8 +31,8 @@ Deployment is made simple and fast thanks to providers like [Vercel](https://ver
 ```
     .
     ├── content                     # Markdown files used by Gatsby to generate pages
-    │   ├── sk                      # Content translated to Slovak langauge
-    │   └── en                      # Content translated to English language
+    │   ├── en                      # Content translated to English langauge
+    │   └── [language-key]          # Content translated to [language-key] language
     ├── src
     │   ├── assets                  # Static assets (e.g. CSS and images)
     │   ├── components              # All React and Gatsby-friendly components
@@ -43,14 +43,14 @@ Deployment is made simple and fast thanks to providers like [Vercel](https://ver
     │   └── utils                   # Utility functions that are needed across the application
     ├── CHANGELOG.md
     ├── CONTRIBUTING.md
-    ├── gatsby-config.js            # Tools and utilities
-    ├── gatsby-node.js              # Main config file for Gatsby plugins and site meta data
+    ├── gatsby-config.js
+    ├── gatsby-node.js
     ├── LICENSE
-    ├── package.json                # Main Node package file with dependencies and meta data for the project
-    ├── postcss.config.js           # Post CSS config file that is used by Tailwind CSS
+    ├── package.json
+    ├── postcss.config.js
     ├── README.md
-    └── tailwind.config.js          # Tailwind CSS config file
-    
+    └── tailwind.config.js
+
 ```
 
 ## Internationalization
@@ -69,9 +69,9 @@ Firstly, you will need to follow certain rules for internationalization to work 
 
 ```markdown
 ---
-page_description: This is a super blog 2 						# Use for better SEO
+page_description: This is a super blog 2 # Use for better SEO
 post_title: Ahojqiq
-post_description: How to get consistent thoughts 		# Use for custom excerpt
+post_description: How to get consistent thoughts # Use for custom excerpt
 post_category: Zamyslenia
 post_date: "2020-04-05"
 ---

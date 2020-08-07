@@ -112,6 +112,14 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-scroll-indicator`,
+      options: {
+        color: "#e2e8f0", // gray-300
+        height: "4px",
+        paths: ["/*/blog/*/*"], // show only on only blog posts
+      },
+    },
+    {
       resolve: `gatsby-plugin-intl`,
       options: {
         path: `${__dirname}/src/locales`, // language JSON resource path

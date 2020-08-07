@@ -106,12 +106,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     ({ node }) => node.fields.language
   );
 
-  const blogPostsPages = []
-  const blogCategoriesPages = []
+  const blogPostsPages = [];
+  const blogCategoriesPages = [];
 
   _.forOwn(blogPostsIntl, (blogPosts, language) => {
     blogPosts.forEach(({ node }) => {
-      const { categorySlug, slug } = node.fields
+      const { categorySlug, slug } = node.fields;
 
       if (!blogPostsPages.includes(slug)) {
         const prevIntl = {};
@@ -122,8 +122,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         //
 
         _.forOwn(blogPostsIntl, (blogPosts, language) => {
-          const blogPost = blogPosts.find(({ node }) => node.fields.slug === slug)
-          const blogPostIndex = blogPosts.indexOf(blogPost)
+          const blogPost = blogPosts.find(
+            ({ node }) => node.fields.slug === slug
+          );
+          const blogPostIndex = blogPosts.indexOf(blogPost);
 
           if (!blogPost) return;
 
@@ -134,12 +136,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
           nextIntl[language] =
             blogPostIndex === 0 ? null : blogPosts[blogPostIndex - 1].node;
-        })
+        });
 
         //
         // Create blog post page
         //
-        
+
         createPage({
           path: slug,
           component: blogPostTemplate,
@@ -155,7 +157,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         blogPostsPages.push(slug);
 
         if (!blogCategoriesPages.includes(categorySlug)) {
-
           //
           // Create blog category page
           //
@@ -167,7 +168,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               slug: categorySlug,
             },
           });
-          
+
           blogCategoriesPages.push(categorySlug);
         }
       }

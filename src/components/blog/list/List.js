@@ -4,13 +4,14 @@ import { injectIntl } from "gatsby-plugin-intl";
 import Item from "./Item";
 import IsEmpty from "./IsEmpty";
 import { useBlogPosts } from "../../../hooks/useBlogPosts";
-import BlogLink from "../../pages/index/BlogLink";
-import Pagination from "../../pagination/Pagination";
+import BlogLink from "../../BlogLink";
 
 const List = ({ latest, intl, data }) => {
   const queriedData = useBlogPosts(intl.locale, latest ? 3 : 1000);
 
-  const blogPosts = data ? data : queriedData;
+  const inCategory = !!data;
+
+  const blogPosts = inCategory ? data : queriedData;
 
   if (blogPosts.length === 0) return <IsEmpty />;
 
@@ -18,7 +19,9 @@ const List = ({ latest, intl, data }) => {
     <>
       <div>
         {blogPosts.map((blogPost, index) => {
-          const { frontmatter, fields } = data ? blogPost.node : blogPost.node.childMarkdownRemark;
+          const { frontmatter, fields } = inCategory
+            ? blogPost.node
+            : blogPost.node.childMarkdownRemark;
           const { slug, categorySlug } = fields;
 
           return (
@@ -26,20 +29,21 @@ const List = ({ latest, intl, data }) => {
               key={`blog-post-${index}`}
               frontmatter={frontmatter}
               slug={slug}
-              categorySlug={data ? "" : categorySlug}
+              categorySlug={categorySlug}
               index={index}
+              hideCategory={inCategory}
             />
           );
         })}
       </div>
-      {latest ? <BlogLink /> : <Pagination />}
+      {latest && <BlogLink />}
     </>
   );
 };
 
 List.defaultProps = {
   latest: false,
-  data: null
+  data: null,
 };
 
 List.propTypes = {

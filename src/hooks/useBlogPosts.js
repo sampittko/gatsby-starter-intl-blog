@@ -56,7 +56,7 @@ const query = graphql`
 `;
 
 export const useBlogPosts = (locale, limit) => {
-  const data = useStaticQuery(query)
+  const data = useStaticQuery(query);
 
   const blogPosts = data[locale].edges
     .slice(0, limit)

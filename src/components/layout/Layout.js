@@ -18,7 +18,7 @@ const Layout = ({ children, backTo }) => {
     <div className="font-sans text-black leading-tight antialiased min-h-screen max-w-screen-md mx-auto bg-white">
       <Header backTo={backTo} />
       <main
-        className={`transition duration-1000 ${
+        className={`mb-6 sm:mb-10 transition duration-1000 ${
           visible ? "opacity-1" : "opacity-0"
         }`}
       >

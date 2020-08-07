@@ -11,10 +11,7 @@ export const pageQuery = graphql`
   query BlogPostsByCategory($slug: String!) {
     sk: allMarkdownRemark(
       filter: {
-        fields: {
-          categorySlug: { eq: $slug }
-          language: { eq: "sk" }
-        }
+        fields: { categorySlug: { eq: $slug }, language: { eq: "sk" } }
       }
     ) {
       edges {
@@ -32,10 +29,7 @@ export const pageQuery = graphql`
     }
     en: allMarkdownRemark(
       filter: {
-        fields: {
-          categorySlug: { eq: $slug }
-          language: { eq: "en" }
-        }
+        fields: { categorySlug: { eq: $slug }, language: { eq: "en" } }
       }
     ) {
       edges {
@@ -59,9 +53,9 @@ const BlogCategoryTemplate = ({ data, pageContext, intl }) => {
 
   const posts = data[intl.locale].edges;
 
-  const { slug } = pageContext
+  const { slug } = pageContext;
 
-  const category = posts[0].node.frontmatter.post_category
+  const category = posts[0].node.frontmatter.post_category;
 
   return (
     <Layout

@@ -5,7 +5,7 @@ import Item from "./item/Item";
 const placeholder = <div />;
 
 const Navigation = ({ prev, next }) => (
-  <div className="w-full mt-8 flex justify-between flex-wrap-reverse mb-6 sm:mb-10">
+  <div className="w-full mt-8 flex justify-between flex-wrap-reverse">
     {prev.title ? (
       <Item slug={prev.slug} title={prev.title} back />
     ) : (

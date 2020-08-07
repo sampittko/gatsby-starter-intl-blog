@@ -45,10 +45,13 @@ export const pageQuery = graphql`
 `;
 
 const BlogPostTemplate = ({ data, pageContext, intl }) => {
-  if (!data[intl.locale]) return <MissingTranslation />
+  const language = intl.locale;
+  if (!data[language]) return <MissingTranslation />
 
-  const post = data[intl.locale];
-  const { prev, next } = pageContext;
+  const post = data[language];
+  const { prevIntl, nextIntl } = pageContext;
+  const prev = prevIntl[language]
+  const next = nextIntl[language]
 
   const description = post.frontmatter.post_description;
   const title = post.frontmatter.post_title;
@@ -67,7 +70,7 @@ const BlogPostTemplate = ({ data, pageContext, intl }) => {
       }}
     >
       <SEO
-        title={`${title} — ${intl.formatMessage({ id: "page.blog.title" })}`}
+        title={`${title} — ${category} — ${intl.formatMessage({ id: "page.blog.title" })}`}
         slug={slug}
         description={description || excerpt}
       />

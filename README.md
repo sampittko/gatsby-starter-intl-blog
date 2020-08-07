@@ -1,6 +1,6 @@
 # Gatsby i18lized Blog Starter
 
-Kick off your project with this internationalized blog boilerplate created with ❤️ by [Samuel Pitoňák](https://twitter.com/sampittko).
+Kick off your project with this internationalized blog boilerplate.
 
 ## Features
 
@@ -10,7 +10,7 @@ Kick off your project with this internationalized blog boilerplate created with 
 - Categorizable blog posts
 - Completely Git-hosted content through Markdown files
 - Easy navigation
-- Simple & clean look achieved with amazing [Tailwind CSS](https://tailwindcss.com/)
+- Simple & classy look achieved with amazing [Tailwind CSS](https://tailwindcss.com/)
 - Accessible & fast for great SEO and high usability
 - Easily configurable through [gatsby-config.js](https://github.com/sampittko/gatsby-starter-intl-blog/blob/master/gatsby-config.js) file
 - Let others know that you are open to work by just one click
@@ -45,12 +45,34 @@ Visit [www.gatsby-starter-intl-blog.now.sh](https://gatsby-starter-intl-blog.now
     ├── postcss.config.js           # Post CSS config file that is used by Tailwind CSS
     ├── README.md
     └── tailwind.config.js          # Tailwind CSS config file
-
+    
 ```
 
 ## Internationalization
 
 This starter supports addition of new languages out of the box.
+
+### Rules
+
+You need to follow certain rules for internationalization to work correctly. Breaking any of the following rules may cause internationalization to not work.
+
+1. Keep folders names of individual articles consistent across supported languages (e.g. <u>/content/en/blog/life-hacks/this-is-my-first-blog-post/</u>, <u>/content/sk/blog/life-hacks/this-is-my-first-blog-post/</u> and <u>/content/si/blog/life-hacks/this-is-my-first-blog-post/</u>)
+2. Prefix blog post folder name with it's category name (e.g. <u>life-hacks</u> from the example above)
+3. Use **at least** `post_title`, `post_category` and `post_date` in frontmatter of article's MD file
+4. Make `post_category` field inside frontmatter consistent across all blog posts in the category's folder
+
+```markdown
+---
+page_description: This is a super blog 2 						# Use for better SEO
+post_title: Ahojqiq
+post_description: How to get consistent thoughts 		# Use for custom excerpt
+post_category: Zamyslenia
+post_date: "2020-04-05"
+post_published: true 																# Use when blog post is just a draft
+---
+```
+
+Suggestion: keep folders names of articles (blog posts titles in other words) and their categories in the default language (e.g. default language of the website in the example mentioned above would be English)
 
 ### Adding Support For a New Language
 
@@ -78,12 +100,11 @@ Replace `[language-key]` with the actual language key that represents the langua
 
 3. Open [content](https://github.com/sampittko/gatsby-starter-intl-blog/blob/master/content/) folder and create a new `/[language-key]/blog/` folder (ideally with translated existing articles included)
 
-   - Important note: **keep the folder names of individual articles consistent across supported languages** (e.g. <u>/content/en/blog/this-is-my-first-blog-post/</u>, <u>/content/sk/blog/this-is-my-first-blog-post/</u> and <u>/content/si/blog/this-is-my-first-blog-post/</u>)
-   - Suggestion: keep folders names of articles (blog posts titles in other words) and their categories in the default language (e.g. default language of the website in the example mentioned above would be English)
-
 4. Extend existing GraphQL queries in the [hooks](https://github.com/sampittko/gatsby-starter-intl-blog/blob/master/src/hooks/) folder by adding the newly added language
 
-5. **You are done.**
+5. Extend existing GraphQL page queries in [blog.js](https://github.com/sampittko/gatsby-starter-intl-blog/blob/master/src/templates/blog/blog.js) and [category.js](https://github.com/sampittko/gatsby-starter-intl-blog/blob/master/src/templates/blog/category.js) by adding the newly added language
+
+6. **You are done**
 
 ### Change Default Language
 
@@ -91,7 +112,7 @@ Replace `[language-key]` with the actual language key that represents the langua
 
 1. Open [gatsby-config.js](https://github.com/sampittko/gatsby-starter-intl-blog/blob/master/gatsby-config.js) file and navigate to the configuration of <u>gatsby-plugin-intl</u>
 2. Change the value of `options.external.defaultLanguage` key with wanted language key
-3. **You are done.**
+3. **You are done**
 
 ## Contributing
 

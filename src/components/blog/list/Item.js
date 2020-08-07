@@ -13,7 +13,7 @@ const Item = ({ frontmatter, slug, categorySlug, index }) => (
         {frontmatter.post_title}
       </h2>
       <div className="md:w-5/12 md:flex md:items-center md:justify-around text-center font-light text-sm">
-        <span className="hidden md:inline w-56">
+        <span className={`${categorySlug ? "visible" : "invisible"} hidden md:inline w-56`}>
           <Link to={categorySlug} className="hover:underline">
             {frontmatter.post_category}
           </Link>
@@ -26,10 +26,14 @@ const Item = ({ frontmatter, slug, categorySlug, index }) => (
   </Link>
 );
 
+Item.defaultProps = { 
+  categorySlug: ""
+}
+
 Item.propTypes = {
   frontmatter: PropTypes.object.isRequired,
   slug: PropTypes.string.isRequired,
-  categorySlug: PropTypes.string.isRequired,
+  categorySlug: PropTypes.string,
   index: PropTypes.number.isRequired,
 };
 

@@ -5,6 +5,7 @@ import SEO from "../../components/SEO";
 import { injectIntl } from "gatsby-plugin-intl";
 import Section from "../../components/section/Section";
 import MissingTranslation from "../../utils/MissingTranslation";
+import BlogPosts from "../../components/blog/list/List";
 
 export const pageQuery = graphql`
   query BlogPostsByCategory($slug: String!) {
@@ -59,9 +60,8 @@ const BlogCategoryTemplate = ({ data, pageContext, intl }) => {
   const posts = data[intl.locale].edges;
 
   const { slug } = pageContext
-  const description = "None"
 
-  const category = "None"
+  const category = posts[0].node.frontmatter.post_category
 
   return (
     <Layout
@@ -75,11 +75,10 @@ const BlogCategoryTemplate = ({ data, pageContext, intl }) => {
       <SEO
         title={`${category} — ${intl.formatMessage({ id: "page.blog.title" })}`}
         slug={slug}
-        description={description}
       />
       <Section
         title={category}
-        render={() => null}
+        render={() => <BlogPosts data={posts} />}
       />
     </Layout>
   );

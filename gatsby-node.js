@@ -76,6 +76,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             node {
               frontmatter {
                 post_published
+                post_title
               }
               fields {
                 slug
@@ -106,13 +107,31 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const blogCategoriesPages = []
 
   _.forOwn(blogPostsIntl, (blogPosts, language) => {
-    blogPosts.forEach(({ node }, index) => {
-      const prev =
-        index === blogPosts.length - 1 ? null : blogPosts[index + 1].node;
-      const next = index === 0 ? null : blogPosts[index - 1].node;
+    blogPosts.forEach(({ node }) => {
       const { categorySlug, slug } = node.fields
 
       if (node.frontmatter.post_published && !blogPostsPages.includes(slug)) {
+        const prevIntl = {};
+        const nextIntl = {};
+
+        //
+        // Get previous and next post for the current post in every supported language (where exists)
+        //
+        _.forOwn(blogPostsIntl, (blogPosts, language) => {
+          const blogPost = blogPosts.find(({ node }) => node.fields.slug === slug)
+          const blogPostIndex = blogPosts.indexOf(blogPost)
+
+          if (!blogPost) return;
+
+          prevIntl[language] =
+            blogPostIndex === blogPosts.length - 1
+              ? null
+              : blogPosts[blogPostIndex + 1].node;
+
+          nextIntl[language] =
+            blogPostIndex === 0 ? null : blogPosts[blogPostIndex - 1].node;
+        })
+        
         createPage({
           path: slug,
           component: blogPostTemplate,
@@ -120,8 +139,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             slug,
             categorySlug,
             language,
-            prev, // May not be applicable in every language the page is in
-            next, // May not be applicable in every language the page is in
+            prevIntl,
+            nextIntl,
           },
         });
 

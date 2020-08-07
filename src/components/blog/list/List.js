@@ -7,8 +7,10 @@ import { useBlogPosts } from "../../../hooks/useBlogPosts";
 import BlogLink from "../../pages/index/BlogLink";
 import Pagination from "../../pagination/Pagination";
 
-const List = ({ latest, intl }) => {
-  const blogPosts = useBlogPosts(intl.locale, latest ? 3 : 1000);
+const List = ({ latest, intl, data }) => {
+  const queriedData = useBlogPosts(intl.locale, latest ? 3 : 1000);
+
+  const blogPosts = data ? data : queriedData;
 
   if (blogPosts.length === 0) return <IsEmpty />;
 
@@ -16,7 +18,7 @@ const List = ({ latest, intl }) => {
     <>
       <div>
         {blogPosts.map((blogPost, index) => {
-          const { frontmatter, fields } = blogPost.node.childMarkdownRemark;
+          const { frontmatter, fields } = data ? blogPost.node : blogPost.node.childMarkdownRemark;
           const { slug, categorySlug } = fields;
 
           return (
@@ -24,7 +26,7 @@ const List = ({ latest, intl }) => {
               key={`blog-post-${index}`}
               frontmatter={frontmatter}
               slug={slug}
-              categorySlug={categorySlug}
+              categorySlug={data ? "" : categorySlug}
               index={index}
             />
           );
@@ -37,10 +39,12 @@ const List = ({ latest, intl }) => {
 
 List.defaultProps = {
   latest: false,
+  data: null
 };
 
 List.propTypes = {
   latest: PropTypes.bool,
+  data: PropTypes.array,
 };
 
 export default injectIntl(List);

@@ -73,13 +73,14 @@ const BlogCategoryTemplate = ({ data, pageContext, intl }) => {
       }}
     >
       <SEO
+        lang={intl.locale}
         title={`${category} — ${intl.formatMessage({ id: "page.blog.title" })}`}
         slug={slug}
+        description={`${intl.formatMessage({
+          id: "page.category.description",
+        })}: ${category}`}
       />
-      <Section
-        title={category}
-        render={() => <BlogPosts data={posts} />}
-      />
+      <Section title={category} render={() => <BlogPosts data={posts} />} />
     </Layout>
   );
 };

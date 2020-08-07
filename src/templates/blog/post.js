@@ -70,6 +70,7 @@ const BlogPostTemplate = ({ data, pageContext, intl }) => {
       }}
     >
       <SEO
+        language={intl.locale}
         title={`${title} — ${category} — ${intl.formatMessage({ id: "page.blog.title" })}`}
         slug={slug}
         description={description || excerpt}

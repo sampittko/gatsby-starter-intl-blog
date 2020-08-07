@@ -17,7 +17,12 @@ const BlogIndexTemplate = ({ intl }) => {
         })}`,
       }}
     >
-      <SEO title={title} />
+      <SEO
+        lang={intl.locale}
+        title={title}
+        slug="/blog/"
+        description={intl.formatMessage({ id: "page.blog.description" })}
+      />
       <Section title={title} render={() => <BlogPosts />} />
     </Layout>
   );

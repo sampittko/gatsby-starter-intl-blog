@@ -74,6 +74,8 @@ post_published: true 																# Use when blog post is just a draft
 
 Suggestion: keep folders names of articles (blog posts titles in other words) and their categories in the default language (e.g. default language of the website in the example mentioned above would be English)
 
+Note: it is not necessary to make a post translation immediately after writing a blog post in any of the supported languages
+
 ### Adding Support For a New Language
 
 Replace `[language-key]` with the actual language key that represents the language that is to be added.
@@ -113,6 +115,28 @@ Replace `[language-key]` with the actual language key that represents the langua
 1. Open [gatsby-config.js](https://github.com/sampittko/gatsby-starter-intl-blog/blob/master/gatsby-config.js) file and navigate to the configuration of <u>gatsby-plugin-intl</u>
 2. Change the value of `options.external.defaultLanguage` key with wanted language key
 3. **You are done**
+
+## Personalize
+
+Make it fully yours by replacing defaults with your personal information. Firstly, open [gatsby-config.js](https://github.com/sampittko/gatsby-starter-intl-blog/blob/master/gatsby-config.js) and change `title`, `siteUrl` and properties of `author` object inside `siteMetadata`object.
+
+### Change favicon with profile picture inside header
+
+Replace default [favicon.png](https://github.com/sampittko/gatsby-starter-intl-blog/blob/master/src/assets/img/favicon.png) file.
+
+- resolution: square
+- format: PNG
+
+### Change header image
+
+Replace default [header_image.jpg](https://github.com/sampittko/gatsby-starter-intl-blog/blob/master/src/assets/img/header_image.jpg) file.
+
+- resolution: 1024x96
+- format: JPEG
+
+### Toggle open to work status
+
+Set `openToWork` to either `true` or `false` inside [gatsby-config.js](https://github.com/sampittko/gatsby-starter-intl-blog/blob/master/gatsby-config.js).
 
 ## Contributing
 

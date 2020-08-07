@@ -105,6 +105,7 @@ SEO.defaultProps = {
   meta: [],
   title: "",
   slug: "",
+  lang: "",
 };
 
 SEO.propTypes = {
@@ -113,6 +114,7 @@ SEO.propTypes = {
   meta: PropTypes.array,
   slug: PropTypes.string,
   title: PropTypes.string.isRequired,
+  lang: PropTypes.string,
 };
 
 export default injectIntl(SEO);

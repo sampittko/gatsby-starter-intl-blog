@@ -19,6 +19,7 @@ export const pageQuery = graphql`
         categorySlug
       }
       frontmatter {
+        page_description
         post_title
         post_date(formatString: "D. MMM YYYY", locale: "sk")
         post_description
@@ -35,6 +36,7 @@ export const pageQuery = graphql`
         categorySlug
       }
       frontmatter {
+        page_description
         post_title
         post_date(formatString: "D. MMM YYYY", locale: "en")
         post_description
@@ -53,12 +55,15 @@ const BlogPostTemplate = ({ data, pageContext, intl }) => {
   const prev = prevIntl[language]
   const next = nextIntl[language]
 
-  const description = post.frontmatter.post_description;
+  const pageDescription = post.frontmatter.page_description;
   const title = post.frontmatter.post_title;
   const date = post.frontmatter.post_date;
   const category = post.frontmatter.post_category;
   const { slug, categorySlug } = post.fields;
-  const { excerpt } = post;
+
+  // Also available
+  // const description = post.frontmatter.post_description;
+  // const { excerpt } = post;
 
   return (
     <Layout
@@ -70,10 +75,10 @@ const BlogPostTemplate = ({ data, pageContext, intl }) => {
       }}
     >
       <SEO
-        language={intl.locale}
+        lang={intl.locale}
         title={`${title} — ${category} — ${intl.formatMessage({ id: "page.blog.title" })}`}
         slug={slug}
-        description={description || excerpt}
+        description={pageDescription}
       />
       <Section
         title={title}

@@ -8,7 +8,7 @@ Kick off your project with this internationalized personal blog website boilerpl
 - Extensible so that it fits anyones needs
 - Dark mode
 - Categorizable blog posts
-- Completely Git-hosted content
+- Git-hosted content
 - Easy navigation
 - Simple & clean look achieved with [Tailwind CSS](https://tailwindcss.com/)
 - Accessible & fast for great SEO and high usability
@@ -18,7 +18,13 @@ Kick off your project with this internationalized personal blog website boilerpl
 
 ## Live Demo
 
-Visit [www.gatsby-starter-intl-blog.now.sh](https://gatsby-starter-intl-blog.now.sh/) the starter in action through [Vercel](https://vercel.com).
+Visit [www.gatsby-starter-intl-blog.now.sh](https://gatsby-starter-intl-blog.now.sh/) to see the starter live in action.
+
+## Deploy with one click
+
+Deployment is made simple and fast thanks to providers like [Vercel](https://vercel.com) or [Netlify](https://netfliy.com). Click on one of the buttons below to deploy in seconds.
+
+<a href="https://vercel.com/import/git?s=https://github.com/sampittko/gatsby-starter-intl-blog"><img src="https://vercel.com/button" alt="Deploy with Vercel"/></a> <a href="https://app.netlify.com/start/deploy?repository=https://github.com/sampittko/gatsby-starter-intl-blog"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy with Netlify"></a>
 
 ## Project Structure
 
@@ -59,6 +65,7 @@ Firstly, you will need to follow certain rules for internationalization to work 
 2. Prefix blog post folder name with it's category name (e.g. <u>life-hacks</u> from the example above)
 3. Use **at least** `post_title`, `post_category` and `post_date` in frontmatter of article's MD file
 4. Make `post_category` field inside frontmatter consistent across all blog posts in the category's folder
+5. Keep formats of `post_date` field inside frontmatter consistent across all blog posts
 
 ```markdown
 ---

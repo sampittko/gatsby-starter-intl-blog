@@ -4,7 +4,6 @@ post_title: Esmeralda
 post_description: How to get consistent thoughts
 post_category: Reflections
 post_date: "2020-04-06"
-post_published: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse enim nisi, hendrerit ac interdum eget, elementum vitae erat. Maecenas bibendum, neque in blandit sollicitudin, libero turpis hendrerit ante, quis convallis neque mi ut mauris. Quisque ipsum orci, tincidunt at lectus vestibulum, aliquet molestie lectus. Donec eget dignissim sem, sed vulputate elit. Mauris placerat tincidunt blandit. Cras et nibh ut ipsum interdum suscipit sit amet id tellus. Donec varius lectus at condimentum euismod. Ut non consequat augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.

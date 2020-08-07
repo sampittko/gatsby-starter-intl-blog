@@ -75,7 +75,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           edges {
             node {
               frontmatter {
-                post_published
                 post_title
               }
               fields {
@@ -114,7 +113,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     blogPosts.forEach(({ node }) => {
       const { categorySlug, slug } = node.fields
 
-      if (node.frontmatter.post_published && !blogPostsPages.includes(slug)) {
+      if (!blogPostsPages.includes(slug)) {
         const prevIntl = {};
         const nextIntl = {};
 

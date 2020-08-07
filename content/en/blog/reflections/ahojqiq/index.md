@@ -4,7 +4,6 @@ post_title: Helloquiq
 post_description: How to get consistent thoughts
 post_category: Reflections
 post_date: "2020-04-05"
-post_published: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut arcu orci. Sed nulla urna, hendrerit quis elementum ac, volutpat in eros. Nulla lacinia condimentum arcu, vitae iaculis augue semper quis. Nulla elementum augue a nisi sollicitudin molestie. Etiam gravida egestas velit, a ultrices dolor mattis quis. Integer posuere ante vel rutrum finibus. Vestibulum eros nisl, ornare id est quis, consequat dignissim urna. Aliquam pharetra ex non dolor rhoncus lacinia. Proin et tortor ut felis condimentum facilisis. Cras rhoncus auctor nibh ac consequat. Mauris ornare a diam sit amet interdum. Aenean posuere id dui et consequat. Ut a porttitor purus. Nullam eu lacinia augue. Fusce ac metus sem.

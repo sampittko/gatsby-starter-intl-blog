@@ -6,14 +6,18 @@ import { graphql } from "gatsby";
 import { injectIntl } from "gatsby-plugin-intl";
 import Navigation from "../../components/blog/post/navigation/Navigation";
 import MissingTranslation from "../../utils/MissingTranslation";
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { MDXProvider } from '@mdx-js/react'
+import Image from "../../components/mdx/Image";
+import Paragraph from "../../components/mdx/Paragraph";
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
-    sk: markdownRemark(
+    sk: mdx(
       fields: { slug: { eq: $slug }, language: { eq: "sk" } }
     ) {
       excerpt(pruneLength: 160)
-      html
+      body
       fields {
         slug
         categorySlug
@@ -26,11 +30,11 @@ export const pageQuery = graphql`
         post_category
       }
     }
-    en: markdownRemark(
+    en: mdx(
       fields: { slug: { eq: $slug }, language: { eq: "en" } }
     ) {
       excerpt(pruneLength: 160)
-      html
+      body
       fields {
         slug
         categorySlug
@@ -45,6 +49,8 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+const shortcodes = { Paragraph, Image }
 
 const BlogPostTemplate = ({ data, pageContext, intl }) => {
   const language = intl.locale;
@@ -93,10 +99,9 @@ const BlogPostTemplate = ({ data, pageContext, intl }) => {
         }}
         render={() => (
           <div>
-            <div
-              dangerouslySetInnerHTML={{ __html: post.html }}
-              className="text-center"
-            />
+            <MDXProvider components={shortcodes}>
+              <MDXRenderer>{post.body}</MDXRenderer>
+            </MDXProvider>
             <Navigation
               prev={{
                 title: prev?.frontmatter.post_title,

@@ -9,7 +9,7 @@ import BlogPosts from "../../components/blog/list/List";
 
 export const pageQuery = graphql`
   query BlogPostsByCategory($slug: String!) {
-    sk: allMarkdownRemark(
+    sk: allMdx(
       filter: {
         fields: { categorySlug: { eq: $slug }, language: { eq: "sk" } }
       }
@@ -27,7 +27,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    en: allMarkdownRemark(
+    en: allMdx(
       filter: {
         fields: { categorySlug: { eq: $slug }, language: { eq: "en" } }
       }

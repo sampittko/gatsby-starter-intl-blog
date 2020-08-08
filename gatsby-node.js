@@ -8,7 +8,7 @@ const polishSlug = (slug) => slug.replace(/\/\//g, "/");
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === `Mdx`) {
     const nodePath = node.fileAbsolutePath;
 
     if (nodePath.match(/\/blog\//)) {
@@ -68,7 +68,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(
     `
       {
-        allMarkdownRemark(
+        allMdx(
           sort: { fields: [frontmatter___post_date], order: DESC }
           limit: 1000
         ) {
@@ -102,7 +102,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   //
 
   const blogPostsIntl = _.groupBy(
-    result.data.allMarkdownRemark.edges,
+    result.data.allMdx.edges,
     ({ node }) => node.fields.language
   );
 

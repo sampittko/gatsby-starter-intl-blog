@@ -21,7 +21,7 @@ const List = ({ latest, intl, data }) => {
         {blogPosts.map((blogPost, index) => {
           const { frontmatter, fields } = inCategory
             ? blogPost.node
-            : blogPost.node.childMarkdownRemark;
+            : blogPost.node.childMdx;
           const { slug, categorySlug } = fields;
 
           return (

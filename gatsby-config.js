@@ -126,6 +126,12 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`],
         gatsbyRemarkPlugins: [
+          {
+            resolve: "gatsby-remark-copy-linked-files",
+            options: {
+              destinationDir: (file) => `${file.hash}`,
+            },
+          },
           `gatsby-remark-smartypants`,
           {
             resolve: `gatsby-remark-images`,

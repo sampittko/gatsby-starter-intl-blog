@@ -1,16 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 const Link = ({ to, title, newTab, children }) => (
-  <a href={to} title={title} target={newTab ? "_blank" : "self"}>
+  <a
+    href={to}
+    title={title}
+    target={newTab ? "_blank" : "self"}
+    className="hover:underline bg-gray-300 dark:bg-gray-700 px-2 py-px"
+  >
     {children}
   </a>
 );
 
 Link.defaultProps = {
   newTab: true,
-  title: ""
-}
+  title: "",
+};
 
 Link.propTypes = {
   newTab: PropTypes.bool,

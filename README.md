@@ -8,7 +8,7 @@ Kick off your project with this internationalized personal blog website boilerpl
 - Extensible so that it fits anyones needs
 - Dark mode
 - Categorizable blog posts
-- Git-hosted content
+- Git-hosted content that supports MDX
 - Easy navigation
 - Simple & clean look achieved with [Tailwind CSS](https://tailwindcss.com/)
 - Accessible & fast for great SEO and high usability

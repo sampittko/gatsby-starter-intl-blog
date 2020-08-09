@@ -7,7 +7,7 @@ import { useBlogPosts } from "../../../hooks/useBlogPosts";
 import BlogLink from "../../BlogLink";
 
 const List = ({ latest, intl, data }) => {
-  const queriedData = useBlogPosts(intl.locale, latest ? 3 : 1000);
+  const queriedData = useBlogPosts(intl.locale, latest ? 4 : 1000);
 
   const inCategory = !!data;
 

@@ -6,16 +6,13 @@ import { graphql } from "gatsby";
 import { injectIntl } from "gatsby-plugin-intl";
 import Navigation from "../../components/blog/post/navigation/Navigation";
 import MissingTranslation from "../../utils/MissingTranslation";
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { MDXProvider } from '@mdx-js/react'
-import Image from "../../components/mdx/Image";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import { MDXProvider } from "@mdx-js/react";
 import Paragraph from "../../components/mdx/Paragraph";
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
-    sk: mdx(
-      fields: { slug: { eq: $slug }, language: { eq: "sk" } }
-    ) {
+    sk: mdx(fields: { slug: { eq: $slug }, language: { eq: "sk" } }) {
       excerpt(pruneLength: 160)
       body
       fields {
@@ -30,9 +27,7 @@ export const pageQuery = graphql`
         post_category
       }
     }
-    en: mdx(
-      fields: { slug: { eq: $slug }, language: { eq: "en" } }
-    ) {
+    en: mdx(fields: { slug: { eq: $slug }, language: { eq: "en" } }) {
       excerpt(pruneLength: 160)
       body
       fields {
@@ -50,7 +45,7 @@ export const pageQuery = graphql`
   }
 `;
 
-const shortcodes = { Paragraph, Image }
+const shortcodes = { Paragraph };
 
 const BlogPostTemplate = ({ data, pageContext, intl }) => {
   const language = intl.locale;

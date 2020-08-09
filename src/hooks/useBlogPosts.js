@@ -4,10 +4,7 @@ const query = graphql`
   query {
     sk: allFile(
       filter: { sourceInstanceName: { eq: "sk/blog" } }
-      sort: {
-        order: DESC
-        fields: childMdx___frontmatter___post_date
-      }
+      sort: { order: DESC, fields: childMdx___frontmatter___post_date }
       limit: 100
     ) {
       edges {
@@ -29,10 +26,7 @@ const query = graphql`
     }
     en: allFile(
       filter: { sourceInstanceName: { eq: "en/blog" } }
-      sort: {
-        order: DESC
-        fields: childMdx___frontmatter___post_date
-      }
+      sort: { order: DESC, fields: childMdx___frontmatter___post_date }
       limit: 100
     ) {
       edges {

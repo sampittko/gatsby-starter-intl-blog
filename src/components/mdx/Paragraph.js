@@ -1,7 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const Paragraph = ({ children }) => <p className="mb-4">{children}</p>;
+const Paragraph = ({ children }) => (
+  <p className="mb-4 text-justify">{children}</p>
+);
 
 Paragraph.propTypes = {
   children: PropTypes.oneOfType([

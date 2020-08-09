@@ -126,17 +126,16 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`],
         gatsbyRemarkPlugins: [
-          {
-            resolve: "gatsby-remark-copy-linked-files",
-            options: {
-              destinationDir: (file) => `${file.hash}`,
-            },
-          },
           `gatsby-remark-smartypants`,
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 768,
+              withWebp: true,
+              wrapperStyle:
+                "margin-bottom: 2rem; margin-top: 2rem; text-align: center; line-height: 3; font-size: .875rem;",
+              linkImagesToOriginal: false,
+              showCaptions: true,
             },
           },
         ],

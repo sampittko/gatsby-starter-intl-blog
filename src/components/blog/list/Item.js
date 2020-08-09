@@ -6,10 +6,10 @@ const Item = ({ frontmatter, slug, categorySlug, index, hideCategory }) => (
   <Link
     key={`blog-post-${index}`}
     to={slug}
-    className="block px-5 py-3 border-2 border-white hover:border-gray-100 bg-gray-100 hover:bg-transparent rounded-full mb-2"
+    className="block px-5 py-3 border-2 border-white dark:border-gray-900 dark-hover:border-gray-700 hover:border-gray-100 bg-gray-100 dark:bg-gray-700 hover:bg-transparent dark-hover:bg-transparent rounded-full mb-2"
   >
     <div className="flex items-center justify-between">
-      <h2 className="inline font-medium text-gray-900 title-font">
+      <h2 className="inline font-medium text-gray-900 dark:text-gray-300 title-font">
         {frontmatter.post_title}
       </h2>
       <div className="md:w-5/12 md:flex md:items-center md:justify-around text-center font-light text-sm">
@@ -18,7 +18,7 @@ const Item = ({ frontmatter, slug, categorySlug, index, hideCategory }) => (
             hideCategory ? "invisible" : "visible"
           }`}
         >
-          <Link to={categorySlug} className="hover:underline">
+          <Link to={categorySlug} className="text-black dark:text-gray-300 hover:underline">
             {frontmatter.post_category}
           </Link>
         </span>

@@ -10,7 +10,7 @@ const Footer = () => {
   );
 
   return (
-    <footer className="fixed bottom-0 px-10 py-1 sm:px-5 sm:py-5 w-full max-w-screen-md bg-white shadow-2xl sm:shadow-none">
+    <footer className="fixed bottom-0 px-10 py-1 sm:px-5 sm:py-5 w-full max-w-screen-md bg-white dark:bg-gray-900 shadow-2xl sm:shadow-none">
       <div
         className={`flex flex-row justify-between ${
           cookiesAccepted ? "py-3" : "pt-3 pb-10 md:pb-14"

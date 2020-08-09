@@ -43,7 +43,7 @@ const Socials = ({ className, socials }) => (
           title={socialDetails.social.name}
           foreign
         >
-          <IconComponent className="w-5 h-auto fill-gray-500 hover:fill-gray-700 inline mx-1" />
+          <IconComponent className="fill-gray-500 hover:fill-gray-700 dark:fill-gray-500 dark-hover:fill-gray-300 w-5 h-auto inline mx-1" />
         </Link>
       );
     })}

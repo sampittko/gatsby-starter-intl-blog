@@ -13,7 +13,7 @@ const OpenToWork = () => {
 
   return visible ? (
     <div className="h-8">
-      <div className="absolute top-0 left-0 w-screen h-8 bg-green text-white text-center text-xs">
+      <div className="absolute top-0 left-0 w-screen h-8 bg-green dark:bg-dark-green text-white text-center text-xs">
         <Message />
         <Close onClick={(e) => onClick(e)} />
       </div>

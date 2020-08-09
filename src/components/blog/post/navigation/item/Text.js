@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { injectIntl } from "gatsby-plugin-intl";
 
 const Text = ({ title, intl, back }) => (
-  <p className={back ? "text-left" : "text-right"}>
+  <p className={`text-black dark:text-gray-300 ${back ? "text-left" : "text-right"}`}>
     <span className="block text-sm">
       {intl.formatMessage({
         id: back ? "blog.post.navigation.prev" : "blog.post.navigation.next",

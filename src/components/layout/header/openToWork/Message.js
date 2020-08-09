@@ -20,7 +20,7 @@ const Message = ({ intl }) => {
   const { email } = data.site.siteMetadata.author;
 
   return (
-    <span className="leading-8">
+    <span className="leading-8 text-white">
       {intl.formatMessage(
         { id: "opentowork" },
         {

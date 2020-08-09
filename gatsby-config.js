@@ -94,9 +94,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-scroll-indicator`,
       options: {
-        color: "#e2e8f0", // gray-300
+        color: "#718096", // gray-600
         height: "4px",
-        paths: ["/*/blog/*/*"], // show only on only blog posts
+        paths: ["/*/blog/*/*"], // show only on blog posts
       },
     },
     {
@@ -126,12 +126,6 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`],
         gatsbyRemarkPlugins: [
-          {
-            resolve: "gatsby-remark-copy-linked-files",
-            options: {
-              destinationDir: (file) => `${file.hash}`,
-            },
-          },
           `gatsby-remark-smartypants`,
           {
             resolve: `gatsby-remark-images`,
@@ -139,9 +133,10 @@ module.exports = {
               maxWidth: 768,
               withWebp: true,
               wrapperStyle:
-                "margin-bottom: 2rem; margin-top: 2rem; text-align: center; line-height: 3; font-size: .875rem;",
+                "margin-bottom: 2rem; margin-top: 2rem; text-align: center; line-height: 3; font-size: .875rem; color: #718096;",
               linkImagesToOriginal: false,
               showCaptions: true,
+              backgroundColor: "transparent",
             },
           },
         ],

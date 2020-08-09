@@ -23,14 +23,14 @@ const Home = ({ fullName }) => (
       `}
       render={(data) => (
         <Img
-          className="mx-auto sm:mx-0 rounded-full border-4 border-gray-300 box-content group-hover:border-gray-700"
+          className="border-gray-300 dark:border-gray-700 group-hover:border-gray-700 dark-group-hover:border-gray-300 mx-auto sm:mx-0 rounded-full border-4 box-content"
           fixed={data.file.childImageSharp.fixed}
           alt=""
           style={{ display: "block", height: "2.5rem", width: "2.5rem" }}
         />
       )}
     />
-    <span className="block sm:inline-block h-full ml-0 mt-3 sm:mt-0 sm:ml-3 text-xl align-middle group-hover:text-gray-700">
+    <span className="block sm:inline-block h-full ml-0 mt-3 sm:mt-0 sm:ml-3 text-xl align-middle text-black dark:text-gray-300 group-hover:text-gray-700 dark-group-hover:text-white">
       {fullName}
     </span>
   </Link>

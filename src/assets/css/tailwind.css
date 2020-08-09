@@ -2,6 +2,7 @@
 
 body {
     @apply overflow-x-hidden;
+    @apply bg-gray-900;
 }
 
 @tailwind components;

@@ -8,14 +8,15 @@ import PropTypes from "prop-types";
 
 const Layout = ({ children, backTo }) => {
   const [visible, setVisible] = useState(false);
-  const darkMode = useDarkMode();
 
+  useDarkMode()
+  
   useEffect(() => {
     setVisible(true);
   }, []);
 
   return (
-    <div className="font-sans text-black leading-tight antialiased min-h-screen max-w-screen-md mx-auto bg-white">
+    <div className="font-sans text-black leading-tight antialiased min-h-screen max-w-screen-md mx-auto bg-white dark:bg-gray-900">
       <Header backTo={backTo} />
       <main
         className={`mb-6 sm:mb-10 transition duration-1000 ${

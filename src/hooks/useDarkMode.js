@@ -8,20 +8,27 @@ const useDarkMode = () => {
       window.matchMedia("(prefers-color-scheme: dark)").matches
   );
 
+  const set = value => {
+    setDarkMode(value);
+    if (value) {
+      document.documentElement.classList.add("mode-dark");
+    } else {
+      document.documentElement.classList.remove("mode-dark");
+    }
+  }
+
+  useEffect(() => {
+    set(darkMode)
+  })
+
   useEffect(() => {
     window.matchMedia &&
       window
         .matchMedia("(prefers-color-scheme: dark)")
         .addEventListener("change", (e) => {
-          const value = e.matches;
-          setDarkMode(value);
-          if (value) {
-            document.documentElement.classList.add("mode-dark");
-          } else {
-            document.documentElement.classList.remove("mode-dark");
-          }
+          set(e.matches);
         });
-  });
+  }, []);
 
   return darkMode;
 };

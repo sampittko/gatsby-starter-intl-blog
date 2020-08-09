@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Title = ({ title, blogPostMeta }) => (
   <h1
-    className={`text-center font-light text-xl ${
+    className={`text-center text-black dark:text-gray-300 font-light text-xl ${
       blogPostMeta ? "mb-2" : "mb-8"
     }`}
   >

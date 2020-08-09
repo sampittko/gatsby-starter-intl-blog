@@ -4,7 +4,7 @@ import Icon from "../../../../../assets/img/chevron.svg";
 
 const Chevron = ({ back }) => (
   <Icon
-    className={`fill-gray-700 w-4 h-auto ${
+    className={`fill-gray-700 dark:fill-gray-300 w-4 h-auto ${
       back ? "transform rotate-180 mr-3" : "ml-3"
     }`}
   />

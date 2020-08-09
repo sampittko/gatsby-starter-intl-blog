@@ -20,7 +20,7 @@ const Layout = ({ children, backTo }) => {
       <BackgroundColor />
       <Header backTo={backTo} />
       <main
-        className={`mb-6 sm:mb-10 transition duration-1000 ${
+        className={`mb-6 sm:mb-12 transition duration-1000 ${
           visible ? "opacity-1" : "opacity-0"
         }`}
       >

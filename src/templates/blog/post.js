@@ -9,6 +9,7 @@ import MissingTranslation from "../../utils/MissingTranslation";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
 import Paragraph from "../../components/mdx/Paragraph";
+import Link from "../../components/mdx/Link";
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -41,7 +42,7 @@ export const pageQuery = graphql`
   }
 `;
 
-const shortcodes = { Paragraph };
+const shortcodes = { Paragraph, Link };
 
 const BlogPostTemplate = ({ data, pageContext, intl }) => {
   const language = intl.locale;

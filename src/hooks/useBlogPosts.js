@@ -5,7 +5,7 @@ const query = graphql`
     sk: allFile(
       filter: { sourceInstanceName: { eq: "sk/blog" } }
       sort: { order: DESC, fields: childMdx___frontmatter___post_date }
-      limit: 100
+      limit: 1000
     ) {
       edges {
         node {
@@ -27,7 +27,7 @@ const query = graphql`
     en: allFile(
       filter: { sourceInstanceName: { eq: "en/blog" } }
       sort: { order: DESC, fields: childMdx___frontmatter___post_date }
-      limit: 100
+      limit: 1000
     ) {
       edges {
         node {
@@ -53,8 +53,8 @@ export const useBlogPosts = (locale, limit) => {
   const data = useStaticQuery(query);
 
   const blogPosts = data[locale].edges
-    .slice(0, limit)
-    .filter((blogPost) => blogPost.node.childMdx !== null);
-
+    .filter((blogPost) => blogPost.node.childMdx !== null)
+    .slice(0, limit);
+    
   return blogPosts;
 };

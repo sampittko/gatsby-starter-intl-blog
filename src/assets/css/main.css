@@ -20837,6 +20837,10 @@ body {
   z-index: auto;
 }
 
+.-z-1 {
+  z-index: -1;
+}
+
 .gap-0 {
   grid-gap: 0;
   gap: 0;
@@ -43517,6 +43521,10 @@ body {
 
   .sm\:z-auto {
     z-index: auto;
+  }
+
+  .sm\:-z-1 {
+    z-index: -1;
   }
 
   .sm\:gap-0 {
@@ -66202,6 +66210,10 @@ body {
     z-index: auto;
   }
 
+  .md\:-z-1 {
+    z-index: -1;
+  }
+
   .md\:gap-0 {
     grid-gap: 0;
     gap: 0;
@@ -88885,6 +88897,10 @@ body {
     z-index: auto;
   }
 
+  .lg\:-z-1 {
+    z-index: -1;
+  }
+
   .lg\:gap-0 {
     grid-gap: 0;
     gap: 0;
@@ -111566,6 +111582,10 @@ body {
 
   .xl\:z-auto {
     z-index: auto;
+  }
+
+  .xl\:-z-1 {
+    z-index: -1;
   }
 
   .xl\:gap-0 {

@@ -19,6 +19,9 @@ module.exports = {
         white: theme("colors.white"),
         green: theme("colors.green"),
       }),
+      zIndex: {
+        '-1': '-1'
+      }
     },
   },
   variants: {

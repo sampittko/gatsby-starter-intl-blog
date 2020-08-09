@@ -20,8 +20,8 @@ module.exports = {
         green: theme("colors.green"),
       }),
       zIndex: {
-        '-1': '-1'
-      }
+        "-1": "-1",
+      },
     },
   },
   variants: {

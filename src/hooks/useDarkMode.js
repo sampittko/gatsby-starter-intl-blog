@@ -8,18 +8,18 @@ const useDarkMode = () => {
       window.matchMedia("(prefers-color-scheme: dark)").matches
   );
 
-  const set = value => {
+  const set = (value) => {
     setDarkMode(value);
     if (value) {
       document.documentElement.classList.add("mode-dark");
     } else {
       document.documentElement.classList.remove("mode-dark");
     }
-  }
+  };
 
   useEffect(() => {
-    set(darkMode)
-  })
+    set(darkMode);
+  });
 
   useEffect(() => {
     window.matchMedia &&

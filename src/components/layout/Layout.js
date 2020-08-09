@@ -9,9 +9,8 @@ import BackgroundColor from "./BackgroundColor";
 
 const Layout = ({ children, backTo }) => {
   const [visible, setVisible] = useState(false);
+  const darkMode = useDarkMode();
 
-  useDarkMode()
-  
   useEffect(() => {
     setVisible(true);
   }, []);

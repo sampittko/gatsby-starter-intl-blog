@@ -17,4 +17,3 @@ All the features presented inside [README.md](https://github.com/sampittko/gatsb
 - Easy to personalize
 - Let visitors know that you are open to work
 - Cookie consent for GDPR compliance
-

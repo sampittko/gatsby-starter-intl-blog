@@ -55,6 +55,6 @@ export const useBlogPosts = (locale, limit) => {
   const blogPosts = data[locale].edges
     .filter((blogPost) => blogPost.node.childMdx !== null)
     .slice(0, limit);
-    
+
   return blogPosts;
 };

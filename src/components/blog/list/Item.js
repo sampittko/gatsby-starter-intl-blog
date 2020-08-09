@@ -18,7 +18,10 @@ const Item = ({ frontmatter, slug, categorySlug, index, hideCategory }) => (
             hideCategory ? "invisible" : "visible"
           }`}
         >
-          <Link to={categorySlug} className="text-black dark:text-gray-300 hover:underline">
+          <Link
+            to={categorySlug}
+            className="text-black dark:text-gray-300 hover:underline"
+          >
             {frontmatter.post_category}
           </Link>
         </span>

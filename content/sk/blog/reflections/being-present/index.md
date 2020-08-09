@@ -10,6 +10,8 @@ post_description: Nullam bibendum, nibh ut scelerisque pharetra, lectus massa pu
 Donec pellentesque metus non mauris condimentum lacinia. Sed urna libero, cursus nec imperdiet sit amet, varius sed turpis. Nulla pharetra feugiat lectus vitae venenatis. Sed semper volutpat quam, sit amet malesuada ex lacinia eget. Aenean ornare purus massa, in ultricies ligula fringilla vel. Aliquam erat volutpat. Fusce vestibulum velit sed elit lobortis, ac feugiat nulla eleifend. Donec sed malesuada ligula. Aliquam sit amet odio eu lacus mollis lobortis. Integer eget mauris mauris. Nullam magna justo, tristique sed mauris ac, fringilla interdum sapien. Vivamus pharetra nisi ut consectetur pretium.
 </Paragraph>
 
+![Lorem ipsum dolor sit amet](presence.jpg "Lorem ipsum dolor sit amet")
+
 <Paragraph>
 Etiam ante tortor, pharetra vitae nunc ac, tincidunt elementum mauris. Sed vehicula, felis a consequat vestibulum, velit diam accumsan risus, eu ultricies nisi elit vitae nisi. Cras mattis mi orci, vel mollis nisi mollis vitae. Proin euismod sed enim a fringilla. Integer scelerisque, enim vitae viverra elementum, tellus nulla sollicitudin velit, id consequat arcu mauris quis nisi. Aenean bibendum feugiat laoreet. Mauris accumsan leo vitae turpis lacinia, ut faucibus magna consequat. Fusce ac tellus lorem.
 </Paragraph>

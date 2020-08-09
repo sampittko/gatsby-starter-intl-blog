@@ -6,6 +6,8 @@ post_date: "2020-05-25"
 post_description: Nullam purus est, efficitur sit amet eros ut, tristique condimentum dui. Duis aliquam lectus nec velit facilisis condimentum in cursus nibh. In posuere rhoncus nibh sed tempus. Etiam tristique odio id neque euismod tristique. Suspendisse tempor, metus et pulvinar posuere, dui tellus mollis nisi, eget tempor erat odio non urna. Integer faucibus accumsan urna, sed ultrices diam elementum ut.
 ---
 
+![Lorem ipsum dolor sit amet](slovenia.jpg "Lorem ipsum dolor sit amet")
+
 <Paragraph>
 Mauris eleifend, turpis vitae tincidunt tempor, velit nisi sagittis augue, eget pharetra libero diam interdum dui. Nullam tempor sodales arcu, et molestie ligula tristique quis. Sed scelerisque, massa non consequat pulvinar, libero quam dictum nunc, nec cursus magna orci sit amet libero. Sed dictum, ipsum eu pretium pharetra, eros lacus egestas lacus, ac porta libero nisi sed lacus. Sed vitae dignissim magna. Vestibulum vitae ultrices massa, nec vulputate felis. Proin lacinia blandit nulla, at fringilla arcu euismod vel. Morbi aliquet urna nec arcu eleifend, ac dictum enim sodales. Nullam purus est, efficitur sit amet eros ut, tristique condimentum dui. Duis aliquam lectus nec velit facilisis condimentum in cursus nibh. In posuere rhoncus nibh sed tempus. Etiam tristique odio id neque euismod tristique. Suspendisse tempor, metus et pulvinar posuere, dui tellus mollis nisi, eget tempor erat odio non urna. Integer faucibus accumsan urna, sed ultrices diam elementum ut.
 </Paragraph>

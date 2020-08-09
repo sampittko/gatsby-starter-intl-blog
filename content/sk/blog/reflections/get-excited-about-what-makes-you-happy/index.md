@@ -6,6 +6,8 @@ post_date: "2020-04-25"
 post_description: Nullam bibendum, nibh ut scelerisque pharetra, lectus massa pulvinar felis, id accumsan massa nisi eu mauris. Quisque suscipit arcu ac tellus faucibus accumsan. Aliquam est orci, porttitor vitae ipsum id, ullamcorper faucibus felis.
 ---
 
+![Lorem ipsum dolor sit amet](happy.jpg "Lorem ipsum dolor sit amet")
+
 <Paragraph>
 Donec pellentesque metus non mauris condimentum lacinia. Sed urna libero, cursus nec imperdiet sit amet, varius sed turpis. Nulla pharetra feugiat lectus vitae venenatis. Sed semper volutpat quam, sit amet malesuada ex lacinia eget. Aenean ornare purus massa, in ultricies ligula fringilla vel. Aliquam erat volutpat. Fusce vestibulum velit sed elit lobortis, ac feugiat nulla eleifend. Donec sed malesuada ligula. Aliquam sit amet odio eu lacus mollis lobortis. Integer eget mauris mauris. Nullam magna justo, tristique sed mauris ac, fringilla interdum sapien. Vivamus pharetra nisi ut consectetur pretium.
 </Paragraph>

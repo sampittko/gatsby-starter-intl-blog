@@ -10,6 +10,8 @@ post_description: Quisque volutpat bibendum libero in efficitur. Nullam dapibus 
 Praesent placerat purus nec est venenatis, non pharetra eros porttitor. Mauris ligula sapien, bibendum ac auctor molestie, euismod id nibh. Aliquam in eros commodo, eleifend lorem tempus, tristique nibh. Quisque volutpat bibendum libero in efficitur. Nullam dapibus elit arcu. Curabitur molestie justo quis cursus pharetra. Aliquam erat volutpat.
 </Paragraph>
 
+![Lorem ipsum dolor sit amet](work-college.jpg "Lorem ipsum dolor sit amet")
+
 <Paragraph>
 Nunc magna augue, tempus id sodales ac, lobortis eu urna. Quisque quis nulla eget justo suscipit egestas. Aliquam et semper eros. Cras eleifend magna sit amet nulla pharetra, id rutrum erat gravida. Cras nec ipsum elit. Quisque laoreet ex vitae leo laoreet, sed pharetra sapien congue. Quisque in varius urna, vel lobortis lectus.
 </Paragraph>

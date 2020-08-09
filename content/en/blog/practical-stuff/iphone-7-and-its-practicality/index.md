@@ -3,7 +3,6 @@ page_description: There are both things to love and things to hate about this 20
 post_title: iPhone 7 and it's practicality
 post_category: Practical stuff
 post_date: "2020-06-30"
-post_description: Vivamus sit amet mi lacus. Nullam at consectetur eros. Donec mauris justo, dapibus eget mollis a, scelerisque id enim. Etiam iaculis ante sapien, sed pulvinar diam venenatis ac.
 ---
 
 <Paragraph>

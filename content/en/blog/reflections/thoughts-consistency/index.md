@@ -3,7 +3,6 @@ page_description: It is important to stay present and to stay so, we need to hav
 post_title: Thoughts consistency
 post_category: Reflections
 post_date: "2018-12-24"
-post_description: Quisque ultricies libero a massa tincidunt egestas. Praesent vehicula odio quis odio vestibulum, a blandit nisi vehicula. Ut sed sapien a elit egestas bibendum.
 ---
 
 <Paragraph>

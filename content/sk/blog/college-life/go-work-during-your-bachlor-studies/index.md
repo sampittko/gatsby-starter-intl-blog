@@ -3,7 +3,6 @@ page_description: Keď máš počas štúdia nejaký čas navyše, využi ho roz
 post_title: Choď pracovať už počas bakalárskeho štúdia
 post_category: College life
 post_date: "2018-03-11"
-post_description: Quisque volutpat bibendum libero in efficitur. Nullam dapibus elit arcu. Curabitur molestie justo quis cursus pharetra. Aliquam erat volutpat.
 ---
 
 <Paragraph>

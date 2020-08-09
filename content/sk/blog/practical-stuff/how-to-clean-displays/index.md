@@ -3,7 +3,6 @@ page_description: Veľa som sa trápil s čistením rôznych displejov, tu je č
 post_title: Ako čistiť displeje
 post_category: Praktické veci
 post_date: "2019-11-03"
-post_description: Vivamus sit amet mi lacus. Nullam at consectetur eros. Donec mauris justo, dapibus eget mollis a, scelerisque id enim. Etiam iaculis ante sapien, sed pulvinar diam venenatis ac.
 ---
 
 <Paragraph>

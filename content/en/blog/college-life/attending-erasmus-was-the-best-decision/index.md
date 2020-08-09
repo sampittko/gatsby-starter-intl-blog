@@ -3,7 +3,6 @@ page_description: Erasmus is a programme thanks to which a college student in Eu
 post_title: Going on Erasmus was the best decision to make during the college years
 post_category: College life
 post_date: "2020-05-25"
-post_description: Nullam purus est, efficitur sit amet eros ut, tristique condimentum dui. Duis aliquam lectus nec velit facilisis condimentum in cursus nibh. In posuere rhoncus nibh sed tempus. Etiam tristique odio id neque euismod tristique. Suspendisse tempor, metus et pulvinar posuere, dui tellus mollis nisi, eget tempor erat odio non urna. Integer faucibus accumsan urna, sed ultrices diam elementum ut.
 ---
 
 ![Lorem ipsum dolor sit amet](slovenia.jpg "Lorem ipsum dolor sit amet")

@@ -3,7 +3,6 @@ page_description: Je dôležité byť prítomný a aby sme takými mohli byť, p
 post_title: Stálosť myšlienok
 post_category: Zamyslenia
 post_date: "2018-12-24"
-post_description: Quisque ultricies libero a massa tincidunt egestas. Praesent vehicula odio quis odio vestibulum, a blandit nisi vehicula. Ut sed sapien a elit egestas bibendum.
 ---
 
 <Paragraph>

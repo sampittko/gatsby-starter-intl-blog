@@ -3,7 +3,6 @@ page_description: Na ceste za úspechom je rozhodujúce, aby si sa rozhodol robi
 post_title: Nadchni sa pre to, čo ťa naozaj baví
 post_category: Zamyslenia
 post_date: "2020-04-25"
-post_description: Nullam bibendum, nibh ut scelerisque pharetra, lectus massa pulvinar felis, id accumsan massa nisi eu mauris. Quisque suscipit arcu ac tellus faucibus accumsan. Aliquam est orci, porttitor vitae ipsum id, ullamcorper faucibus felis.
 ---
 
 ![Lorem ipsum dolor sit amet](happy.jpg "Lorem ipsum dolor sit amet")

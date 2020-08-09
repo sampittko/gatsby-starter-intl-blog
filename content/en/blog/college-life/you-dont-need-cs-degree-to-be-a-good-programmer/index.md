@@ -3,7 +3,6 @@ page_description: How did I get to know the fact that actually anyone can be a g
 post_title: You don't need a CS degree to be a programmer
 post_category: College life
 post_date: "2020-08-07"
-post_description: Quisque volutpat bibendum libero in efficitur. Nullam dapibus elit arcu. Curabitur molestie justo quis cursus pharetra. Aliquam erat volutpat.
 ---
 
 <Paragraph>

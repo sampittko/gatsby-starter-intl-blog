@@ -3,7 +3,6 @@ page_description: It is fundamental to do the thing that is more than just money
 post_title: Get excited about what really makes you happy
 post_category: Reflections
 post_date: "2020-04-25"
-post_description: Nullam bibendum, nibh ut scelerisque pharetra, lectus massa pulvinar felis, id accumsan massa nisi eu mauris. Quisque suscipit arcu ac tellus faucibus accumsan. Aliquam est orci, porttitor vitae ipsum id, ullamcorper faucibus felis.
 ---
 
 ![Lorem ipsum dolor sit amet](happy.jpg "Lorem ipsum dolor sit amet")

@@ -3,7 +3,6 @@ page_description: Na tomto zariadení sú veci, ktoré budete mať radi ale aj t
 post_title: iPhone 7 a jeho praktickosť
 post_category: Praktické veci
 post_date: "2020-06-30"
-post_description: Vivamus sit amet mi lacus. Nullam at consectetur eros. Donec mauris justo, dapibus eget mollis a, scelerisque id enim. Etiam iaculis ante sapien, sed pulvinar diam venenatis ac.
 ---
 
 <Paragraph>

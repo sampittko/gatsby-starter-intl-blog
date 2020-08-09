@@ -3,7 +3,6 @@ page_description: Ako som sám dospel k záveru, že byť dobrým programátorom
 post_title: Nepotrebuješ titul z informatiky aby si mohol byť programátorom
 post_category: Vysokoškolský život
 post_date: "2020-08-07"
-post_description: Quisque volutpat bibendum libero in efficitur. Nullam dapibus elit arcu. Curabitur molestie justo quis cursus pharetra. Aliquam erat volutpat.
 ---
 
 <Paragraph>

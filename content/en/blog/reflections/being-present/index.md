@@ -3,7 +3,6 @@ page_description: I don't know how about you but as for me, I wanna be as presen
 post_title: Being present
 post_category: Reflections
 post_date: "2020-02-29"
-post_description: Nullam bibendum, nibh ut scelerisque pharetra, lectus massa pulvinar felis, id accumsan massa nisi eu mauris. Quisque suscipit arcu ac tellus faucibus accumsan. Aliquam est orci, porttitor vitae ipsum id, ullamcorper faucibus felis.
 ---
 
 <Paragraph>

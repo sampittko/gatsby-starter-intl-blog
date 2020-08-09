@@ -13,7 +13,6 @@ import Paragraph from "../../components/mdx/Paragraph";
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     sk: mdx(fields: { slug: { eq: $slug }, language: { eq: "sk" } }) {
-      excerpt(pruneLength: 160)
       body
       fields {
         slug
@@ -23,12 +22,10 @@ export const pageQuery = graphql`
         page_description
         post_title
         post_date(formatString: "D. MMM YYYY", locale: "sk")
-        post_description
         post_category
       }
     }
     en: mdx(fields: { slug: { eq: $slug }, language: { eq: "en" } }) {
-      excerpt(pruneLength: 160)
       body
       fields {
         slug
@@ -38,7 +35,6 @@ export const pageQuery = graphql`
         page_description
         post_title
         post_date(formatString: "D. MMM YYYY", locale: "en")
-        post_description
         post_category
       }
     }
@@ -61,10 +57,6 @@ const BlogPostTemplate = ({ data, pageContext, intl }) => {
   const date = post.frontmatter.post_date;
   const category = post.frontmatter.post_category;
   const { slug, categorySlug } = post.fields;
-
-  // Also available
-  // const description = post.frontmatter.post_description;
-  // const { excerpt } = post;
 
   return (
     <Layout

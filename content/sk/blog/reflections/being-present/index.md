@@ -3,7 +3,6 @@ page_description: Neviem ako ty ale čo sa týka mňa, chcem byť čo najviac pr
 post_title: Byť prítomný
 post_category: Zamyslenia
 post_date: "2020-02-29"
-post_description: Nullam bibendum, nibh ut scelerisque pharetra, lectus massa pulvinar felis, id accumsan massa nisi eu mauris. Quisque suscipit arcu ac tellus faucibus accumsan. Aliquam est orci, porttitor vitae ipsum id, ullamcorper faucibus felis.
 ---
 
 <Paragraph>

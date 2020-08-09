@@ -71,7 +71,6 @@ Firstly, you will need to follow certain rules for internationalization to work 
 ---
 page_description: This is a super blog post 2 # Use for better SEO
 post_title: Hello there
-post_description: Just a sample blog post that you will enjoy reading # Use for custom excerpt
 post_category: Reflections
 post_date: "2020-04-05"
 ---

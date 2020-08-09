@@ -3,7 +3,6 @@ page_description: I struggled a lot when it comes to cleaning various displays, 
 post_title: How to clean displays
 post_category: Practical stuff
 post_date: "2019-11-03"
-post_description: Vivamus sit amet mi lacus. Nullam at consectetur eros. Donec mauris justo, dapibus eget mollis a, scelerisque id enim. Etiam iaculis ante sapien, sed pulvinar diam venenatis ac.
 ---
 
 <Paragraph>

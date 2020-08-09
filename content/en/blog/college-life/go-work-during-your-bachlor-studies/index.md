@@ -3,7 +3,6 @@ page_description: When there is some spare time during your studies at college, 
 post_title: Go work during your Bachelor Studies
 post_category: College life
 post_date: "2018-03-11"
-post_description: Quisque volutpat bibendum libero in efficitur. Nullam dapibus elit arcu. Curabitur molestie justo quis cursus pharetra. Aliquam erat volutpat.
 ---
 
 <Paragraph>

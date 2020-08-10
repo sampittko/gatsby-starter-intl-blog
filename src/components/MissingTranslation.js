@@ -16,10 +16,10 @@ const MissingTranslation = ({ intl, id }) => (
     <Section
       title={intl.formatMessage({ id: "missingtranslation.title" })}
       render={() => (
-        <p className="text-center">
+        <p className="text-center text-black dark:text-gray-300">
           {intl.formatMessage({ id: "missingtranslation.suggestion" })}
           <span className="block text-sm mt-1 w-auto">
-            <span className="bg-gray-300 px-2 py-px">
+            <span className="bg-gray-300 dark:bg-gray-700 px-2 py-px">
               ID: <span className="underline">{id}</span>
             </span>
           </span>

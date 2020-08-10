@@ -24,8 +24,12 @@ const DarkModeToggle = ({ value, onToggle, intl }) => (
   </div>
 );
 
+DarkModeToggle.defaultProps = {
+  value: null,
+}
+
 DarkModeToggle.propTypes = {
-  value: PropTypes.bool.isRequired,
+  value: PropTypes.bool,
   onToggle: PropTypes.func.isRequired,
 };
 

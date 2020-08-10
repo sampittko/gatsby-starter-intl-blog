@@ -16,6 +16,8 @@
   "blog.noposts": "There are no posts yet",
   "blog.post.navigation.prev": "Previous",
   "blog.post.navigation.next": "Up next",
+  "missingtranslation.title": "Missing translation",
+  "missingtranslation.suggestion": "Suggest author to add a translation for this content by providing an ID displayed below.",
   "footer.note.madeby": "made by {developer}",
   "footer.note.madeby.hover": "GitHub page of the project",
   "footer.note.using": "using",

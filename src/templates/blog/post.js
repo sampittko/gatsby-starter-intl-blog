@@ -5,11 +5,11 @@ import Section from "../../components/section/Section";
 import { graphql } from "gatsby";
 import { injectIntl } from "gatsby-plugin-intl";
 import Navigation from "../../components/blog/post/navigation/Navigation";
-import MissingTranslation from "../../utils/MissingTranslation";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
 import Paragraph from "../../components/mdx/Paragraph";
 import Link from "../../components/mdx/Link";
+import MissingTranslation from "../../components/MissingTranslation";
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -46,7 +46,14 @@ const shortcodes = { Paragraph, Link };
 
 const BlogPostTemplate = ({ data, pageContext, intl }) => {
   const language = intl.locale;
-  if (!data[language]) return <MissingTranslation />;
+
+  if (!data[language]) {
+    return (
+      <MissingTranslation
+        id={`/${language}${pageContext.slug}`}
+      />
+    );
+  }
 
   const post = data[language];
   const { prevIntl, nextIntl } = pageContext;

@@ -16,6 +16,8 @@
   "blog.noposts": "Zatiaľ tu nie sú žiadne články",
   "blog.post.navigation.prev": "Predošlý",
   "blog.post.navigation.next": "Nasledujúci",
+  "missingtranslation.title": "Chýbajúci preklad",
+  "missingtranslation.suggestion": "Navrhni autorovi pridanie prekladu pre tento obsah poskytnutím ID uvedeného nižšie.",
   "footer.note.madeby": "vyrobil {developer}",
   "footer.note.madeby.hover": "GitHub stránka projektu",
   "footer.note.using": "pomocou",

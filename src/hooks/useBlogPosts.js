@@ -19,7 +19,6 @@ const query = graphql`
               slug
               categorySlug
             }
-            excerpt
           }
         }
       }
@@ -41,7 +40,6 @@ const query = graphql`
               slug
               categorySlug
             }
-            excerpt
           }
         }
       }

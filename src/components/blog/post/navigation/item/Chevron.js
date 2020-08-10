@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Icon from "../../../../../assets/img/chevron.svg";
+import Icon from "../../../../../assets/img/icons/chevron.svg";
 
 const Chevron = ({ back }) => (
   <Icon

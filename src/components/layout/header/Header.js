@@ -1,6 +1,6 @@
 import React from "react";
 
-import Image from "./image/Image";
+import Hero from "./hero/Hero";
 import Links from "./links/Links";
 import OpenToWork from "./openToWork/OpenToWork";
 import { useStaticQuery, graphql } from "gatsby";
@@ -18,7 +18,7 @@ const query = graphql`
   }
 `;
 
-const Header = ({ backTo }) => {
+const Header = ({ backTo, darkMode, onDarkModeToggle }) => {
   const data = useStaticQuery(query);
   const { openToWork } = data.site.siteMetadata.author;
 
@@ -26,7 +26,11 @@ const Header = ({ backTo }) => {
     <header className="container px-5 py-8 mx-auto">
       {openToWork && <OpenToWork />}
       <Links />
-      <Image backTo={backTo} />
+      <Hero
+        backTo={backTo}
+        darkMode={darkMode}
+        onDarkModeToggle={onDarkModeToggle}
+      />
     </header>
   );
 };
@@ -40,6 +44,8 @@ Header.propTypes = {
     to: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
   }),
+  darkMode: PropTypes.bool.isRequired,
+  onDarkModeToggle: PropTypes.func.isRequired,
 };
 
 export default Header;

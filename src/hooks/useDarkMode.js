@@ -1,36 +1,45 @@
 import { useEffect } from "react";
-import { useLocalStorage } from "beautiful-react-hooks";
+import { useSessionStorage } from "beautiful-react-hooks";
 
-const useDarkMode = () => {
-  const [darkMode, setDarkMode] = useLocalStorage(
-    "dark-mode",
-    window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-  );
+const useDarkMode = (considerOS, initialValue) => {
+  const [enabled, setEnabled] = useSessionStorage("dark-mode", null);
 
-  const set = (value) => {
-    setDarkMode(value);
+  const setDarkMode = (value) => {
     if (value) {
       document.documentElement.classList.add("mode-dark");
     } else {
       document.documentElement.classList.remove("mode-dark");
     }
+    setEnabled(value);
   };
 
   useEffect(() => {
-    set(darkMode);
-  });
+    // use existing value
+    if (enabled !== null) {
+      setDarkMode(enabled)
+    }
+    // was not yet set
+    else {
+      if (!!considerOS) {
+        window.matchMedia &&
+          window
+            .matchMedia("(prefers-color-scheme: dark)")
+            .addEventListener("change", (e) => {
+              setDarkMode(e.matches);
+            });
 
-  useEffect(() => {
-    window.matchMedia &&
-      window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .addEventListener("change", (e) => {
-          set(e.matches);
-        });
+        setDarkMode(
+          window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+      }
+      else {
+        setDarkMode(!!initialValue)
+      }
+    }
   }, []);
 
-  return darkMode;
+  return [enabled, setDarkMode]
 };
 
 export default useDarkMode;

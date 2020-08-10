@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Link from "../../../Link";
-import GitHub from "../../../../assets/img/social/github.svg";
-import LinkedIn from "../../../../assets/img/social/linkedin.svg";
-import Twitter from "../../../../assets/img/social/twitter.svg";
+import GitHub from "../../../../assets/img/icons/social/github.svg";
+import LinkedIn from "../../../../assets/img/icons/social/linkedin.svg";
+import Twitter from "../../../../assets/img/icons/social/twitter.svg";
 
 const getSocialDetails = (socials, socialName) => {
   let socialDetails = {};

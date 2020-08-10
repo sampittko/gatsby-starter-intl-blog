@@ -1,8 +1,8 @@
 import React from "react";
-import Vercel from "../../../../assets/img/poweredbys/vercel.svg";
-import Egghead from "../../../../assets/img/poweredbys/egghead.svg";
-import Tailwind from "../../../../assets/img/poweredbys/tailwind.svg";
-import Gatsby from "../../../../assets/img/poweredbys/gatsby.svg";
+import Vercel from "../../../../assets/img/icons/poweredbys/vercel.svg";
+import Egghead from "../../../../assets/img/icons/poweredbys/egghead.svg";
+import Tailwind from "../../../../assets/img/icons/poweredbys/tailwind.svg";
+import Gatsby from "../../../../assets/img/icons/poweredbys/gatsby.svg";
 import Logo from "./Logo";
 
 const poweredBys = [Vercel, Gatsby, Tailwind, Egghead];

@@ -20,5 +20,7 @@
   "footer.note.madeby.hover": "GitHub page of the project",
   "footer.note.using": "using",
   "footer.cookies.accept": "Accept",
-  "footer.cookies.consent": "You agree with the use of cookies by browsing the website."
+  "footer.cookies.consent": "You agree with the use of cookies by browsing the website.",
+  "darkmode.toggle.turnon": "Turn on dark mode",
+  "darkmode.toggle.turnoff": "Turn on light mode"
 }

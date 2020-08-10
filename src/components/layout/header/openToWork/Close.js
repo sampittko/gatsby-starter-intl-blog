@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Icon from "../../../../assets/img/close.svg";
+import Icon from "../../../../assets/img/icons/close.svg";
 
 const Close = ({ onClick }) => (
   <button onClick={onClick}>

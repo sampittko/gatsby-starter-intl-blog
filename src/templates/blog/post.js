@@ -48,11 +48,7 @@ const BlogPostTemplate = ({ data, pageContext, intl }) => {
   const language = intl.locale;
 
   if (!data[language]) {
-    return (
-      <MissingTranslation
-        id={`/${language}${pageContext.slug}`}
-      />
-    );
+    return <MissingTranslation id={`/${language}${pageContext.slug}`} />;
   }
 
   const post = data[language];

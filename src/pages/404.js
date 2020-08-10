@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 import Layout from "../components/layout/Layout";
 import SEO from "../components/SEO";
 import Section from "../components/section/Section";
-import { injectIntl } from 'gatsby-plugin-intl';
+import { injectIntl } from "gatsby-plugin-intl";
 
 const NotFoundPage = ({ intl }) => (
   <Layout
@@ -20,7 +20,7 @@ const NotFoundPage = ({ intl }) => (
     <Section
       title="404"
       render={() => (
-        <p className="text-center">
+        <p className="text-center text-black dark:text-gray-300">
           {intl.formatMessage({ id: "page.notfound.description" })}
         </p>
       )}

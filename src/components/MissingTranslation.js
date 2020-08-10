@@ -1,8 +1,8 @@
-import React from 'react';
-import Section from './section/Section';
-import Layout from './layout/Layout';
-import { injectIntl } from 'gatsby-plugin-intl';
-import PropTypes from 'prop-types'
+import React from "react";
+import Section from "./section/Section";
+import Layout from "./layout/Layout";
+import { injectIntl } from "gatsby-plugin-intl";
+import PropTypes from "prop-types";
 
 const MissingTranslation = ({ intl, id }) => (
   <Layout
@@ -31,6 +31,6 @@ const MissingTranslation = ({ intl, id }) => (
 
 MissingTranslation.propTypes = {
   id: PropTypes.string.isRequired,
-}
+};
 
 export default injectIntl(MissingTranslation);

@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 import Sun from "../../../../../assets/img/icons/sun.svg";
 import Moon from "../../../../../assets/img/icons/moon.svg";
-import { injectIntl } from 'gatsby-plugin-intl';
+import { injectIntl } from "gatsby-plugin-intl";
 
 const DarkModeToggle = ({ value, onToggle, intl }) => (
   <div className="group">
@@ -26,7 +26,7 @@ const DarkModeToggle = ({ value, onToggle, intl }) => (
 
 DarkModeToggle.defaultProps = {
   value: null,
-}
+};
 
 DarkModeToggle.propTypes = {
   value: PropTypes.bool,

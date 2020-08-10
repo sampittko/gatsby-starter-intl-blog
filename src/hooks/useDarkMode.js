@@ -16,7 +16,7 @@ const useDarkMode = (considerOS, initialValue) => {
   useEffect(() => {
     // use existing value
     if (enabled !== null) {
-      setDarkMode(enabled)
+      setDarkMode(enabled);
     }
     // was not yet set
     else {
@@ -32,14 +32,13 @@ const useDarkMode = (considerOS, initialValue) => {
           window.matchMedia &&
             window.matchMedia("(prefers-color-scheme: dark)").matches
         );
-      }
-      else {
-        setDarkMode(!!initialValue)
+      } else {
+        setDarkMode(!!initialValue);
       }
     }
   }, []);
 
-  return [enabled === null ? false : enabled, setDarkMode]
+  return [enabled === null ? false : enabled, setDarkMode];
 };
 
 export default useDarkMode;

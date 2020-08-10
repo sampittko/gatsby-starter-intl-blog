@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import DarkModeToggle from './DarkModeToggle';
-import BackTo from './BackTo';
+import React from "react";
+import PropTypes from "prop-types";
+import DarkModeToggle from "./DarkModeToggle";
+import BackTo from "./BackTo";
 
 const Actions = ({ backTo, darkMode, onDarkModeToggle }) => (
   <div className="absolute h-24 mt-5 z-50 w-screen">

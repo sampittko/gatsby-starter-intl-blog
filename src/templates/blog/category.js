@@ -52,9 +52,7 @@ const BlogCategoryTemplate = ({ data, pageContext, intl }) => {
   const language = intl.locale;
 
   if (data[language].edges.length === 0) {
-    return (
-      <MissingTranslation id={`/${language}${pageContext.slug}`} />
-    );
+    return <MissingTranslation id={`/${language}${pageContext.slug}`} />;
   }
 
   const posts = data[language].edges;

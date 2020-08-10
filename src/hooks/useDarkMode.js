@@ -39,7 +39,7 @@ const useDarkMode = (considerOS, initialValue) => {
     }
   }, []);
 
-  return [enabled, setDarkMode]
+  return [enabled === null ? false : enabled, setDarkMode]
 };
 
 export default useDarkMode;

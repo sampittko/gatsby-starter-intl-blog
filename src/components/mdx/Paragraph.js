@@ -8,7 +8,7 @@ const Paragraph = ({ children }) => (
 );
 
 Paragraph.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.object.isRequired,
 };
 
 export default Paragraph;

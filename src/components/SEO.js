@@ -21,7 +21,7 @@ const SEO = ({
           siteMetadata {
             title
             siteUrl
-            ogImageUrl
+            defaultImage
             author {
               userName
             }
@@ -34,7 +34,7 @@ const SEO = ({
       const metaDescription = description;
       const metaImage = image
         ? `${siteMetadata.siteUrl}/${image}`
-        : siteMetadata.ogImageUrl;
+        : siteMetadata.defaultImage;
       const url = `${siteMetadata.siteUrl}${slug}`;
       return (
         <Helmet

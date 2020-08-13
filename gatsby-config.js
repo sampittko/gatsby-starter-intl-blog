@@ -2,8 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "Samuel Pitoňák (@sampittko)",
     siteUrl: "https://sampittko.sk",
-    ogImageUrl:
-      "https://pbs.twimg.com/profile_images/1255901925079474177/aVyiRhR8_400x400.jpg",
+    defaultImage: "https://avatars3.githubusercontent.com/u/38221262",
     author: {
       fullName: "Samuel Pitoňák",
       email: "sampittko@gmail.com",

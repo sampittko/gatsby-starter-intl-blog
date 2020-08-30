@@ -108,7 +108,7 @@ Replace `[language-key]` with the actual language key that represents the langua
 
 4. Extend existing GraphQL queries in the [hooks](https://github.com/sampittko/gatsby-starter-intl-blog/blob/main/src/hooks/) folder by adding the newly added language
 
-5. Extend existing GraphQL page queries in [blog.js](https://github.com/sampittko/gatsby-starter-intl-blog/blob/main/src/templates/blog/blog.js) and [category.js](https://github.com/sampittko/gatsby-starter-intl-blog/blob/main/src/templates/blog/category.js) by adding the newly added language
+5. Extend existing GraphQL page queries in [post.js](https://github.com/sampittko/gatsby-starter-intl-blog/blob/main/src/templates/blog/post.js) and [category.js](https://github.com/sampittko/gatsby-starter-intl-blog/blob/main/src/templates/blog/category.js) by adding the newly added language
 
 6. **You are done**
 
@@ -152,4 +152,4 @@ Check what is new but also the history of changes for this project in [CHANGELOG
 
 ## License
 
-This project is under the MIT license which is great! Read more inside [LICENSE.md](https://github.com/sampittko/gatsby-starter-intl-blog/blob/main/LICENSE).
+This project is under the MIT license which is great! Read more inside [LICENSE](https://github.com/sampittko/gatsby-starter-intl-blog/blob/main/LICENSE).

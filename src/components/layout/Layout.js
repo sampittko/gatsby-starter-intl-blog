@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "../../assets/css/main.css";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
-import { withIntlRedirect } from "../../utils/withIntlRedirect";
 import useDarkMode from "../../hooks/useDarkMode";
 import PropTypes from "prop-types";
 import Main from "./Main";
@@ -41,4 +40,4 @@ Layout.propTypes = {
   }),
 };
 
-export default withIntlRedirect(Layout);
+export default Layout;

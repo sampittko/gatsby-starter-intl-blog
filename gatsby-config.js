@@ -106,7 +106,7 @@ module.exports = {
         path: `${__dirname}/src/locales`, // language JSON resource path
         languages: ["sk", "en"], // supported language keys
         defaultLanguage: "sk", // default language when visiting /page instead of sk/page
-        redirect: true, // if the value is true, / or /page-2 will be redirected to the user’s preferred language router. e.g) /ko or /ko/page-2. Otherwise, the pages will render defaultLangugage language.
+        redirect: false, // if the value is true, / or /page-2 will be redirected to the user’s preferred language router. e.g) /ko or /ko/page-2. Otherwise, the pages will render defaultLangugage language.
         // additional settings for the needs of site components
         external: {
           defaultLanguage: "en", // language to redirect to by default if language was not set

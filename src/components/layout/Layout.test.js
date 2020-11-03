@@ -2,8 +2,10 @@ import React from "react";
 import renderer from "react-test-renderer";
 import Layout from "./Layout";
 import * as Gatsby from "gatsby";
+import { IntlProvider } from "gatsby-plugin-intl";
+import enTranslations from '../../locales/en.json';
 
-const Intl = jest.genMockFromModule("gatsby-plugin-intl");
+jest.mock("./footer/LanguagePicker", () => () => jest.fn());
 
 const useStaticQuery = jest.spyOn(Gatsby, "useStaticQuery");
 useStaticQuery.mockImplementation(() => ({
@@ -31,13 +33,11 @@ describe("Layout", () => {
   it("renders correctly", () => {
     const tree = renderer
       .create(
-        <Intl.IntlProvider>
+        <IntlProvider locale="en" messages={enTranslations}>
           <Layout />
-        </Intl.IntlProvider>
+        </IntlProvider>
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
-
-    fireEvent.click(queryByTestId("dark-mode-toggle-button"));
   });
 });

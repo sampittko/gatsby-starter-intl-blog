@@ -7,6 +7,7 @@ import { injectIntl } from "gatsby-plugin-intl";
 const DarkModeToggle = ({ value, onToggle, intl }) => (
   <div className="group">
     <button
+      data-testid="dark-mode-toggle-button"
       onClick={onToggle}
       className="bg-white group-hover:bg-gray-700 dark:bg-gray-900 h-10 w-10 rounded-full flex justify-center items-center mr-6 lg:-mr-5"
       title={

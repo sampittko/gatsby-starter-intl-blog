@@ -7,6 +7,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
+    "test": "jest --silent",
     "start": "npm run watch:css && gatsby develop",
     "develop": "npm run watch:css && gatsby develop",
     "build": "npm run build:css && gatsby build",
@@ -43,9 +44,14 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.8.6",
+    "babel-jest": "^26.6.2",
+    "babel-preset-gatsby": "^0.5.15",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.2",
     "lodash": "^4.17.19",
     "postcss-cli": "^7.1.1",
     "prettier": "^2.0.5",
+    "react-test-renderer": "^17.0.1",
     "tailwindcss": "^1.6.2",
     "tailwindcss-dark-mode": "^1.1.6"
   },
